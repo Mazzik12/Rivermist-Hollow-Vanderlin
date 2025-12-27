@@ -240,6 +240,8 @@
 			return "ADJ"
 		if(BODY_ADJ_UPPER_LAYER)
 			return "ADJ"
+		if(BODY_ADJ_TOP_LAYER)
+			return "ADJ"
 		if(BODY_BEHIND_LAYER)
 			return "BEHIND"
 		if(BODY_UNDER_LAYER)
