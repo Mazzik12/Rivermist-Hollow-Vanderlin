@@ -550,3 +550,43 @@
 		collar.name = "catbell collar"
 	target.update_inv_neck()
 	forceMove(collar) // move us inside the collar so that if we salvage it, we get the bell back
+
+/datum/repeatable_crafting_recipe/leather/leash
+	name = "leather leash"
+	requirements = list(
+		/obj/item/natural/hide/cured = 1
+	)
+	tool_usage = list(
+		/obj/item/needle = list("starts to sew", "start to sew")
+	)
+	starting_atom = /obj/item/needle
+	attacked_atom = /obj/item/natural/hide/cured
+	output = /obj/item/leash/leather
+	craft_time = 10 SECONDS
+	crafting_message = "starts sewing a leather leash"
+	craftdiff = 0
+
+/datum/repeatable_crafting_recipe/survival/rope_leash
+	name = "rope leash"
+	requirements = list(
+		/obj/item/rope = 1
+	)
+	tool_usage = list(
+		/obj/item/needle = list("starts to sew", "start to sew")
+	)
+	starting_atom = /obj/item/needle
+	attacked_atom = /obj/item/rope
+	output = /obj/item/leash
+	craft_time = 3 SECONDS
+	crafting_message = "starts to sew a rope leash"
+
+/datum/repeatable_crafting_recipe/survival/chain_leash
+	name = "chain leash"
+	requirements = list(
+		/obj/item/rope/chain = 1
+	)
+	starting_atom = /obj/item/rope/chain
+	attacked_atom = /obj/item/rope/chain
+	output = /obj/item/leash/chain
+	craft_time = 2 SECONDS
+	crafting_message = "starts linking a chain leash"
