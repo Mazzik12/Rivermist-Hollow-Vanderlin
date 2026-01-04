@@ -311,18 +311,21 @@
 /datum/sex_action/proc/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target, must_flip = FALSE) //must_flip is for handling partner's message
 	return
 
-/datum/sex_action/proc/check_sex_lock(mob/locked, organ_slot, obj/item/item) //free for all for now
+/datum/sex_action/proc/check_sex_lock(mob/locked, organ_slot, obj/item/item)
 	if(!organ_slot && !item)
 		return FALSE
-	for(var/datum/sex_session_lock/lock as anything in GLOB.locked_sex_objects)
-		//if(lock in sex_locks)
-		//	continue
-		//if(lock.locked_host != locked)
-		//	continue
-		//if((lock.locked_item != item && !item) || (lock.locked_organ_slot != organ_slot) && !organ_slot)
-		//	continue
+
+	return FALSE //unlocking it all for now
+
+	/*for(var/datum/sex_session_lock/lock as anything in GLOB.locked_sex_objects)
+		if(lock in sex_locks)
+			continue
+		if(lock.locked_host != locked)
+			continue
+		if((lock.locked_item != item && !item) || (lock.locked_organ_slot != organ_slot) && !organ_slot)
+			continue
 		return TRUE
-	return FALSE
+	return FALSE*/
 
 
 /datum/sex_action/proc/do_onomatopoeia(mob/living/carbon/human/user)

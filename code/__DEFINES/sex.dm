@@ -35,6 +35,7 @@ GLOBAL_LIST_EMPTY(locked_sex_objects)
 #define COMSIG_SEX_HOLE_AFTER_REMOVE "sex_hole_after_remove"						// fires when we remove an object from a *hole*
 #define COMSIG_SEX_ADJUST_ORGASM_PROG "sex_adjust_orgasm_prog"                  // (amount) - Adjust orgasm prog level
 #define COMSIG_SEX_SET_ORGASM_PROG "sex_set_orgasm_prog"                        // (amount) - Set orgasm prog to specific value
+#define COMSIG_SEX_EDGED_BY_OTHER_STATE "sex_set_edged_state"                        // (amount) - Set orgasm prog to specific value
 
 // Knotting Component Signals
 /// Attempts to knot a target. Args: (target, force_level)

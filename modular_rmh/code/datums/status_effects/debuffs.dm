@@ -70,6 +70,29 @@
 	. = ..()
 	owner.remove_stress(/datum/stress_event/blue_balls)
 
+/datum/status_effect/close_to_orgasm
+	id = "close_to_orgasm"
+	duration = 1 MINUTES
+	alert_type = /atom/movable/screen/alert/status_effect/close_to_orgasm
+	effectedstats = list("strength" = -1, "speed" = -1, "intelligence" = -2)
+
+/datum/stress_event/close_to_orgasm
+	desc = "<span class='love_low'>I am really close to release.</span>"
+	timer = 1 MINUTES
+	stress_change = 1
+
+/datum/status_effect/close_to_orgasm/on_apply()
+	owner.add_stress(/datum/stress_event/close_to_orgasm)
+	. = ..()
+
+/datum/status_effect/close_to_orgasm/on_remove()
+	owner.remove_stress(/datum/stress_event/close_to_orgasm)
+	. = ..()
+
+/atom/movable/screen/alert/status_effect/close_to_orgasm
+	name = "Close"
+	desc = "<span class='love_low'>I feel the pleasure building, I am really close...</span>"
+
 /datum/status_effect/edging_overstimulation
 	id = "edging_overstimulation"
 	duration = 5 MINUTES

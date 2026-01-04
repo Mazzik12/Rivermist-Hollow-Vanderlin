@@ -230,8 +230,7 @@
 	return TRUE
 
 /datum/sex_session/proc/perform_sex_action(mob/living/carbon/human/action_initiator, mob/living/carbon/human/action_target, arousal_amt, pain_amt, orgasm_prog_amt, datum/sex_action/sex_act)
-	var/list/arousal_data_user = list()
-	SEND_SIGNAL(user, COMSIG_SEX_GET_AROUSAL, arousal_data_user)
+
 	var/list/arousal_data_target = list()
 	SEND_SIGNAL(action_target, COMSIG_SEX_GET_AROUSAL, arousal_data_target)
 
@@ -243,7 +242,6 @@
 			var/lovermessage = pick("This feels so good!","I am in nirvana!","This is too good to be possible!","By the Gods!","I can't stop, too good!~")
 			to_chat(action_target, span_love(lovermessage))
 
-	var/edge_other = FALSE
 	if(action_target != user && edging_other)
 		if(arousal_data_target["arousal"] >= AROUSAL_EDGING_THRESHOLD + 15)
 			var/succes_chance = 100
@@ -260,22 +258,23 @@
 				if(prob(10))
 					to_chat(user, span_love("I can't tell if they are close or not..."))
 			if(prob(succes_chance))
-				edge_other = TRUE
+				SEND_SIGNAL(action_target, COMSIG_SEX_EDGED_BY_OTHER_STATE, TRUE) //yeah, feels like a hack, honesytly, but it works
 
 	var/res_send = RESIST_NONE
 	var/mob/living/action_user_final
 	var/giving = TRUE
+
 	if(user == action_initiator) //set proper user
 		action_user_final = user
-		res_send = arousal_data_user["resistance_to_pleasure"]
 	else
 		action_user_final = action_initiator
-		res_send = arousal_data_target["resistance_to_pleasure"]
 		giving = FALSE
 
+	var/list/arousal_data_user = list()
+	SEND_SIGNAL(action_user_final, COMSIG_SEX_GET_AROUSAL, arousal_data_user)
+	res_send = arousal_data_user["resistance_to_pleasure"]
 
-
-	SEND_SIGNAL(action_user_final, COMSIG_SEX_RECEIVE_ACTION, sex_act, action_initiator, action_target, arousal_amt, pain_amt, orgasm_prog_amt, giving, force, speed, res_send, edge_other)
+	SEND_SIGNAL(action_user_final, COMSIG_SEX_RECEIVE_ACTION, sex_act, action_initiator, action_target, arousal_amt, pain_amt, orgasm_prog_amt, giving, force, speed, res_send)
 
 /datum/sex_session/proc/handle_passive_ejaculation(mob/living/carbon/human/handler)
 	if(!handler)

@@ -31,6 +31,8 @@
 	var/resistance_to_pleasure = RESIST_NONE
 	/// Recent orgasm count
 	var/recent_orgasm_count = 0
+	/// Are we edged by partner
+	var/is_edged = FALSE
 
 /*
 no passive orgasm from arousal +
@@ -70,6 +72,7 @@ fix holding pleasure
 	RegisterSignal(parent, COMSIG_SEX_HOLE_AFTER_REMOVE, PROC_REF(hole_after_remove_handle))
 	RegisterSignal(parent, COMSIG_SEX_ADJUST_ORGASM_PROG, PROC_REF(adjust_orgasm_prog))
 	RegisterSignal(parent, COMSIG_SEX_SET_ORGASM_PROG, PROC_REF(set_orgasm_prog))
+	RegisterSignal(parent, COMSIG_SEX_EDGED_BY_OTHER_STATE, PROC_REF(set_edging_state))
 
 /datum/component/arousal/UnregisterFromParent()
 	. = ..()
@@ -115,7 +118,7 @@ fix holding pleasure
 		if(40 to INFINITY)
 			org_rate = 0.3
 
-	adjust_orgasm_prog(parent, -4 * org_rate)
+	adjust_orgasm_prog(parent, -1 * org_rate)
 
 /datum/component/arousal/proc/handle_aroousal_cooling()
 	//if(!can_lose_arousal())
@@ -146,6 +149,9 @@ fix holding pleasure
 	if(arousal < 120)
 		return
 	adjust_orgasm_prog(parent, CLAMP(arousal / 120, 1, 2))
+
+/datum/component/arousal/proc/set_edging_state()
+	is_edged = TRUE
 
 /datum/component/arousal/proc/can_climax()
 	// Add some checks for like curses or something here.
@@ -216,7 +222,7 @@ fix holding pleasure
 /datum/component/arousal/proc/set_edging(datum/source, amount)
 	edging_charge = clamp(amount, 0, MAX_EDGING)
 
-/datum/component/arousal/proc/receive_sex_action(datum/source, datum/sex_action/s_action, mob/living/carbon/human/action_initiator, mob/living/carbon/human/action_target, arousal_amt, pain_amt, orgasm_prog_amt, giving, applied_force, applied_speed, applied_resist, edged_by_other)
+/datum/component/arousal/proc/receive_sex_action(datum/source, datum/sex_action/s_action, mob/living/carbon/human/action_initiator, mob/living/carbon/human/action_target, arousal_amt, pain_amt, orgasm_prog_amt, giving, applied_force, applied_speed, applied_resist)
 	var/mob/living/user = parent
 
 	// Apply multipliers
@@ -322,10 +328,10 @@ fix holding pleasure
 				to_chat(user, span_love(resmessage))
 	if(arousal > AROUSAL_EDGING_THRESHOLD)
 		adjust_edging(source, arousal_amt / 3)
-	if(edged_by_other)
+	if(is_edged)
 		if(arousal <= 120)
-			arousal_amt = 0
-			orgasm_prog_amt = 0
+			arousal_amt = 0.01
+			orgasm_prog_amt = 0.01
 		else
 			arousal_amt *= 0.2
 			orgasm_prog_amt *= 0.2
@@ -349,6 +355,8 @@ fix holding pleasure
 	try_ejaculate(s_action, action_initiator, action_target, giving)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
+
+	is_edged = FALSE
 
 /datum/component/arousal/proc/update_arousal_effects()
 	update_pink_screen()
@@ -579,6 +587,8 @@ fix holding pleasure
 			user.emote("sexmoanhvy", forced = TRUE)
 
 	charge = max(0, charge - CHARGE_FOR_CLIMAX)
+
+	is_edged = FALSE
 
 	user.add_stress(/datum/stress_event/cumok)
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
@@ -953,6 +963,13 @@ fix holding pleasure
 
 		MOBTIMER_SET(user, "edging_overstimulation")
 		user.apply_status_effect(/datum/status_effect/edging_overstimulation)
+
+	if(orgasm_progress > 85)
+		if(!user.has_status_effect(/datum/status_effect/close_to_orgasm))
+			user.apply_status_effect(/datum/status_effect/close_to_orgasm)
+	else
+		user.remove_status_effect(/datum/status_effect/close_to_orgasm)
+
 
 /datum/component/arousal/proc/hole_before_insert_handle(datum/source, obj/item/item, hole_id, mob/living/inserter)
 	//var/mob/living/user = parent
