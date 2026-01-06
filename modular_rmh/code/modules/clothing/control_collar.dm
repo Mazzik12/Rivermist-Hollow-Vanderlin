@@ -298,22 +298,25 @@ GLOBAL_LIST_INIT(reverse_slave_phrases_translations, list(
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, TRAIT_STATUS_EFFECT(id))
 	return ..()
 
-
-/datum/anvil_recipe/slavecollar
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/gem/red, /obj/item/gem/blue, /obj/item/gem/diamond)
-	i_type = "Valuables"
-	name = "Cruel slave gorget"
-	recipe_name = "a cruel slave collar"
-	created_item = /obj/item/clothing/neck/slave_collar/male
+/datum/repeatable_crafting_recipe/arcyne/slavecollar
+	name = "slave collar"
+	reagent_requirements = list()
+	tool_usage = list()
+	requirements = list(
+		/obj/item/natural/hide/cured  = 1,
+		/obj/item/gem/red = 1,
+		/obj/item/gem/blue = 1,
+		/obj/item/gem/diamond = 1
+	)
+	output = /obj/item/clothing/neck/slave_collar
+	starting_atom = /obj/item/gem/diamond
+	attacked_atom = /obj/item/natural/hide/cured
 	craftdiff = 4
 
-/datum/anvil_recipe/slavecollar/cruel
+/datum/repeatable_crafting_recipe/arcyne/slavecollar/cruel
+	name = "cruel slave collar"
+	output = /obj/item/clothing/neck/slave_collar/male
 
-/datum/anvil_recipe/slavecollar/elegant
-	name = "Elegant slave collar"
-	recipe_name = "an elegant slave collar"
-	created_item = /obj/item/clothing/neck/slave_collar/female
-	additional_items = list(/obj/item/natural/hide/cured, /obj/item/gem/red, /obj/item/gem/blue, /obj/item/gem/diamond)
-	craftdiff = 4
-
+/datum/repeatable_crafting_recipe/arcyne/slavecollar/elegant
+	name = "elegant slave collar"
+	output = /obj/item/clothing/neck/slave_collar/female
