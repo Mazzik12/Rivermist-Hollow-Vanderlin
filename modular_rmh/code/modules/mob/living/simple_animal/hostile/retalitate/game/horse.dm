@@ -42,9 +42,7 @@
 			CALLBACK(src, PROC_REF(after_birth)),\
 		)
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/male // Делим на два пола, чтобы корректно работал horse/tamed(mob/user)
-	gender = "male"
-
+///
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/kid
 	icon = 'modular_rmh/icons/mob/monster/horse.dmi'
 	name = "foal"
@@ -61,5 +59,28 @@
 	icon_living = "[foalcolor]"
 	icon_dead = "[foalcolor]_dead"
 
+///
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/male // Делим на два пола, чтобы работал horse/tamed(mob/user)
+	gender = "male"
+
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/kid/boy // Делим на два пола, чтобы ничего не сломалось, на всякий случай.
 	gender = "male"
+
+///
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
+	tame = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/male/tame
+	tame = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/tame/saddled/Initialize()
+	. = ..()
+	var/obj/item/natural/saddle/S = new(src)
+	ssaddle = S
+	update_appearance(UPDATE_OVERLAYS)
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/male/tame/saddled/Initialize()
+	. = ..()
+	var/obj/item/natural/saddle/S = new(src)
+	ssaddle = S
+	update_appearance(UPDATE_OVERLAYS)
