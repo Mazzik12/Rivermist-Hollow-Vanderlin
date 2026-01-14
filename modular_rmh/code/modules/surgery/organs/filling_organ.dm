@@ -58,7 +58,7 @@
 	var/list/arousal_data = list()
 	SEND_SIGNAL(H, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	//updates size caps
-	if(!issimple(H) && H.mind && organ_sizeable)
+	if(!isanimal(H) && H.mind && organ_sizeable)
 		var/captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
 		if(damage)
 			captarget = max(0, captarget-damage*10)
@@ -195,7 +195,7 @@
 		chem_splash(owner, 3, reagents)
 		playsound(owner, 'sound/foley/waterenter.ogg', 15)
 
-	/*if(!issimple(H) && H.mind)
+	/*if(!isanimal(H) && H.mind)
 		if(contents.len)
 			for(var/obj/item/forgancontents as anything in forgan.contents)
 				if(!istype(forgancontents, /obj/item/dildo)) //dildo keeps stuff in even if you have no pants ig
