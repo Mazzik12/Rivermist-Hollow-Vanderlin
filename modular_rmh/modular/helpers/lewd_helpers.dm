@@ -70,6 +70,8 @@
 
 /obj/item
 	var/genital_access = FALSE
+	///for bra only body armors that allow groin interactions.
+	var/is_bra = FALSE
 
 /obj/item/organ/genitals
 	var/visible_through_clothes = FALSE

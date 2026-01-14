@@ -225,11 +225,6 @@
 									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
 				break*/
 
-
-/obj/item/clothing
-	///for bra only body armors that allow groin interactions.
-	var/is_bra = FALSE
-
 //had to make this ghetto ass shit, fucks sake
 /mob/living/carbon/proc/mob_slot_wearing(zone)
 	if(iscarbon(src))
