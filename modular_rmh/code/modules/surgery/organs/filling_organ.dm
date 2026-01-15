@@ -23,7 +23,7 @@
 	var/absorbrate = 1 //refilling and hungerhelp are irrelevant to this, each life tick. NO LESS THAN 1 DIGESTS RIGHT.
 	var/absorbmult = 1 //free gains
 	var/driprate = 0.1
-	var/spiller = FALSE //toggles if it will spill its contents when not plugged.
+	var/spiller = FALSE //toggles if it will spill its stored_items when not plugged.
 	var/blocker = ITEM_SLOT_SHIRT //pick an item slot
 	var/additional_blocker
 	var/max_femcum = 0
@@ -58,12 +58,18 @@
 	var/list/arousal_data = list()
 	SEND_SIGNAL(H, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	//updates size caps
+	var/captarget
 	if(!isanimal(H) && H.mind && organ_sizeable)
-		var/captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
+		captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
 		if(damage)
 			captarget = max(0, captarget-damage*10)
-		if(contents.len)
-			for(var/obj/item/thing as anything in contents)
+	if(!isanimal(H) && H.mind)
+		if(!captarget) //like vaginas dont have size selection
+			captarget = max_reagents
+		var/list/stored_items = list()
+		SEND_SIGNAL(H, COMSIG_HOLE_RETURN_ITEM_LIST_SINGLE, stored_items, slot)
+		if(length(stored_items))
+			for(var/obj/item/thing as anything in stored_items)
 				if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
 					captarget -= thing.w_class*10
 		if(captarget != reagents.maximum_volume)
@@ -92,7 +98,7 @@
 			to_chat(H, span_boldwarning("My [pick(altnames)] BLEED..!"))
 
 	if(reagents.maximum_volume < reagents.total_volume) //overflow
-		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents due to damage!"),span_info("My [pick(altnames)] spill some of it's contents due to damage!"),span_unconscious("I hear a splash."))
+		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's stored_items due to damage!"),span_info("My [pick(altnames)] spill some of it's stored_items due to damage!"),span_unconscious("I hear a splash."))
 		var/turf/ownerloc = owner.loc
 		ownerloc.add_liquid_from_reagents(reagents, amount = reagents.maximum_volume-reagents.total_volume)
 		reagents.remove_all(reagents.maximum_volume-reagents.total_volume)
@@ -137,7 +143,9 @@
 		return
 	if(reagents.total_volume && absorbing) //slowly inject to your blood if they have reagents. Will not work if refilling because i cant properly seperate the reagents for which to keep which to dump.
 		reagents.trans_to(owner, absorbrate, absorbmult, TRUE, FALSE)
-	if(!contents.len) //if nothing is plugging the hole, stuff will drip out.
+	var/list/stored_items = list()
+	SEND_SIGNAL(owner, COMSIG_HOLE_RETURN_ITEM_LIST_SINGLE, stored_items, slot)
+	if(!length(stored_items)) //if nothing is plugging the hole, stuff will drip out.
 		var/tempdriprate = driprate
 		if((reagents.total_volume && spiller) || (reagents.total_volume > reagents.maximum_volume)) //spiller or above it's capacity to leak.
 			var/obj/item/clothing/blockingitem = H.mob_slot_wearing(blocker)
@@ -177,14 +185,21 @@
 					tempdriprate *= 50 //since default values are basically decimals.
 					reagents.trans_to(the_bottle, min(tempdriprate))
 					to_chat(owner, span_info("I collect the fluids dripping from me in \the [the_bottle]."))
-	else //we got something in contents
-		for(var/obj/item/reagent_containers/contentitem in contents) //we got a bottle inside
+	else //we got something in stored_items
+		for(var/obj/item/reagent_containers/contentitem in stored_items) //we got a bottle inside
 			if(contentitem.reagents && contentitem.spillable)
+				/* lets mix things up
 				if(refilling && reagents.total_volume) //producers fill bottles, others get filled.
 					reagents.trans_to(reagents, rand(4,8))
 				else
 					if(contentitem.reagents.total_volume)
 						contentitem.reagents.trans_to(reagents, rand(4,8))
+				*/
+				if(contentitem.reagents.total_volume) //stir the pot
+					contentitem.reagents.trans_to(reagents, rand(4,8))
+				if(refilling && reagents.total_volume)
+					reagents.trans_to(contentitem, rand(4,8))
+
 	COOLDOWN_START(src, liquidcd, processspeed)
 
 /obj/item/organ/genitals/filling_organ/proc/organ_jumped()
@@ -194,38 +209,40 @@
 	var/stealth = H.get_skill_level(/datum/skill/misc/sneaking)
 	var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 	if(reagents.total_volume > reagents.maximum_volume / 2 && spiller && prob(keepinsidechance)) //if you have more than half full spiller organ.
-		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's contents with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))
+		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's stored_items with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's stored_items with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))
 		chem_splash(owner, 3, reagents)
 		playsound(owner, 'sound/foley/waterenter.ogg', 15)
 
 	/*if(!isanimal(H) && H.mind)
-		if(contents.len)
-			for(var/obj/item/forgancontents as anything in forgan.contents)
-				if(!istype(forgancontents, /obj/item/dildo)) //dildo keeps stuff in even if you have no pants ig
+		var/list/stored_items = list()
+		SEND_SIGNAL(H, COMSIG_HOLE_RETURN_ITEM_LIST_SINGLE, stored_items, slot)
+		if(length(stored_items))
+			for(var/obj/item/forganstored_items as anything in forgan.stored_items)
+				if(!istype(forganstored_items, /obj/item/dildo)) //dildo keeps stuff in even if you have no pants ig
 					var/obj/item/clothing/blockingitem = get_organ_blocker(H, zone)
 					if(!blockingitem || blockingitem.genital_access) //checks if the item has genital_access, like skirts, if not, it blocks the thing from flying off.
 						if(prob(keepinsidechance))
 							if(H.client?.prefs.showrolls)
-								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]! [keepinsidechance]%"))
+								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(stored_items)]! [keepinsidechance]%"))
 							else
-								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(contents)]!"))
+								to_chat(H, span_alert("Damn! I lose my [pick(altnames)]'s grip on [english_list(stored_items)]!"))
 							playsound(H, 'sound/misc/mat/insert (1).ogg', 20, TRUE, -2, ignore_walls = FALSE)
-							forgancontents.doMove(get_turf(H))
-							forgan.contents -= forgancontents
+							forganstored_items.doMove(get_turf(H))
+							forgan.stored_items -= forganstored_items
 							var/yeet = rand(4)
 							var/turf/selectedturf = pick(orange(H, yeet)) //object flies off the hole with pressure at a random turf, funny.
-							forgancontents.throw_at(selectedturf, yeet, 2)
+							forganstored_items.throw_at(selectedturf, yeet, 2)
 						else
 							if(H.client?.prefs.showrolls)
 								if(keepinsidechance < 10)
-									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
+									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(stored_items)]. [keepinsidechance]%"))
 								else
-									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]. [keepinsidechance]%"))
+									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(stored_items)]. [keepinsidechance]%"))
 							else
 								if(keepinsidechance < 10)
-									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
+									to_chat(H, span_blue("I easily maintain my [pick(altnames)]'s grip on [english_list(stored_items)]."))
 								else
-									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(contents)]."))
+									to_chat(H, span_info("Phew, I maintain my [pick(altnames)]'s grip on [english_list(stored_items)]."))
 				break*/
 
 //had to make this ghetto ass shit, fucks sake
