@@ -30,7 +30,7 @@
 	var/pregnant = FALSE // is it pregnant
 
 	//misc
-	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
+	//var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
 
 	COOLDOWN_DECLARE(liquidcd)
 

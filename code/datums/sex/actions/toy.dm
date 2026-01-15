@@ -29,10 +29,10 @@
 		return FALSE
 
 	// Try to fit it in the hole
-	var/success = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, held_toy, hole_id, user, FALSE, FALSE)
-	if(!success)
-		to_chat(user, span_warning("[target]'s [hole_id] can't accommodate [held_toy.name]!"))
-		return FALSE
+	//var/success = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, held_toy, hole_id, user, FALSE, FALSE)
+	//if(!success)
+	////	to_chat(user, span_warning("[target]'s [hole_id] can't accommodate [held_toy.name]!"))
+	//	return FALSE
 
 	// Remove from user's hand since it's now in the hole
 	user.dropItemToGround(held_toy, force = TRUE)

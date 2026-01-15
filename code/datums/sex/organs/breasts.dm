@@ -28,9 +28,9 @@
 		reagent_to_make = M.breast_milk
 	if(!refilling)
 		reagents.clear_reagents()
-	M.add_hole(ORGAN_SLOT_BREASTS, /datum/component/storage/concrete/grid/hole/breasts)
-	SEND_SIGNAL(M, COMSIG_HOLE_MODIFY_HOLE, ORGAN_SLOT_BREASTS, 3, CEILING(organ_size / 4, 1))
+	add_bodystorage(M, null, /datum/component/body_storage/breasts)
 
 /obj/item/organ/genitals/filling_organ/breasts/Remove(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	SEND_SIGNAL(M, COMSIG_HOLE_REMOVE_HOLE, ORGAN_SLOT_BREASTS)
+	var/datum/component/body_storage/breasts/comp = GetComponent(/datum/component/body_storage/breasts)
+	comp?.RemoveComponent()

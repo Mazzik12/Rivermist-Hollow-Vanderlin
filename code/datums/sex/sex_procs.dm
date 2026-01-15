@@ -163,8 +163,8 @@
 /mob/living/carbon/human/Initialize()
 	. = ..()
 	AddComponent(/datum/component/arousal)
-	//add_hole(ORGAN_SLOT_ANUS, /datum/component/storage/concrete/grid/hole/ass)
-	add_hole(BODY_ZONE_PRECISE_MOUTH, /datum/component/storage/concrete/grid/hole/mouth)
+	var/obj/item/organ/guts/gut = getorganslot(ORGAN_SLOT_GUTS)
+	gut.add_bodystorage(src, null, /datum/component/body_storage/mouth, src)
 
 
 /mob/living/proc/return_character_information()

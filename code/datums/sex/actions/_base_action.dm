@@ -153,10 +153,10 @@
 	if(!hole_id || !stored_item_type)
 		return TRUE // No storage requirements
 
-	// Check if target has hole storage component
-	var/datum/component/hole_storage/storage_comp = target.GetComponent(/datum/component/hole_storage)
-	if(!storage_comp)
-		return FALSE
+	// Check if target has hole storage components
+	//var/datum/component/body_storage/storage_comp = target.GetComponent(/datum/component/body_storage)
+	//if(!storage_comp)
+	//	return FALSE
 
 	// Create the item we want to store for testing
 	var/obj/item/item_to_test
@@ -172,12 +172,12 @@
 			item_to_test.name = stored_item_name
 
 	// Check if the specific hole can fit our item
-	var/can_fit = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, item_to_test, hole_id, user, TRUE, TRUE) // Silent check
+	//var/can_fit = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, item_to_test, hole_id, user, TRUE, TRUE) // Silent check
 
 	// Clean up test item
 	qdel(item_to_test)
 
-	return can_fit
+	return TRUE// can_fit
 
 /datum/sex_action/proc/get_users_penis(mob/living/carbon/human/user)
 	if(!user)
@@ -206,12 +206,12 @@
 			item_to_store.name = stored_item_name
 
 	// Try to fit it in the hole
-	var/success = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, item_to_store, hole_id, user, FALSE, TRUE)
+	/*var/success = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, item_to_store, hole_id, user, FALSE, TRUE)
 	if(!success)
 		qdel(item_to_store)
 		to_chat(user, span_warning("[target]'s [hole_id] can't accommodate [item_to_store.name]!"))
 		return FALSE
-
+*/
 	// Track the storage
 	var/datum/storage_tracking_entry/entry = new(item_to_store, user, hole_id, user)
 	tracked_storage += entry
@@ -226,7 +226,7 @@
 		if(entry.hole_id == hole_id && entry.stored_item)
 			var/obj/item/stored_item = entry.stored_item
 
-			SEND_SIGNAL(target, COMSIG_HOLE_REMOVE_ITEM, stored_item, hole_id, silent, TRUE)
+			SEND_SIGNAL(target, COMSIG_BODYSTORAGE_TRY_REMOVE, stored_item, hole_id, silent, TRUE)
 
 			if(istype(stored_item, /obj/item/penis_fake))
 				var/obj/item/penis_fake/fake_penis = stored_item

@@ -45,10 +45,10 @@
 		sex_session.stop_current_action()
 		return
 	var/success
-	if(user == target)
+	/*if(user == target)
 		success = SEND_SIGNAL(user, COMSIG_HOLE_TRY_FIT, dildo, hole_id, target, TRUE, FALSE)
 	else
-		success = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, dildo, hole_id, target, TRUE, FALSE)
+		success = SEND_SIGNAL(target, COMSIG_HOLE_TRY_FIT, dildo, hole_id, target, TRUE, FALSE)*/
 	if(success)
 		user.update_inv_hands()
 		user.update_a_intents()
@@ -77,7 +77,7 @@
 	if(check_sex_lock(target, ORGAN_SLOT_BREASTS))
 		return FALSE
 	var/list/stored_items = list()
-	SEND_SIGNAL(target, COMSIG_HOLE_RETURN_ITEM_LIST_SINGLE, stored_items, hole_id)
+	//SEND_SIGNAL(target, COMSIG_HOLE_RETURN_ITEM_LIST_SINGLE, stored_items, hole_id)
 	if(!stored_items.len)
 		return FALSE
 	return TRUE
@@ -108,10 +108,10 @@
 	var/datum/sex_session/sex_session = get_sex_session(user, target)
 
 	var/obj/item/removed_item
-	if(user == target)
+	/*if(user == target)
 		removed_item = SEND_SIGNAL(user, COMSIG_HOLE_REMOVE_RANDOM_ITEM, hole_id, target, TRUE)
 	else
-		removed_item = SEND_SIGNAL(target, COMSIG_HOLE_REMOVE_RANDOM_ITEM, hole_id, target, TRUE)
+		removed_item = SEND_SIGNAL(target, COMSIG_HOLE_REMOVE_RANDOM_ITEM, hole_id, target, TRUE)*/
 	if(!removed_item)
 		to_chat(user, sex_session.spanify_force("I couldn't find anything inside..."))
 		sex_session.stop_current_action()
