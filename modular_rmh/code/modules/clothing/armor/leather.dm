@@ -23,13 +23,13 @@
 	sellprice = 35
 
 /datum/anvil_recipe/armor/iron/studded
-	name = "Studded Leather Armor (+2 cured leather)"
+	name = "Studded Leather Armor (+Leather Armor)"
 	recipe_name = "studded light armor"
-	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	additional_items = list(/obj/item/clothing/armor/leather)
 	created_item = /datum/anvil_recipe/armor/iron/studded
 
 /datum/anvil_recipe/armor/iron/studded/mail
-	name = "Studded Leather mail (+3 cured leather)"
+	name = "Studded Leather mail (+Leather Armor, +1 cured leather)"
 	recipe_name = "studded light mail armor"
-	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	additional_items = list(/obj/item/clothing/armor/leather, /obj/item/natural/hide/cured)
 	created_item = /datum/anvil_recipe/armor/iron/studded
