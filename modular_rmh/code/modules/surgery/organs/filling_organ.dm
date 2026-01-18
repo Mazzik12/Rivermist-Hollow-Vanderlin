@@ -37,6 +37,7 @@
 	//misc
 	var/list/altnames = list("bugged place", "bugged organ") //used in thought messages.
 	var/last_size_alert = 0
+	var/last_damagespill_alert = 0
 
 	COOLDOWN_DECLARE(liquidcd)
 
@@ -101,10 +102,12 @@
 			to_chat(H, span_boldwarning("My [pick(altnames)] BLEED..!"))
 
 	if(reagents.maximum_volume < reagents.total_volume) //overflow
-		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's stored_items due to damage!"),span_info("My [pick(altnames)] spill some of it's stored_items due to damage!"),span_unconscious("I hear a splash."))
+		if(world.time > last_damagespill_alert + 30 SECONDS)
+			last_damagespill_alert = world.time
+			owner.visible_message(span_info("[owner]'s [pick(altnames)] can not hold all of the liquids in anymore and spill some of it's contents!"),span_info("My [pick(altnames)] can not hold all of the liquids in anymore and spill some of it's contents!!"),span_unconscious("I hear a splash."))
 		var/turf/ownerloc = owner.loc
-		ownerloc.add_liquid_from_reagents(reagents, amount = reagents.maximum_volume-reagents.total_volume)
-		reagents.remove_all(reagents.maximum_volume-reagents.total_volume)
+		ownerloc.add_liquid_from_reagents(reagents, amount = reagents.maximum_volume-reagents.total_volume+15)
+		reagents.remove_all(reagents.maximum_volume-reagents.total_volume+15)
 
 	// modify nutrition to generate reagents
 	if(istype(src, /obj/item/organ/genitals/filling_organ/vagina)) //generate lube from arousal
@@ -210,8 +213,10 @@
 	var/stealth = H.get_skill_level(/datum/skill/misc/sneaking)
 	var/keepinsidechance = CLAMP((rand(25,100) - (stealth * 20)),0,100) //basically cant lose your item if you have 5 stealth.
 	if(reagents.total_volume > reagents.maximum_volume / 2 && spiller && prob(keepinsidechance)) //if you have more than half full spiller organ.
-		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's stored_items with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's stored_items with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))
-		chem_splash(owner, 3, reagents)
+		owner.visible_message(span_info("[owner]'s [pick(altnames)] spill some of it's contents with the pressure on it!"),span_info("My [pick(altnames)] spill some of it's contents with the pressure on it! [keepinsidechance]%"),span_unconscious("I hear a splash."))
+		var/turf/ownerloc = owner.loc
+		ownerloc.add_liquid_from_reagents(reagents, amount = reagents.maximum_volume/3)
+		reagents.remove_all(reagents.maximum_volume/3)
 		playsound(owner, 'sound/foley/waterenter.ogg', 15)
 
 	/*if(!isanimal(H) && H.mind)
