@@ -299,6 +299,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/wield_block = TRUE
 	/// This value is used for calculating bulk when inserting into "body storage". If not specified, uses w_class
 	var/body_storage_bulk
+	/// If this item has visual overlay when inserted into a body_storage
+	var/has_body_storage_overlay = FALSE
 
 
 /obj/item/proc/set_quality(quality)

@@ -8,4 +8,4 @@
 	)
 	def_bulk_inner = 8
 	def_bulk_deep = 15
-	max_stretching_mult = 3
+	max_stretching_mult = 2.5

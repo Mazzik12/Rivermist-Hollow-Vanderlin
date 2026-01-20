@@ -90,7 +90,7 @@
 	RegisterSignal(parent, COMSIG_BODYSTORAGE_REMOVE_RAND_ITEM, PROC_REF(remove_random_item_from_layer))
 	RegisterSignal(parent, COMSIG_BODYSTORAGE_IS_ITEM_IN, PROC_REF(check_item_in_layer))
 	RegisterSignal(parent, COMSIG_BODYSTORAGE_IS_ITEM_TYPE_IN, PROC_REF(check_item_type_in_layer))
-	RegisterSignal(parent, COMSIG_BODYSTORAGE_RETURN_ITEM_LIST_SINGLE, PROC_REF(return_2d_list))
+	RegisterSignal(parent, COMSIG_BODYSTORAGE_GET_2D_ITEM_LIST, PROC_REF(return_2d_list))
 	RegisterSignal(parent, COMSIG_BODYSTORAGE_UPDATE_SIZE, PROC_REF(update_size))
 	RegisterSignal(parent, COMSIG_BODYSTORAGE_SWAP_LAYERS_RAND, PROC_REF(rand_item_layer_swap))
 
@@ -106,7 +106,7 @@
 	UnregisterSignal(parent, COMSIG_BODYSTORAGE_REMOVE_RAND_ITEM)
 	UnregisterSignal(parent, COMSIG_BODYSTORAGE_IS_ITEM_IN)
 	UnregisterSignal(parent, COMSIG_BODYSTORAGE_IS_ITEM_TYPE_IN)
-	UnregisterSignal(parent, COMSIG_BODYSTORAGE_RETURN_ITEM_LIST_SINGLE)
+	UnregisterSignal(parent, COMSIG_BODYSTORAGE_GET_2D_ITEM_LIST)
 	UnregisterSignal(parent, COMSIG_BODYSTORAGE_UPDATE_SIZE)
 	UnregisterSignal(parent, COMSIG_BODYSTORAGE_SWAP_LAYERS_RAND)
 
@@ -114,20 +114,26 @@
 	. = ..()
 	for (var/obj/item/I in outer_overlays)
 		remove_outer_overlay(I)
-
-/datum/component/body_storage/proc/handle_insertion(datum/source, obj/item/incoming_item, target_layer, force = FALSE)
+/**
+ * Tries to insert an item into a hole
+ * @param incoming_item - The incoming item
+ * @param target_layer - The storage layer where we should put the item in
+ * @param force - If we are using force to push the item in. Boolean
+ * @param override - If the insertion should always succeed. Boolean
+*/
+/datum/component/body_storage/proc/handle_insertion(datum/source, obj/item/incoming_item, target_layer, force = FALSE, override = FALSE)
 	if(!available_layers[target_layer])
 		return FALSE
-	var/fit_condition = check_fit(source, incoming_item, target_layer, force)
-	if(fit_condition == INSERT_FEEDBACK_OK || fit_condition == INSERT_FEEDBACK_OK_FORCE || fit_condition == INSERT_FEEDBACK_ALMOST_FULL)
+	var/fit_condition = check_fit(source, incoming_item, target_layer, force, override)
+	if(fit_condition == INSERT_FEEDBACK_OK || fit_condition == INSERT_FEEDBACK_OK_FORCE || fit_condition == INSERT_FEEDBACK_ALMOST_FULL || fit_condition == INSERT_FEEDBACK_OK_OVERRIDE)
 		insert_in_storage(source, incoming_item, target_layer)
-		var/diff = layer_storage_cur_bulk[target_layer] - layer_storage_max_bulk[target_layer]
-		if(diff > 0)
-			handle_stretch(source, diff)
-		if(target_layer == STORAGE_LAYER_OUTER)
-			apply_outer_overlay(incoming_item)
 	return fit_condition
 
+/**
+ * Inserts an item into a hole
+ * @param incoming_item - The incoming item
+ * @param target_layer - The storage layer where we should put the item in
+*/
 /datum/component/body_storage/proc/insert_in_storage(datum/source, obj/item/incoming_item, target_layer)
 	if(iscarbon(incoming_item.loc))
 		var/mob/living/carbon/M = incoming_item.loc
@@ -135,9 +141,21 @@
 	organ_storing.contents += incoming_item
 	incoming_item.forceMove(organ_storing)
 	var/list/t_layer = all_layers[target_layer]
-	t_layer += incoming_item
+	t_layer.Add(incoming_item)
 	layer_storage_cur_bulk[target_layer] += incoming_item.body_storage_bulk
+	var/diff = layer_storage_cur_bulk[target_layer] - layer_storage_max_bulk[target_layer]
+	if(incoming_item.has_body_storage_overlay)
+		apply_outer_overlay(incoming_item)
+	if(diff > 0)
+		handle_stretch(source, diff)
 
+/**
+ * Checks if an item fits in the selected layer
+ * @param incoming_item - The incoming item
+ * @param target_layer - The storage layer where we should put the item in
+ * @param force - If we are using force to push the item in. Boolean
+ * @param override - If the insertion should always succeed. Boolean
+*/
 /datum/component/body_storage/proc/check_fit(datum/source, obj/item/incoming_item, target_layer, force = FALSE, override = FALSE)
 	if(!available_layers[target_layer])
 		return FALSE
@@ -150,8 +168,10 @@
 	if(LAZYLEN(t_layer) >= layer_storage_max_num[target_layer]) //hard cap
 		return FALSE
 
-	var/incoming_bulk = layer_storage_cur_bulk[target_layer] + incoming_item.body_storage_bulk
+	if(override)
+		return INSERT_FEEDBACK_OK_OVERRIDE
 
+	var/incoming_bulk = layer_storage_cur_bulk[target_layer] + incoming_item.body_storage_bulk
 	if(incoming_bulk > layer_storage_max_bulk[target_layer])
 		if(incoming_bulk > layer_storage_max_bulk[target_layer] * 1.5 )
 			return INSERT_FEEDBACK_STUFFED
@@ -164,26 +184,44 @@
 			return INSERT_FEEDBACK_ALMOST_FULL
 		return INSERT_FEEDBACK_OK
 
+/**
+ * Tries to remove an item from a hole
+ * @param removed_item - The removed item
+ * @param target_layer - The storage layer where we should put the item in
+*/
 /datum/component/body_storage/proc/handle_removal(datum/source, obj/item/removed_item, target_layer)
 	if(!target_layer)
 		target_layer = find_item_layer(removed_item)
 	if(check_item_in_layer(source, removed_item, target_layer))
 		remove_from_storage(source, removed_item, target_layer)
-		if(target_layer == STORAGE_LAYER_OUTER)
-			remove_outer_overlay(removed_item)
 		return TRUE
 	else
 		return FALSE
 
+/**
+ * Removes an item from a hole
+ * @param removed_item - The removed item
+ * @param target_layer - The storage layer where we should put the item in
+ * @param force - If we are using force to push the item in. Boolean
+*/
 /datum/component/body_storage/proc/remove_from_storage(datum/source, obj/item/removed_item, target_layer)
 	organ_storing.contents -= removed_item
 	var/list/t_layer = all_layers[target_layer]
-	t_layer -= removed_item
+	t_layer.Remove(removed_item)
 	layer_storage_cur_bulk[target_layer] -= removed_item.body_storage_bulk
+	if(removed_item.has_body_storage_overlay)
+		remove_outer_overlay(removed_item)
 
-
+/**
+ * Swaps a random item between two layers. Layers should be different
+ * @param source_layer - The layer we remove an item from
+ * @param new_layer - The layer we try to put the item in
+ * @param force - If we are using force to push the item in. Boolean
+*/
 /datum/component/body_storage/proc/rand_item_layer_swap(datum/source, source_layer, new_layer, force = FALSE)
 	if(!source_layer || !new_layer)
+		return FALSE
+	if(source_layer == new_layer)
 		return FALSE
 	var/obj/item/item_a = return_random_item_from_layer(source, source_layer)
 	if(!item_a)
@@ -191,14 +229,24 @@
 	SEND_SIGNAL(parent, COMSIG_BODYSTORAGE_TRY_REMOVE, item_a, source_layer)
 	return handle_insertion(source, item_a, new_layer, force)
 
+/**
+ * Handles the stretching of our parent organ
+ * @param size_diff - The over-the-limit value of inserted item
+*/
 /datum/component/body_storage/proc/handle_stretch(datum/source, size_diff)
 	if(istype(organ_storing, /obj/item/organ/genitals/filling_organ) || organ_storing.stretchable)
 		if(organ_storing.stretched_coefficient < max_stretching_mult)
-			SEND_SIGNAL(organ_storing, COMSIG_ORGAN_STRETCHED, size_diff)
+			organ_storing.get_stretched(size_diff)
 
+/**
+ * Returns a 3d list of all the layers
+*/
 /datum/component/body_storage/proc/return_contents_lists(datum/source)
 	return all_layers
 
+/**
+ * Returns a 3d list of all the layers
+*/
 /datum/component/body_storage/proc/return_2d_list(datum/source)
 	var/list/return_list = list()
 	for(var/list in available_layers)
@@ -207,32 +255,57 @@
 				return_list += el
 	return return_list
 
+/**
+ * Returns the reference to a random irem from selected layer
+ * @param target_layer - The target layer
+*/
 /datum/component/body_storage/proc/return_random_item_from_layer(datum/source, target_layer)
 	var/list/t_layer = all_layers[target_layer]
 	if(t_layer.len)
 		return pick(t_layer)
 
+/**
+ * Removes and returns the reference to a random irem from selected layer
+ * @param target_layer - The target layer
+*/
 /datum/component/body_storage/proc/remove_random_item_from_layer(datum/source, target_layer)
 	var/obj/item/picked_item = return_random_item_from_layer(source, target_layer)
 	if(picked_item)
 		SEND_SIGNAL(parent, COMSIG_BODYSTORAGE_TRY_REMOVE, picked_item, target_layer)
 		return picked_item
 
+/**
+ * Returns the list of available layers
+*/
 /datum/component/body_storage/proc/return_available_layers(datum/source)
 	return available_layers
 
+/**
+ * Checks if an item is in a certain layer
+ * @param t_item - Item to check for
+ * @param target_layer - The target layer
+*/
 /datum/component/body_storage/proc/check_item_in_layer(datum/source, obj/item/t_item, target_layer)
 	if(t_item in all_layers[target_layer])
 		return TRUE
 	else
 		return FALSE
 
+/**
+ * Checks if a type is in a certain layer
+ * @param type - Type to check for
+ * @param target_layer - The target layer
+*/
 /datum/component/body_storage/proc/check_item_type_in_layer(datum/source, type, target_layer)
 	for(var/el in all_layers[target_layer])
 		if(istype(el, type))
 			return TRUE
 	return FALSE
 
+/**
+ * Finds which layer the item is in
+ * @param t_item - Item to check for
+*/
 /datum/component/body_storage/proc/find_item_layer(datum/source, obj/item/t_item)
 	for(var/list in available_layers)
 		for(var/el in all_layers[list])
@@ -240,6 +313,10 @@
 				return TRUE
 	return null
 
+/**
+ * Applies the mob_overlay_icon as an overlay of selected item to the parent mob
+ * @param i_item - Item to get overlay from
+*/
 /datum/component/body_storage/proc/apply_outer_overlay(obj/item/i_item)
 	if(!i_item)
 		return
@@ -249,6 +326,10 @@
 	owner.add_overlay(item_overlay)
 	outer_overlays[i_item] = item_overlay
 
+/**
+ * Removes the overlay of selected item from the parent mob
+ * @param i_item - Item to remove overlay of
+*/
 /datum/component/body_storage/proc/remove_outer_overlay(obj/item/i_item)
 	if(!i_item)
 		return
@@ -259,6 +340,9 @@
 	outer_overlays -= i_item
 	qdel(i_overlay)
 
+/**
+ * Calculates the max bulk of the storage
+*/
 /datum/component/body_storage/proc/calculate_bulk()
 	var/organ_size_mult = 1
 	var/organ_size_add = 0
@@ -271,9 +355,16 @@
 	layer_storage_max_bulk[STORAGE_LAYER_INNER] = (def_bulk_inner + organ_size_add) * organ_storing.stretched_coefficient //setting up default max bulk
 	layer_storage_max_bulk[STORAGE_LAYER_DEEP] = (def_bulk_deep + organ_size_add) * organ_storing.stretched_coefficient
 
+/**
+ * Updates the bulk
+*/
 /datum/component/body_storage/proc/update_size(datum/source)
 	calculate_bulk()
 
+/**
+ * Returns the layer list from layer index
+ * @param index - Target layer
+*/
 /datum/component/body_storage/proc/return_layer_list_by_index(datum/source, index)
 	switch(index)
 		if(STORAGE_LAYER_OUTER)
@@ -285,6 +376,12 @@
 		if(STORAGE_LAYER_DEEP)
 			return deep_layer_contents
 
+/**
+ * Helper for adding the storage comp to organs
+ * @param the_mob - Parent mob
+ * @param location - organ_slot, if we somehow want to add the storage to different slot
+ * @param hole_type - The hole component type to add
+*/
 /obj/item/organ/proc/add_bodystorage(mob/living/the_mob, location = null, hole_type)
 	if(!GetComponent(hole_type))
 		AddComponent(hole_type, src, location, the_mob)

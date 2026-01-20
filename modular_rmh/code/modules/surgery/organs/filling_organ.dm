@@ -49,8 +49,6 @@
 		startsfilled = FALSE
 	if(special && startsfilled) // won't fill the organ if you insert this organ via surgery
 		reagents.add_reagent(reagent_to_make, reagents.maximum_volume)
-	if(stretchable)
-		RegisterSignal(src, COMSIG_ORGAN_STRETCHED, PROC_REF(get_stretched))
 
 /obj/item/organ/genitals/filling_organ/on_life()
 	var/mob/living/carbon/human/H = owner
@@ -269,23 +267,25 @@
 /obj/item/organ/proc/get_stretched(datum/source, diff)
 	return
 
-/obj/item/organ/genitals/filling_organ/get_stretched(datum/source, diff)
+/obj/item/organ/genitals/filling_organ/get_stretched(diff)
+	if(!istype(src, /obj/item/organ/genitals/filling_organ) && !stretchable)
+		return
 	var/mob/living/carbon/human/H = owner
 	var/datum/component/arousal/aro = owner.GetComponent(/datum/component/arousal)
 	switch(diff)
-		if(1 to 1.5)
+		if(1 to 3)
 			stretched_coefficient += 0.05
 			to_chat(owner, span_love("My [pick(src.altnames)] is getting stretched..."))
-		if(1.5 to 2)
+		if(3 to 5)
 			stretched_coefficient += 0.1
 			to_chat(owner, span_alert("This stretching is hurting my [pick(src.altnames)]!"))
 			aro.try_do_pain_effect(PAIN_MED_EFFECT, FALSE)
-		if(2 to INFINITY)
+		if(5 to INFINITY)
 			stretched_coefficient += 0.5
 			to_chat(owner, span_love("AHH, GET IT ALL OUT OF MY [capitalize(pick(src.altnames))]!"))
 			aro.try_do_pain_effect(PAIN_HIGH_EFFECT, FALSE)
-	if(stretched_coefficient > 2)
+	if(stretched_coefficient > 3)
 		H.Immobilize(20)
 		//try increase organ size (code later)
-	stretched_coefficient = CLAMP(stretched_coefficient, 1, 5)
+	stretched_coefficient = CLAMP(stretched_coefficient, 1, 3)
 	SEND_SIGNAL(src, COMSIG_BODYSTORAGE_UPDATE_SIZE)
