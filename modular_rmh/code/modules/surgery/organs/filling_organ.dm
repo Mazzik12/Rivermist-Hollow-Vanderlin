@@ -153,7 +153,7 @@
 			if(!isnull(additional_blocker))
 				if(H.underwear)
 					blockingitem = H.underwear
-			if(blockingitem && !blockingitem.genital_access) //we aint dripping a drop.
+			/*if(blockingitem && !blockingitem.genital_access) //we aint dripping a drop.
 				tempdriprate = 0.1 //if worn slot cover it, drip nearly nothing.
 				if(owner.has_quirk(/datum/quirk/selfawaregeni))
 					if(prob(5))
@@ -164,8 +164,8 @@
 						to_chat(H, pick(span_info("A little bit of [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name]..."),
 							span_info("Some liquid drips from my [pick(altnames)] to my [blockingitem.name]."),
 							span_info("My [pick(altnames)] spills some liquid to my [blockingitem.name]."),
-							span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name].")))
-			else //we drippin
+							span_info("Some [english_list(reagents.reagent_list)] drips from my [pick(altnames)] to my [blockingitem.name].")))*/
+			if(!(blockingitem && !blockingitem.genital_access)) //we drippin
 				if(prob(5)) //with selfawaregeni quirk you got some chance to see what type of liquid is dripping from you.
 					if(owner.has_quirk(/datum/quirk/selfawaregeni))
 						if(!MOBTIMER_FINISHED(H, "organ_drip", rand(20,120)))
