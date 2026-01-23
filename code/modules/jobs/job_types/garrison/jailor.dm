@@ -49,7 +49,6 @@
 
 /datum/job/jailor/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
-	spawned.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 	spawned.adjust_stat_modifier(STATMOD_JOB, STATKEY_END, pick(4,5,6))
 	spawned.adjust_stat_modifier(STATMOD_JOB, STATKEY_INT, pick(-4,-5,-6))

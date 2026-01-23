@@ -50,7 +50,6 @@
 
 /datum/job/migrant/gaoler/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
-	spawned.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /datum/outfit/gaoler
 	name = "Gaoler (Migrant Wave)"

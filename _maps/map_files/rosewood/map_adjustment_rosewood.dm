@@ -25,11 +25,6 @@
 	)
 
 	blacklist = list(
-		// Inquisition
-		/datum/job/inquisitor,
-		/datum/job/absolver,
-		/datum/job/adept,
-		/datum/job/orthodoxist,
 		// RACES_PLAYER_GRENZ
 		/datum/job/advclass/combat/swordmaster,
 		/datum/job/advclass/mercenary/grenzelhoft,

@@ -26,7 +26,6 @@
 
 /datum/job/advclass/mercenary/anthrax/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
-	spawned.verbs |= /mob/living/carbon/human/proc/torture_victim //Secret police training
 
 	if(spawned.gender == FEMALE)
 		// Female: melee defense-oriented brute

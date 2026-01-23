@@ -31,32 +31,18 @@ GLOBAL_PROTECT(garrison_positions)
 GLOBAL_LIST_INIT(church_positions, list(
 	/datum/job/priest::title,
 	/datum/job/monk::title,
-	/datum/job/undertaker::title,
-	/datum/job/templar::title,
 	))
 GLOBAL_PROTECT(church_positions)
-
-GLOBAL_LIST_INIT(inquisition_positions, list(
-	/datum/job/inquisitor::title,
-	/datum/job/orthodoxist::title,
-	/datum/job/absolver::title,
-	/datum/job/adept::title,
-	))
-GLOBAL_PROTECT(inquisition_positions)
-
-
 
 GLOBAL_LIST_INIT(serf_positions, list(
 	/datum/job/innkeep::title,
 	/datum/job/armorsmith::title,
 	/datum/job/weaponsmith::title,
 	/datum/job/tailor::title,
-	/datum/job/alchemist::title,
 	/datum/job/artificer::title,
 	/datum/job/matron::title,
 	/datum/job/feldsher::title,
 	/datum/job/apothecary::title,
-	/datum/job/scribe::title,
 	/datum/job/gaffer::title,
 	/datum/job/butler::title,
 	/datum/job/persistence/carpenter::title,
@@ -75,8 +61,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	/datum/job/hunter::title,
 	/datum/job/fisher::title,
 	/datum/job/bard::title,
-	/datum/job/prisoner::title,
-	/datum/job/vagrant::title,
 	/datum/job/persistence/woodsman::title,
 	/datum/job/persistence/miner::title,
 	/datum/job/persistence/farmer::title,
@@ -93,14 +77,6 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	/datum/job/clinicapprentice::title,
 	))
 GLOBAL_PROTECT(apprentices_positions)
-
-GLOBAL_LIST_INIT(youngfolk_positions, list(
-	/datum/job/innkeep_son::title,
-	/datum/job/orphan::title,
-	/datum/job/churchling::title,
-	/datum/job/soilchild::title,
-))
-GLOBAL_PROTECT(youngfolk_positions)
 
 GLOBAL_LIST_INIT(company_positions, list(
 	/datum/job/merchant::title,
@@ -132,13 +108,11 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	sorting_order += GLOB.noble_positions
 	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.church_positions
-	sorting_order += GLOB.inquisition_positions
 	sorting_order += GLOB.serf_positions
 	sorting_order += GLOB.company_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.allmig_positions
-	sorting_order += GLOB.youngfolk_positions
 	return sorting_order
 
 GLOBAL_LIST_INIT(exp_specialmap, list(

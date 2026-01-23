@@ -480,7 +480,6 @@
 
 /datum/special_trait/sadistic/on_apply(mob/living/carbon/human/character, silent)
 	character.set_flaw(/datum/charflaw/addiction/maniac)
-	character.verbs |= /mob/living/carbon/human/proc/torture_victim
 	character.mind.special_items["Chains"] = /obj/item/rope/chain
 
 //negative
@@ -521,7 +520,7 @@
 	greet_text = span_boldwarning("I've been denounced by the church for either reasons legitimate or not!")
 	req_text = "Non-church role"
 	weight = 20
-	restricted_jobs = list(/datum/job/priest, /datum/job/monk, /datum/job/undertaker, /datum/job/templar, /datum/job/churchling)
+	restricted_jobs = list(/datum/job/priest)
 
 /datum/special_trait/hussite/on_apply(mob/living/carbon/human/character, silent)
 	GLOB.excommunicated_players += character.real_name
@@ -644,31 +643,11 @@
 	character.adjust_skillrank(/datum/skill/misc/sneaking, -2, TRUE)
 	character.adjust_skillrank(/datum/skill/misc/stealing, -2, TRUE)
 
-/datum/special_trait/vengantbum
-	name = "Vengant Bum"
-	greet_text = span_notice("I was once a nobleman, \
-	high on life until my father was murdered right in front of me. \
-	Thankfully, my mentor took me to safety and taught me all I needed to survive in these disgusting lands. \
-	They think I am a lowlife, but that's just an advantage.")
-	req_text = "Be a beggar"
-	allowed_jobs = list(/datum/job/vagrant)
-	weight = 7
-
-/datum/special_trait/vengantbum/on_apply(mob/living/carbon/human/character, silent)
-	ADD_TRAIT(character, TRAIT_DECEIVING_MEEKNESS, "[type]")
-	character.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
-	character.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
-	character.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	character.base_constitution = 20
-	character.base_strength = 20
-	character.base_endurance = 20
-	character.recalculate_stats()
-
 /datum/special_trait/my_precious
 	name = "My Precious"
 	greet_text = span_notice("The ring, it's so shiny.. so valuable, I can feel its power. It's all mine!")
 	req_text = "Be a beggar"
-	allowed_jobs = list(/datum/job/vagrant)
+	allowed_jobs = null
 	weight = 50
 
 /datum/special_trait/my_precious/on_apply(mob/living/carbon/human/character, silent)
@@ -738,7 +717,7 @@
 /datum/special_trait/overcompensating
 	name = "Overcompensating"
 	greet_text = span_boldwarning("I have an enormous sword on my back, I had it crafted specially for me, it left me without even a zenny, but now nobody will mention my small pintle!.")
-	allowed_jobs = list(/datum/job/vagrant)
+	allowed_jobs = null
 	req_text = "Be a Beggar"
 	weight = 10
 

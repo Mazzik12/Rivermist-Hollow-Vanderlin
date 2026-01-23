@@ -77,7 +77,6 @@
 #define JCOLOR_SOLDIER "#b64949"
 #define JCOLOR_SERF "#669968"
 #define JCOLOR_PEASANT "#936d6c"
-#define JCOLOR_INQUISITION "#FF0000"
 
 // job display orders //
 
@@ -112,11 +111,8 @@
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13
 #define JDO_MONK 14
-#define JDO_GRAVETENDER 15
-#define JDO_CHURCHLING 15.1
 
 #define JDO_SHEPHERD 17
-#define JDO_TEMPLAR 17.1
 
 #define JDO_MERCHANT 18
 #define JDO_SHOPHAND 18.1
@@ -129,13 +125,10 @@
 #define JDO_BAPP 22
 #define JDO_ARTIFICER 23
 
-
-
 #define JDO_BUTLER 25
 #define JDO_SERVANT 26
 
 #define JDO_INNKEEP 27
-#define JDO_INNKEEP_CHILD 27.5
 #define JDO_COOK 28
 
 #define JDO_BUTCHER 28.1
@@ -144,7 +137,6 @@
 #define JDO_HUNTER 28.4
 #define JDO_CARPENTER 28.6
 #define JDO_MASON 28.61
-#define JDO_CHEESEMAKER 28.7
 #define JDO_MINER 28.8
 #define JDO_MATRON 28.9
 #define JDO_GRAVEMAN 29
@@ -152,7 +144,6 @@
 
 #define JDO_JESTER 30
 #define JDO_BARD 30.1
-#define JDO_PRISONER 31
 
 #define JDO_CHIEF 32
 
@@ -164,14 +155,6 @@
 #define JDO_WRETCH 34.4
 
 #define JDO_MERCENARY 35
-
-#define JDO_VAGRANT 36
-#define JDO_ORPHAN 37
-#define JDO_SOILCHILD 38
-
-#define JDO_PURITAN 40
-#define JDO_ORTHODOXIST	40.1
-#define JDO_ABSOLVER 40.2
 
 #define BITFLAG_CHURCH (1<<0)
 #define BITFLAG_ROYALTY (1<<1)

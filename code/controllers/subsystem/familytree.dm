@@ -38,11 +38,6 @@ SUBSYSTEM_DEF(familytree)
 		/datum/job/lord,
 		/datum/job/hand,
 		/datum/job/advclass/hand,
-		/datum/job/adept,
-		/datum/job/advclass/adept,
-		/datum/job/orphan,
-		/datum/job/innkeep_son,
-		/datum/job/churchling,
 		)
 	//This creates 2 families for each race roundstart so that siblings dont fail to be added to a family.
 	var/list/preset_family_species = list(

@@ -39,7 +39,6 @@
 	. = ..()
 	spawned.virginity = TRUE
 	spawned.set_patron(/datum/patron/divine/astrata)
-	spawned.verbs |= /mob/living/carbon/human/proc/torture_victim
 
 /datum/outfit/daywalker
 	name = "Daywalker (Migrant Wave)"

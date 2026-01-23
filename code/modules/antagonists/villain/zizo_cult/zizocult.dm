@@ -103,8 +103,6 @@
 			return FALSE
 		if(new_owner.assigned_role.title in GLOB.church_positions)
 			return FALSE
-		if(new_owner.assigned_role.title in GLOB.inquisition_positions)
-			return FALSE
 		if(new_owner.unconvertable)
 			return FALSE
 		if(new_owner.current && HAS_TRAIT(new_owner.current, TRAIT_MINDSHIELD))

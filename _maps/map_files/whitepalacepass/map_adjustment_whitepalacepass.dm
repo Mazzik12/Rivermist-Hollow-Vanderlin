@@ -11,7 +11,6 @@
 		/datum/job/forestguard,
 		/datum/job/forestwarden,
 		/datum/job/dungeoneer,
-		/datum/job/prisoner,
 		/datum/job/jailor,
 		/datum/job/gaffer_assistant //Never filled, prefer to just ditch it.
 	)
@@ -28,12 +27,10 @@
 		/datum/job/miner = 4,
 		/datum/job/fisher = 2,
 		/datum/job/farmer = 3,
-		/datum/job/orphan = 6,
 		/datum/job/men_at_arms = 4,
 		/datum/job/guardsman = 6,
 		/datum/job/mercenary = 3,
 		/datum/job/artificer = 2,
-		/datum/job/adept = 4
 	)
 	ages_adjust = list(
 		/datum/job/forestguard = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
