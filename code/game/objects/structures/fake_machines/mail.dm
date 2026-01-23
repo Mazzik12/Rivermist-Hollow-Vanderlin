@@ -191,10 +191,6 @@ GLOBAL_LIST_EMPTY(letters_sent)
 		to_chat(H, span_warning("This is of no use to me - I may give this to a mercenary so they may send it themselves."))
 		return
 
-	if(!is_mercenary_job(H.mind.assigned_role))
-		to_chat(H, span_warning("I can't make use of this - I do not belong to the Guild."))
-		return
-
 	if(H.tokenclaimed)
 		to_chat(H, span_warning("I have already received my commendation. There's always next month to look forward to."))
 		return

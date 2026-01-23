@@ -29,7 +29,6 @@
 		/datum/job/farmer = 3,
 		/datum/job/men_at_arms = 4,
 		/datum/job/guardsman = 6,
-		/datum/job/mercenary = 3,
 		/datum/job/artificer = 2,
 	)
 	ages_adjust = list(

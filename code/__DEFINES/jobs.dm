@@ -151,8 +151,6 @@
 #define JDO_GAFFER 33.1
 #define JDO_PILGRIM 34.2
 #define JDO_MIGRANT  34.3
-#define JDO_BANDIT 34.3
-#define JDO_WRETCH 34.4
 
 #define JDO_MERCENARY 35
 

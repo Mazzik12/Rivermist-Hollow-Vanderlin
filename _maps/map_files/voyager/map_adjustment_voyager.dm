@@ -29,11 +29,9 @@
 		/datum/job/prince,
 		/datum/job/servant,
 		/datum/job/bapprentice,
-		/datum/job/bandit,
 		/datum/job/minor_noble,
 		/datum/job/guardsman,
 		/datum/job/archivist,
-		/datum/job/wretch,
 	)
 	slot_adjust = list(
 		/datum/job/farmer = 1000,

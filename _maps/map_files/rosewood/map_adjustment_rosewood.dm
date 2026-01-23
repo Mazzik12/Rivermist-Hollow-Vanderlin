@@ -27,9 +27,6 @@
 	blacklist = list(
 		// RACES_PLAYER_GRENZ
 		/datum/job/advclass/combat/swordmaster,
-		/datum/job/advclass/mercenary/grenzelhoft,
-		/datum/job/advclass/pilgrim/rare/grenzelhoft,
-		/datum/job/advclass/pilgrim/rare/preacher,
 		/datum/job/advclass/veteran/merc,
 	)
 

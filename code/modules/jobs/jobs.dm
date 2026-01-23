@@ -86,11 +86,7 @@ GLOBAL_LIST_INIT(company_positions, list(
 GLOBAL_PROTECT(company_positions)
 
 GLOBAL_LIST_INIT(allmig_positions, list(
-	/datum/job/pilgrim::title,
 	/datum/job/adventurer::title,
-	/datum/job/mercenary::title,
-	/datum/job/bandit::title,
-	/datum/job/wretch::title,
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(

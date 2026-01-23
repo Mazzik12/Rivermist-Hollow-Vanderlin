@@ -29,7 +29,6 @@
 		/datum/job/men_at_arms = 3, //Combat roles overall tuned town a bit.
 		/datum/job/guardsman = 6,
 		/datum/job/adventurer = 8, //Not sure on this one but I generally want to cut down on the non-town roles.
-		/datum/job/pilgrim = 15,
 		/datum/job/clinicapprentice = 2,
 	)
 
