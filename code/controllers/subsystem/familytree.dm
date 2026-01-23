@@ -31,10 +31,6 @@ SUBSYSTEM_DEF(familytree)
 	var/list/viable_spouses = list()
 	//These jobs are excluded from AddLocal()
 	var/excluded_jobs = list(
-		/datum/job/prince,
-		/datum/job/advclass/heir,
-		/datum/job/consort,
-		/datum/job/advclass/consort,
 		/datum/job/lord,
 		/datum/job/hand,
 		/datum/job/advclass/hand,

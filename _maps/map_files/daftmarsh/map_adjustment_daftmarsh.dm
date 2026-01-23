@@ -8,7 +8,6 @@
 	map_file_name = "daftmarsh.dmm"
 	// Disabled for Daftmarsh.
 	blacklist = list(
-		/datum/job/courtphys, //Against design idea.
 		/datum/job/tapster, //Unneeded.
 		/datum/job/shophand, //Unneeded honestly.
 		/datum/job/gaffer_assistant, //Never filled, prefer to just ditch it.
@@ -26,12 +25,7 @@
 		/datum/job/miner = 4,
 		/datum/job/fisher = 4, //Thematically fitting for them to be more common than most.
 		/datum/job/farmer = 4, //Not like this would ever be filled ANYWAYS.
-		/datum/job/men_at_arms = 3, //Combat roles overall tuned town a bit.
 		/datum/job/guardsman = 6,
 		/datum/job/adventurer = 8, //Not sure on this one but I generally want to cut down on the non-town roles.
 		/datum/job/clinicapprentice = 2,
-	)
-
-	ages_adjust = list(
-		/datum/job/forestguard = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	)

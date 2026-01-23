@@ -82,12 +82,9 @@
 
 #define JDO_DEFAULT 0
 #define JDO_LORD 1
-#define JDO_CONSORT 1.1
-#define JDO_PRINCE 1.2
 #define JDO_HAND 2
 #define JDO_STEWARD 3
 #define JDO_MINOR_NOBLE 3.5
-#define JDO_PHYSICIAN 3.7
 
 #define JDO_MAGICIAN 4
 #define JDO_WAPP 5
@@ -98,15 +95,8 @@
 
 #define JDO_CAPTAIN 7
 #define JDO_VET 7.1
-#define JDO_ROYALKNIGHT 7.2
-#define JDO_MENATARMS 8
 #define JDO_CITYWATCHMEN 8.1
-#define JDO_GATEMASTER 8.2
 #define JDO_DUNGEONEER 9
-#define JDO_JAILOR 9.1
-#define JDO_SQUIRE 10
-#define JDO_FORWARDEN 11
-#define JDO_FORGUARD 11.1
 
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13

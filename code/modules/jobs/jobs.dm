@@ -1,29 +1,19 @@
 GLOBAL_LIST_INIT(noble_positions, list(
 	/datum/job/roguetown/village/townmaster::title,
-	/datum/job/consort::title,
 	/datum/job/hand::title,
-	/datum/job/prince::title,
 	/datum/job/captain::title,
 	/datum/job/steward::title,
 	/datum/job/magician::title,
 	/datum/job/archivist::title,
-	/datum/job/courtphys::title,
 	/datum/job/minor_noble::title,
 ))
 GLOBAL_PROTECT(noble_positions)
 
 GLOBAL_LIST_INIT(garrison_positions, list(
-	/datum/job/royalknight::title,
 	/datum/job/veteran::title,
 	/datum/job/guardsman::title,
 	/datum/job/lieutenant::title,
-	/datum/job/men_at_arms::title,
-	/datum/job/gatemaster::title,
-	/datum/job/jailor::title,
 	/datum/job/dungeoneer::title,
-	/datum/job/town_elder::title,
-	/datum/job/forestwarden::title,
-	/datum/job/forestguard::title,
 	/datum/job/persistence/caravanguard::title,
 	))
 GLOBAL_PROTECT(garrison_positions)
@@ -44,7 +34,6 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	/datum/job/feldsher::title,
 	/datum/job/apothecary::title,
 	/datum/job/gaffer::title,
-	/datum/job/butler::title,
 	/datum/job/persistence/carpenter::title,
 	/datum/job/persistence/stonemason::title,
 	))
@@ -68,7 +57,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 GLOBAL_PROTECT(peasant_positions)
 
 GLOBAL_LIST_INIT(apprentices_positions, list(
-	/datum/job/squire::title,
 	/datum/job/bapprentice::title,
 	/datum/job/mageapprentice::title,
 	/datum/job/servant::title,

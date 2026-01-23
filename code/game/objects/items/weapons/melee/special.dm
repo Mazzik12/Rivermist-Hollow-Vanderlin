@@ -86,8 +86,6 @@
 				rod_jobs = GLOB.noble_positions | GLOB.garrison_positions | list(
 				/datum/job/jester::title,
 				/datum/job/servant::title,
-				/datum/job/butler::title,
-				/datum/job/squire::title,
 			)
 
 			if(!((H.mind?.assigned_role.title in rod_jobs)))

@@ -147,17 +147,13 @@
 		return
 
 	var/datum/job/lord_job = SSjob.GetJobType(/datum/job/lord)
-	var/datum/job/consort_job = SSjob.GetJobType(/datum/job/consort)
 	for(var/mob/living/carbon/human/HL in GLOB.human_list)
 		if(HL.mind)
-			if(is_lord_job(HL.mind.assigned_role) || is_consort_job(HL.mind.assigned_role))
+			if(is_lord_job(HL.mind.assigned_role))
 				HL.mind.set_assigned_role(SSjob.GetJobType(/datum/job/villager))
 		if(HL.job == "Monarch")
 			HL.job = "Ex-Monarch"
 			lord_job?.remove_spells(HL)
-		if(HL.job == "Consort")
-			HL.job = "Ex-Consort"
-			consort_job?.remove_spells(HL)
 
 	var/new_title = (coronated.gender == MALE) ? SSmapping.config.monarch_title : SSmapping.config.monarch_title_f
 	coronated.mind.set_assigned_role(/datum/job/lord)
