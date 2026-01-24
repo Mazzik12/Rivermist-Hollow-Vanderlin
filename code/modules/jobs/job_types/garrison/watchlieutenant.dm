@@ -9,7 +9,7 @@
 	tutorial = "You are a lieutenant of the City Watch. \
 	You have been chosen by the Captain to lead the Watch in his absence; \
 	Failure is not an option."
-	department_flag = GARRISON
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_CITYWATCHMEN
 	faction = FACTION_TOWN

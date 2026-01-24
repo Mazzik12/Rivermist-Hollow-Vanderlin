@@ -3,7 +3,7 @@
 	title = "Mason"
 	tutorial = "This city's walls have a memory, and you are their confidant. You work pavement, polish marble, and carve statues for the vainglory of your overlord. \
 	Your true liege, however, is this town's stone. Treat it well, and when your foolish master inevitably gets overthrown, all you have maintained shall in turn protect you."
-	department_flag = PEASANTS
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_MASON
 	faction = FACTION_TOWN

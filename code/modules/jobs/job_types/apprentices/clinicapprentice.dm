@@ -5,7 +5,7 @@
 	You hope to one dae open a Clinic of your own. \
 	Perhaps you might even venture out to Kingsfield to further your studies in their fabled universities. \
 	Though most likely you will end up as one of the many countless Physickers roaming Faience."
-	department_flag = APPRENTICES
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN
 	display_order = JDO_CLINICAPPRENTICE

@@ -3,7 +3,7 @@
 	tutorial = "Long hours and back-breaking work wouldnt even describe a quarter of what you do in a day for your Master. \
 	Its exhausting, filthy and you dont get much freetime: \
 	but someday youll get your own smithy, and youll have TWICE as many apprentices as your master does."
-	department_flag = APPRENTICES
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN
 	total_positions = 2

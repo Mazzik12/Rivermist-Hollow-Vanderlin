@@ -4,7 +4,7 @@
 	You work your fingers to the bone nearly every dae, \
 	and have naught to show for it but boney fingers. \
 	Perhaps this week you will finally be recognized, or allowed some respite?"
-	department_flag = APPRENTICES
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN
@@ -79,7 +79,7 @@
 	title = "Tapster"
 	f_title = "Alemaid"
 	tutorial = "The Innkeeper needed waiters and extra hands. So here am I, serving the food and drinks while ensuring the tavern rooms are kept clean."
-	department_flag = APPRENTICES
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN
@@ -147,7 +147,7 @@
 	title = "Orphanage Assistant"
 	tutorial = "I once was an orphan, the matron took me in and now I am forever in her debt. \
 	That orphanage, those who were like me need guidance, I shall assist the matron in her tasks."
-	department_flag = APPRENTICES
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN
@@ -205,7 +205,7 @@
 	title = "Ring Servant"
 	tutorial = "I never had what it took to be a mercenary, but I offered my service to the Guild regardless. \
 	My vow is to serve whomever holds the ring of Burden while avoiding its curse from befalling me."
-	department_flag = APPRENTICES
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN

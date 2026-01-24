@@ -5,7 +5,7 @@
 	The divine is all that matters in an immoral world. \
 	The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Vanderlin. \
 	It is up to you to shepherd the flock into a Ten-fearing future."
-	department_flag = CHURCHMEN
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_PRIEST
 	faction = FACTION_TOWN
@@ -105,7 +105,7 @@
 	title = "Ex-Priest"
 	f_title = "Ex-Priestess"
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_EQUIP_RANK)
-	department_flag = CHURCHMEN
+	department_flag = TOWN
 	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0
@@ -114,7 +114,7 @@
 	title = "Vice Priest"
 	f_title = "Vice Priestess"
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_EQUIP_RANK)
-	department_flag = CHURCHMEN
+	department_flag = TOWN
 	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0

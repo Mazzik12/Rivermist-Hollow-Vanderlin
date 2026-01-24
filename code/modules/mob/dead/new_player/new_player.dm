@@ -487,26 +487,30 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 			var/cat_color = SSjob.name_occupations[category[1]].selection_color //use the color of the first job in the category (the department head) as the category color
 			var/cat_name = ""
 			switch (SSjob.name_occupations[category[1]].department_flag)
-				if (NOBLEMEN)
-					cat_name = "Nobles"
-				if (GARRISON)
-					cat_name = "Garrison"
-				if (SERFS)
-					cat_name = "Yeomanry"
-				if (CHURCHMEN)
-					cat_name = "Churchmen"
-				if (COMPANY)
-					cat_name = "Company"
-				if (PEASANTS)
-					cat_name = "Peasantry"
-				if (APPRENTICES)
-					cat_name = "Apprentices"
-				if (YOUNGFOLK)
-					cat_name = "Young Folk"
+				if (LORDS)
+					cat_name = "Lords"
+				if (KEEP)
+					cat_name = "The Keep"
+				if (TOWNHALL)
+					cat_name = "The Town Hall"
+				if (TOWNWATCH)
+					cat_name = "The Town Watch"
+				if (CHAPEL)
+					cat_name = "The Chapel"
+				if (SCHOLARS)
+					cat_name = "The Scholars"
+				if (TRADERS)
+					cat_name = "The Waterdeep Merchant’s Guild"
+				if (TAVERN)
+					cat_name = "The Tavern"
+				if (TOWN)
+					cat_name = "The Town"
 				if (OUTSIDERS)
-					cat_name = "Outsiders"
-				if (INQUISITION)
-					cat_name = "Inquisition"
+					cat_name = "The Outsiders"
+				if (ADVENTURERS)
+					cat_name = "The Adventurers"
+				if (VILLAINS)
+					cat_name = "The Villains"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"

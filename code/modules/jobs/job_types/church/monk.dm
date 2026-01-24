@@ -4,7 +4,7 @@
 	You are a humble acolyte at the temple in Vanderlin, \
 	not yet a trained guardian or an ordained priest. \
 	But who else would keep the fires lit and the floors clean?"
-	department_flag = CHURCHMEN
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_MONK
 	faction = FACTION_TOWN

@@ -5,7 +5,7 @@
 	those belong to the men left rotting in the fields where you honed your ancient trade. \
 	Tired of senseless killing for men with crowns, you traded stability for a life of adventure. You returned a hero and savior of the lands, but those glory days with your old adventurer party are long gone. \
 	The honor has faded, your weary body aches, and your weapons gather dust. Sometimes you wonder how your old friends are doing."
-	department_flag = GARRISON
+	department_flag = TOWN
 	display_order = JDO_VET
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN

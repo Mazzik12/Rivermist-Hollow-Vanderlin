@@ -1,6 +1,6 @@
 /datum/job/gaffer
 	title = "Gaffer"
-	department_flag = SERFS
+	department_flag = TOWN
 	faction = "Station"
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	total_positions = 1

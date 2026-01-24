@@ -142,7 +142,6 @@
 		/datum/component/equipment_stress/job_specific, \
 		/datum/stress_event/maiddress, \
 		list(TRAIT_VILLAIN = null, TRAIT_NOBLE = /datum/stress_event/maiddress/noble), \
-		immune_departments = (NOBLEMEN | GARRISON | OUTSIDERS | COMPANY), \
 		department_exceptions = list(/datum/job/advclass/pilgrim, /datum/job/grabber), \
 		inverse = TRUE, \
 	)

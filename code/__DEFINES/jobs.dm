@@ -58,25 +58,35 @@
 #define FACTION_BUMS		"Bums"
 #define FACTION_MATTHIOS	"Matthios"
 
-#define NOBLEMEN		(1<<0)
-#define GARRISON		(1<<1)
-#define CHURCHMEN		(1<<2)
-#define SERFS			(1<<3)
-#define PEASANTS		(1<<4)
-#define APPRENTICES		(1<<5)
-#define YOUNGFOLK		(1<<6)
-#define OUTSIDERS		(1<<7)
-#define COMPANY			(1<<8)
-#define INQUISITION 	(1<<9)
+#define LORDS			(1<<0)	//For the Vampire Lords and Ladies
+#define KEEP			(1<<1)	//For the Vampire Keep servants and guards
+#define TOWNHALL		(1<<2)	//For the people who work at the town hall
+#define TOWNWATCH		(1<<3)	//For the town watch
+#define CHAPEL			(1<<4)	//For the chapel roles
+#define SCHOLARS		(1<<5)	//For the mages, alchemists and librarians
+#define TRADERS			(1<<6)	//For the Waterdeep's Guild
+#define TAVERN			(1<<7)	//For the tavern roles
+#define TOWN			(1<<8)	//For all the other roles within the town
+#define OUTSIDERS		(1<<9)	//For the witch, the druids and others
+#define ADVENTURERS		(1<<10)	//For all the adventurer classes
+#define VILLAINS		(1<<11)	//For the bandits, cultists and other scum
 
-#define UNDEAD			(1<<10)
+#define UNDEAD			(1<<12)
 
 
-#define JCOLOR_NOBLE "#9c40bf"
-#define JCOLOR_MERCHANT "#c2b449"
-#define JCOLOR_SOLDIER "#b64949"
-#define JCOLOR_SERF "#669968"
-#define JCOLOR_PEASANT "#936d6c"
+#define JCOLOR_LORDS        "#b02a3c" // Regal blood red
+#define JCOLOR_KEEP         "#6e6a8c" // Cold dusk violet
+#define JCOLOR_TOWNHALL     "#4fa1a8" // Civic teal
+#define JCOLOR_TOWNWATCH   	"#7b8a99" // Cold steel blue-gray
+#define JCOLOR_CHAPEL       "#e6c35c" // Radiant sacred gold
+#define JCOLOR_SCHOLARS 	"#b07cff" // Vivid arcane violet
+#define JCOLOR_TRADERS 	    "#6a7fd6" // Violet-blue
+#define JCOLOR_TAVERN       "#d08a4b" // Warm amber ale
+#define JCOLOR_TOWN         "#7f9a77" // Soft moss green
+#define JCOLOR_OUTSIDERS    "#8c6fb1" // Witch violet
+#define JCOLOR_ADVENTURERS  "#4fc48d" // Bright emerald
+#define JCOLOR_VILLAINS     "#9b3d6a" // Sinister magenta-crimson
+
 
 // job display orders //
 
@@ -148,4 +158,3 @@
 #define BITFLAG_ROYALTY (1<<1)
 #define BITFLAG_CONSTRUCTOR (1<<2)
 #define BITFLAG_GARRISON (1<<3)
-

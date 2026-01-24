@@ -5,7 +5,7 @@
 	Without your skilled hands and knifework most of the livestock around the town would be wasted."
 	display_order = JDO_BUTCHER
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	department_flag = PEASANTS
+	department_flag = TOWN
 	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0

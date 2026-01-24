@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(townmaster_titles)
 	tutorial = "The great mage‑lords have chosen you to rule a distant village. Under your guidance, the guilds\
 	flourish and the people	find shelter beneath its roofs. The fate of this land - its order and its\
 	prosperity - rests in your hands."
-	department_flag = NOBLEMEN
+	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_LORD
 	faction = FACTION_TOWN
@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(townmaster_titles)
 
 /datum/job/roguetown/village/extownmaster //just used to change the lords title
 	title = "Ex-Town Master"
-	department_flag = NOBLEMEN
+	department_flag = TOWN
 	faction = FACTION_TOWN
 	total_positions = 0
 	spawn_positions = 0

@@ -6,7 +6,7 @@
 	something you exploit with potent conviction. Let no man ever forget whose ear you whisper into. \
 	You have killed more men with those lips than any blademaster could ever claim to.\
 	You can add and remove agents with your Frumentarii scroll"
-	department_flag = NOBLEMEN
+	department_flag = TOWN
 	display_order = JDO_HAND
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN
