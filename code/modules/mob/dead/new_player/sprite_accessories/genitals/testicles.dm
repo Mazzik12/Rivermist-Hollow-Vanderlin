@@ -14,9 +14,6 @@
 
 /datum/sprite_accessory/genitals/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	if(owner)
-		if(owner.underwear)
-			return FALSE
-
 		var/obj/item/organ/genitals/penis/penis = owner.getorganslot(ORGAN_SLOT_PENIS)
 		if(penis && penis.sheath_type == SHEATH_TYPE_SLIT)
 			return FALSE

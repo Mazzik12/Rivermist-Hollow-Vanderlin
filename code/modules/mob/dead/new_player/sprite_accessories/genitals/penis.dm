@@ -28,10 +28,8 @@
 		return "[icon_state]_[penis.organ_size]"
 
 /datum/sprite_accessory/genitals/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	if(owner && owner.underwear)
-		return FALSE
 
-	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDEUNDIESBOT)
+	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDEUNDIESBOT|HIDECROTCH)
 
 /datum/sprite_accessory/genitals/penis/human
 	icon_state = "human"

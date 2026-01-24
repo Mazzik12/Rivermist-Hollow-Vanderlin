@@ -626,6 +626,7 @@
 	SEND_SIGNAL(src, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	if(wear_pants)
 		var/obj/item/clothing/pantsies = wear_pants
+		var/obj/item/clothing/undies = underwear
 		if(pantsies.flags_inv & HIDECROTCH)
 			if(!pantsies.genital_access)
 				if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
@@ -634,7 +635,7 @@
 					if(getorganslot(ORGAN_SLOT_VAGINA))
 						organ_desc += "[capitalize(m1)] shifting their legs uncomfortably."
 					//show_pant_desc = TRUE
-		else if(underwear)
+		else if(undies)
 			if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
 				if(getorganslot(ORGAN_SLOT_PENIS))
 					organ_desc += "[capitalize(m1)] pitching a tent in [m2] [underwear.name]."

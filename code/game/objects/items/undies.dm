@@ -22,6 +22,7 @@
 	grid_width = 32
 	slot_flags = ITEM_SLOT_MOUTH | ITEM_SLOT_UNDERWEAR
 	muteinmouth = TRUE
+	flags_inv = HIDECROTCH
 
 /obj/item/clothing/undies/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))
@@ -78,6 +79,7 @@
 	desc = "A pair of linen underpants; Faerun's most common." // RMH
 	icon_state = "braies"
 	item_state = "braies"
+	flags_inv = HIDEBUTT|HIDECROTCH
 
 // Craft
 
