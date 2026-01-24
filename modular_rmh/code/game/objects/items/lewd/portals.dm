@@ -103,7 +103,12 @@
     name = "portal panties"
     desc = "Laced with unstable portal magic."
     icon = 'modular_rmh/icons/obj/lewd/fleshlight.dmi'
-    icon_state = "portalpanties"
+    mob_overlay_icon = 'modular_rmh/icons/obj/lewd/portals_onmob.dmi'
+    item_state = "panties"
+    icon_state = "panties"
+    gendered = TRUE
+    slot_flags = ITEM_SLOT_UNDERWEAR
+
     var/obj/item/portallight/linked_light = null
     var/mob/living/carbon/human/current_wearer = null
     var/org_target = ORGAN_SLOT_VAGINA
