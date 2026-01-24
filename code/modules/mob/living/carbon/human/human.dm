@@ -716,7 +716,7 @@
 			//this sucks ass. refactor to locate the current ruler/consort
 			if(HL.mind)
 				if(is_lord_job(HL.mind.assigned_role))
-					HL.mind.set_assigned_role(SSjob.GetJobType(/datum/job/villager))
+					HL.mind.set_assigned_role(SSjob.GetJobType(/datum/job/towner))
 			//would be better to change their title directly, but that's not possible since the title comes from the job datum
 			if(HL.job == "Monarch")
 				HL.job = "Ex-Monarch"

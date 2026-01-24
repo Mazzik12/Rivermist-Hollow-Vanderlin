@@ -150,7 +150,7 @@
 	for(var/mob/living/carbon/human/HL in GLOB.human_list)
 		if(HL.mind)
 			if(is_lord_job(HL.mind.assigned_role))
-				HL.mind.set_assigned_role(SSjob.GetJobType(/datum/job/villager))
+				HL.mind.set_assigned_role(SSjob.GetJobType(/datum/job/towner))
 		if(HL.job == "Monarch")
 			HL.job = "Ex-Monarch"
 			lord_job?.remove_spells(HL)

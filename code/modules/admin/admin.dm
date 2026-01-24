@@ -1068,7 +1068,7 @@
 			continue
 
 		if(is_priest_job(HL.mind.assigned_role))
-			HL.mind.set_assigned_role(/datum/job/villager)
+			HL.mind.set_assigned_role(/datum/job/towner)
 			HL.job = "Ex-Priest"
 
 
