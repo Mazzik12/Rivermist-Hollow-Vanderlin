@@ -31,7 +31,7 @@
 
 /atom/movable/screen/plane_master/openspace/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
-	add_filter("openspace_blur", 1, gauss_blur_filter(1))
+	add_filter("openspace_blur", 1, gauss_blur_filter(0.1))
 
 /atom/movable/screen/plane_master/floor
 	name = "floor plane master"
