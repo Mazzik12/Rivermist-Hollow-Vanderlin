@@ -513,19 +513,6 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 5
 
-/datum/repeatable_crafting_recipe/leather/bikini
-	name = "leather bikini (2 leather)"
-	output = /obj/item/clothing/armor/leather/bikini
-	requirements = list(/obj/item/natural/hide/cured = 2)
-	sellprice = 26
-
-/datum/repeatable_crafting_recipe/leather/hidebikini
-	name = "hide bikini (2 leather, 1 fur)"
-	output = /obj/item/clothing/armor/leather/hide/bikini
-	requirements = list(/obj/item/natural/hide/cured = 2,
-				/obj/item/natural/fur = 1)
-	sellprice = 26
-
 /datum/repeatable_crafting_recipe/leather/armor/bikini
 	name = "leather bikini armor"
 	requirements = list(
@@ -543,7 +530,6 @@
 	)
 	output = /obj/item/clothing/armor/leather/bikini/bra
 	craftdiff = 1
-
 
 /datum/repeatable_crafting_recipe/leather/hidearmor/bikini
 	name = "hide bikini armor"
