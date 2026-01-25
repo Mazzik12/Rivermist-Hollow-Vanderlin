@@ -676,13 +676,13 @@
 
 /datum/repeatable_crafting_recipe/conversion/studdedconvone
 	name = "studded armor bikini"
-	output = list(/obj/item/clothing/armor/leather/studded/bikini)
+	output = /obj/item/clothing/armor/leather/studded/bikini
 	requirements = list(/obj/item/clothing/armor/leather/studded = 1)
 	attacked_atom = /obj/item/clothing/armor/leather/studded
 
 /datum/repeatable_crafting_recipe/conversion/studdedconvtwo
 	name = "studded bra"
-	output = list(/obj/item/clothing/armor/leather/studded/bikini/bra)
+	output = /obj/item/clothing/armor/leather/studded/bikini/bra
 	requirements = list(/obj/item/clothing/armor/leather/studded/bikini = 1)
 	attacked_atom = /obj/item/clothing/armor/leather/studded/bikini
 
@@ -700,36 +700,36 @@
 
 /datum/repeatable_crafting_recipe/conversion/ichainkiniconv
 	name = "chainmail bra"
-	output = list(/obj/item/clothing/armor/chainmail/iron/bikini/bra)
+	output = /obj/item/clothing/armor/chainmail/iron/bikini/bra
 	requirements = list(/obj/item/clothing/armor/chainmail/iron/bikini = 1)
 	attacked_atom = /obj/item/clothing/armor/chainmail/iron/bikini
 
 /datum/repeatable_crafting_recipe/conversion/chainkiniconv
 	name = "chainmail bra"
-	output = list(/obj/item/clothing/armor/chainmail/bikini/bra)
+	output = /obj/item/clothing/armor/chainmail/bikini/bra
 	requirements = list(/obj/item/clothing/armor/chainmail/bikini = 1)
 	attacked_atom = /obj/item/clothing/armor/chainmail/bikini
 
 /datum/repeatable_crafting_recipe/conversion/halfplateconvone
 	name = "halfplate armor bikini"
-	output = list(/obj/item/clothing/armor/plate/bikini)
+	output = /obj/item/clothing/armor/plate/bikini
 	requirements = list(/obj/item/clothing/armor/plate = 1)
 	attacked_atom = /obj/item/clothing/armor/plate
 
 /datum/repeatable_crafting_recipe/conversion/halfplateconvtwo
 	name = "halfplate bra"
-	output = list(/obj/item/clothing/armor/plate/bikini/bra)
+	output = /obj/item/clothing/armor/plate/bikini/bra
 	requirements = list(/obj/item/clothing/armor/plate/bikini = 1)
 	attacked_atom = /obj/item/clothing/armor/plate/bikini
 
 /datum/repeatable_crafting_recipe/conversion/halfplateconvone
 	name = "fullplate armor bikini"
-	output = list(/obj/item/clothing/armor/plate/full/bikini)
+	output = /obj/item/clothing/armor/plate/full/bikini
 	requirements = list(/obj/item/clothing/armor/plate/full = 1)
 	attacked_atom = /obj/item/clothing/armor/plate/full
 
 /datum/repeatable_crafting_recipe/conversion/halfplateconvtwo
 	name = "fullplate bra"
-	output = list(/obj/item/clothing/armor/plate/full/bikini/bra)
+	output = /obj/item/clothing/armor/plate/full/bikini/bra
 	requirements = list(/obj/item/clothing/armor/plate/full/bikini = 1)
 	attacked_atom = /obj/item/clothing/armor/plate/full/bikini
