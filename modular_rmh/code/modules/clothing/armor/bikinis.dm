@@ -359,8 +359,9 @@
 	created_item = /obj/item/clothing/armor/brigandine/bikini
 	craftdiff = 3
 
+//naming those bra still so its easier to find in list when needed, than top.
 /datum/anvil_recipe/armor/steel/brigadinebra
-	name = "Brigandine Top (+1 Steel Bar, +1 Cured Leather, +1 Cloth)"
+	name = "Brigandine Bra (+1 Steel Bar, +1 Cured Leather, +1 Cloth)"
 	recipe_name = "a Brigandine Top"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured, /obj/item/natural/cloth)
