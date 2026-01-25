@@ -62,7 +62,7 @@
 
 /datum/repeatable_crafting_recipe/leather/leatherskirt
 	name = "leather skirt"
-	output =/obj/item/clothing/pants/trou/leather/skirt
+	output = /obj/item/clothing/pants/trou/leather/skirt
 
 /datum/repeatable_crafting_recipe/leather/standalone/hlskirt
 	name = "hardened leather skirt"
