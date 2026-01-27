@@ -161,10 +161,8 @@
 /turf/open/floor/hexstone,
 /area/indoors/cave/rmh_dwarf_keep/throne)
 "aU" = (
-/obj/item/ore/iron,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/blocks,
-/area/indoors/cave/rmh_dwarf_keep/smelters)
+/turf/closed/mineral,
+/area/indoors/cave/rmh_cave/to_underdark)
 "aW" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -593,11 +591,6 @@
 	},
 /turf/open/floor/hexstone,
 /area/indoors/cave/rmh_dwarf_keep/living)
-"cA" = (
-/obj/effect/decal/cleanable/debris/stone,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/churchmarble,
-/area/indoors/cave/rmh_dwarf_keep/throne)
 "cB" = (
 /obj/structure/window/openclose{
 	dir = 1
@@ -2278,11 +2271,6 @@
 	},
 /turf/open/floor/dirt,
 /area/outdoors/mountains/rmh_mountains/frozen/lowlands)
-"jC" = (
-/obj/item/coin/gold/pile,
-/obj/item/coin/gold/pile,
-/turf/open/floor/tile/brownbrick,
-/area/indoors/cave/rmh_dwarf_keep/treasury)
 "jD" = (
 /obj/structure/flora/tree/pine/dead{
 	icon_state = "dead2"
@@ -2360,10 +2348,6 @@
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/ruinedwood/spiral,
 /area/under/town/basement/keep)
-"jX" = (
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/hexstone,
-/area/indoors/cave/rmh_dwarf_keep/living)
 "jY" = (
 /obj/effect/decal/cleanable/dreamfiend_ichor,
 /turf/open/floor/volcanic,
@@ -2551,7 +2535,6 @@
 /area/indoors/town/bath)
 "kQ" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
-/obj/item/coin/gold/pile,
 /turf/open/floor/tile/checker,
 /area/under/rmh_bedrock)
 "kR" = (
@@ -2887,11 +2870,6 @@
 /obj/machinery/light/fueled/wallfire/candle/blue,
 /turf/open/water/bath,
 /area/indoors/town/bath)
-"mj" = (
-/obj/effect/decal/cleanable/debris/stone,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/cobblerock/alt,
-/area/indoors/cave/rmh_dwarf_keep)
 "ml" = (
 /turf/open/floor/snow/patchy,
 /area/outdoors/mountains/rmh_mountains/frozen)
@@ -3609,14 +3587,6 @@
 /obj/structure/bookcase/random/archive,
 /turf/open/floor/wood,
 /area/indoors/town/manor)
-"pH" = (
-/obj/structure/fluff/walldeco/church/line{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/debris/stone,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/churchrough,
-/area/indoors/cave/rmh_dwarf_keep/throne)
 "pI" = (
 /obj/structure/door/iron/bars{
 	lockid = "keep_dungeon";
@@ -3731,10 +3701,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/hexstone,
 /area/indoors/cave/rmh_dwarf_keep/grand)
-"qj" = (
-/obj/item/coin/gold/pile,
-/turf/open/floor/volcanic,
-/area/indoors/cave/rmh_dwarf_keep/treasury)
 "qk" = (
 /obj/effect/decal/cobbleedge{
 	icon = 'icons/roguetown/misc/tables.dmi';
@@ -4169,10 +4135,6 @@
 "rX" = (
 /turf/open/floor/dirt,
 /area/outdoors/mountains/rmh_mountains/frozen/lowlands)
-"rY" = (
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/herringbone,
-/area/indoors/cave/rmh_dwarf_keep/grand)
 "rZ" = (
 /obj/structure/flora/grass/bush/wall/tall,
 /turf/open/floor/grass/yel,
@@ -4439,10 +4401,6 @@
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/naturalstone,
 /area/indoors/cave/rmh_dwarf_keep/grand)
-"tk" = (
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/churchmarble,
-/area/indoors/cave/rmh_dwarf_keep/throne)
 "tl" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/produce/fruit/apple,
@@ -5504,7 +5462,6 @@
 /area/indoors/cave/rmh_dwarf_keep/smelters)
 "xF" = (
 /obj/structure/closet/crate/chest/neu_fancy,
-/obj/item/coin/gold/pile,
 /turf/open/floor/tile/checker,
 /area/under/rmh_bedrock)
 "xG" = (
@@ -5566,7 +5523,6 @@
 /area/under/town/basement/keep)
 "xW" = (
 /obj/structure/closet/dirthole/closed,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
 /turf/open/floor/dirt/road,
 /area/outdoors/mountains/rmh_mountains/frozen)
 "xX" = (
@@ -5734,14 +5690,6 @@
 /obj/structure/table/wood/fancy/royalblack,
 /turf/open/floor/tile/checkeralt,
 /area/indoors/town/manor)
-"yG" = (
-/obj/effect/decal/cleanable/debris/stone,
-/obj/structure/table/church/m{
-	icon_state = "stonetable_small"
-	},
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/hexstone,
-/area/indoors/cave/rmh_dwarf_keep/living)
 "yH" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 5
@@ -6139,10 +6087,6 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/concrete,
 /area/indoors/town/manor)
-"AK" = (
-/obj/item/coin/gold/pile,
-/turf/open/floor/tile,
-/area/under/rmh_bedrock)
 "AL" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/effect/spawner/map_spawner/loot/valuable_clutter_spawner,
@@ -7251,10 +7195,6 @@
 	},
 /turf/open/floor/snow/rough,
 /area/outdoors/mountains/rmh_mountains/frozen)
-"FV" = (
-/obj/item/coin/gold/pile,
-/turf/open/floor/hexstone,
-/area/indoors/cave/rmh_dwarf_keep/treasury)
 "FX" = (
 /obj/effect/decal/cleanable/dreamfiend_ichor/large,
 /turf/open/floor/herringbone,
@@ -7487,13 +7427,6 @@
 /obj/item/ore/tin,
 /turf/open/floor/concrete,
 /area/indoors/cave/rmh_dwarf_keep/smelters)
-"GV" = (
-/obj/item/coin/gold/pile,
-/obj/effect/decal/remains/human{
-	color = "#5e5e5e"
-	},
-/turf/open/floor/hexstone,
-/area/indoors/cave/rmh_dwarf_keep/treasury)
 "GW" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -7824,9 +7757,8 @@
 /turf/open/floor/concrete,
 /area/indoors/cave/rmh_dwarf_keep/living)
 "Ik" = (
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/churchbrick,
-/area/indoors/cave/rmh_dwarf_keep/forge)
+/turf/closed/mineral,
+/area/indoors/cave/rmh_dwarf_keep)
 "Il" = (
 /obj/structure/fluff/traveltile{
 	aportalgoesto = "mainmapmoutain";
@@ -8109,9 +8041,8 @@
 /turf/open/floor/cobblerock,
 /area/indoors/cave/rmh_cave/cold)
 "Jq" = (
-/obj/item/coin/gold/pile,
-/turf/open/floor/tile,
-/area/indoors/cave/rmh_dwarf_keep/treasury)
+/turf/closed/mineral,
+/area/indoors/cave/rmh_dwarf_keep/grand)
 "Js" = (
 /obj/structure/bars/pipe{
 	pixel_y = 7;
@@ -8369,11 +8300,6 @@
 	},
 /turf/open/floor/herringbone,
 /area/indoors/cave/rmh_dwarf_keep/living)
-"KA" = (
-/obj/effect/decal/cleanable/debris/stone,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/herringbone,
-/area/indoors/cave/rmh_dwarf_keep/grand)
 "KC" = (
 /turf/open/floor/twig,
 /area/outdoors/rmh_air)
@@ -8695,11 +8621,6 @@
 	icon_state = "chess"
 	},
 /area/indoors/town/manor)
-"LR" = (
-/obj/effect/decal/cleanable/debris/stone,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/church,
-/area/indoors/cave/rmh_dwarf_keep/throne)
 "LU" = (
 /turf/closed/mineral/bedrock/cold{
 	name = "solid rock"
@@ -9022,12 +8943,7 @@
 	icon_state = "6";
 	name = "teleport rune"
 	},
-/obj/effect/decal/cobbleedge{
-	icon = 'icons/roguetown/misc/structure.dmi';
-	icon_state = "shitportal";
-	name = "rune portal";
-	pixel_y = 11
-	},
+/obj/effect/decal/portal,
 /turf/open/floor/greenstone/runed,
 /area/indoors/town/rmh/magician/pass)
 "No" = (
@@ -9441,10 +9357,6 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
 /area/indoors/town/manor)
-"OY" = (
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/concrete,
-/area/indoors/cave/rmh_dwarf_keep/forge)
 "OZ" = (
 /obj/structure/stairs/fancy/r{
 	dir = 1
@@ -9603,11 +9515,6 @@
 	},
 /turf/open/floor/herringbone,
 /area/indoors/town/manor)
-"PK" = (
-/obj/effect/decal/cleanable/debris/stone,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/hexstone,
-/area/indoors/cave/rmh_dwarf_keep/living)
 "PN" = (
 /obj/structure/flora/grass{
 	color = "#4dc6eb"
@@ -10286,9 +10193,8 @@
 /turf/open/floor/ruinedwood/herringbone_clear,
 /area/under/town/basement/keep)
 "SX" = (
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/tile/brownbrick,
-/area/indoors/cave/rmh_dwarf_keep/smelters)
+/turf/closed/mineral,
+/area/indoors/cave/rmh_dwarf_keep/treasury)
 "SZ" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/naturalstone,
@@ -10356,7 +10262,6 @@
 "To" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/machinery/light/fueled/wallfire/candle/blue/l,
-/obj/item/coin/gold/pile,
 /turf/open/floor/tile/checker,
 /area/under/rmh_bedrock)
 "Tq" = (
@@ -10439,13 +10344,6 @@
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/carpet/royalblack,
 /area/indoors/town/manor)
-"TE" = (
-/obj/structure/table/church/m{
-	icon_state = "stonetable_small"
-	},
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/hexstone,
-/area/indoors/cave/rmh_dwarf_keep/living)
 "TG" = (
 /turf/open/floor/hexstone,
 /area/outdoors/exposed/rmh_dwarf_keep)
@@ -11032,15 +10930,6 @@
 	},
 /turf/open/floor/snow/patchy,
 /area/outdoors/mountains/rmh_mountains)
-"Wg" = (
-/obj/structure/bars/pipe{
-	pixel_y = -10;
-	dir = 1
-	},
-/obj/structure/bars/grille,
-/obj/effect/spawner/map_spawner/loot/valuable_jewelry_spawner,
-/turf/open/floor/tile,
-/area/indoors/cave/rmh_dwarf_keep/smelters)
 "Wh" = (
 /turf/open/floor/carpet/lord/center{
 	dir = 2
@@ -11476,10 +11365,6 @@
 /obj/effect/decal/cleanable/debris/wood,
 /turf/open/floor/herringbone,
 /area/indoors/cave/rmh_dwarf_keep/entrance)
-"XP" = (
-/obj/item/coin/gold/pile,
-/turf/open/floor/tile/brownbrick,
-/area/indoors/cave/rmh_dwarf_keep/treasury)
 "XQ" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/cobble,
@@ -16044,7 +15929,7 @@ bH
 bH
 IJ
 TP
-AK
+RW
 RW
 YM
 rq
@@ -16302,7 +16187,7 @@ bH
 bH
 IJ
 RW
-AK
+RW
 Da
 ea
 zl
@@ -25202,8 +25087,8 @@ Ok
 Ok
 Ok
 GS
-XP
-Jq
+GS
+Ok
 Ok
 Ok
 ss
@@ -25330,10 +25215,10 @@ Ok
 Ok
 Ok
 Ok
-XP
-qj
-qj
-Jq
+GS
+dw
+dw
+Ok
 Ok
 Ok
 Ok
@@ -25457,12 +25342,12 @@ VA
 Ok
 Ok
 Fs
-Jq
-Jq
+Ok
+Ok
 GS
 GS
 Ok
-qj
+dw
 Ok
 Ok
 Ok
@@ -25585,13 +25470,13 @@ GS
 Im
 vm
 dw
-XP
+GS
 GS
 GS
 GS
 zW
-XP
-XP
+GS
+GS
 dw
 GS
 dw
@@ -25714,12 +25599,12 @@ Im
 GS
 GS
 dw
-qj
+dw
 GS
 GS
 GS
 GS
-XP
+GS
 GS
 GS
 dw
@@ -25846,7 +25731,7 @@ Ok
 Ok
 dw
 Ok
-XP
+GS
 GS
 Ok
 Ok
@@ -25974,8 +25859,8 @@ Ok
 Ok
 Ok
 Ok
-Jq
-qj
+Ok
+dw
 dw
 Ok
 Ok
@@ -26246,10 +26131,10 @@ dw
 dw
 EZ
 EZ
-FV
+EZ
 GS
 dw
-Jq
+Ok
 Ok
 ss
 Zp
@@ -26371,7 +26256,7 @@ ss
 Ok
 Ok
 Ok
-XP
+GS
 dw
 EZ
 EZ
@@ -26502,12 +26387,12 @@ VA
 Ok
 GS
 GS
-FV
-GV
+EZ
+bB
 dw
-qj
+dw
 GS
-qj
+dw
 dw
 Ok
 Ok
@@ -26628,7 +26513,7 @@ Ok
 Ok
 VA
 VA
-Jq
+Ok
 GS
 GS
 bB
@@ -26761,7 +26646,7 @@ GS
 GS
 zW
 bB
-FV
+EZ
 EZ
 GS
 zW
@@ -26886,15 +26771,15 @@ fs
 YW
 GS
 GS
-XP
+GS
 KG
 GS
-FV
+EZ
 EZ
 dw
-qj
+dw
 GS
-XP
+GS
 dw
 dw
 dw
@@ -27018,7 +26903,7 @@ Ok
 Ok
 GS
 GS
-qj
+dw
 dw
 EZ
 dw
@@ -27150,10 +27035,10 @@ GS
 dw
 vZ
 dw
-XP
+GS
 GS
 Ok
-Jq
+Ok
 Ok
 Ok
 Ok
@@ -27275,7 +27160,7 @@ Ok
 Ok
 Ok
 dw
-qj
+dw
 EZ
 dw
 dw
@@ -27401,7 +27286,7 @@ Ok
 ss
 Zp
 ss
-Jq
+Ok
 Ok
 GS
 dw
@@ -27409,7 +27294,7 @@ EZ
 EZ
 EZ
 GS
-XP
+GS
 Ok
 Ok
 ss
@@ -27532,10 +27417,10 @@ ss
 Ok
 Ok
 Ok
-XP
+GS
 GS
 dw
-FV
+EZ
 EZ
 GS
 GS
@@ -27794,7 +27679,7 @@ GS
 GS
 EZ
 EZ
-FV
+EZ
 GS
 GS
 Ok
@@ -28194,7 +28079,7 @@ Ok
 GS
 GS
 Ok
-Jq
+Ok
 Ok
 Ok
 Ok
@@ -28322,11 +28207,11 @@ Ok
 Ok
 KG
 GS
-Jq
 Ok
 Ok
 Ok
-Jq
+Ok
+Ok
 Ok
 Ok
 GS
@@ -28450,13 +28335,13 @@ Ok
 Ok
 Ok
 GS
-jC
-Jq
+GS
+Ok
 Ok
 Ok
 ss
-Jq
-Jq
+Ok
+Ok
 Ok
 GS
 GS
@@ -28580,7 +28465,7 @@ Ok
 Ok
 GS
 fs
-Jq
+Ok
 Ok
 ss
 Zp
@@ -28710,7 +28595,7 @@ Ok
 GS
 GS
 Ok
-Jq
+Ok
 Ok
 ss
 Ok
@@ -28840,7 +28725,7 @@ GS
 GS
 Ok
 Ok
-Jq
+Ok
 Ok
 Ok
 Ok
@@ -29099,7 +28984,7 @@ zW
 GS
 GS
 GS
-XP
+GS
 GS
 GS
 KG
@@ -29257,8 +29142,8 @@ Lb
 Is
 tV
 AT
-AT
-AT
+Ik
+Ik
 AT
 Vz
 Vz
@@ -29385,9 +29270,9 @@ kR
 Lb
 tV
 tV
-AT
-AT
-AT
+Ik
+Ik
+Ik
 AT
 qv
 Fz
@@ -29502,11 +29387,11 @@ aC
 aC
 VV
 AT
-AT
-AT
-AT
-AT
-AT
+Ik
+Ik
+Ik
+Ik
+Ik
 qD
 Ee
 wi
@@ -29515,8 +29400,8 @@ hF
 VV
 VV
 AT
-AT
-AT
+Ik
+Ik
 wi
 VV
 Ez
@@ -29632,8 +29517,8 @@ VV
 pJ
 Mv
 qD
-AT
-AT
+Ik
+Ik
 AT
 Gt
 Mv
@@ -29761,8 +29646,8 @@ VV
 qD
 qD
 Te
-AT
-AT
+Ik
+Ik
 AT
 wi
 qD
@@ -29827,7 +29712,7 @@ bH
 bH
 bH
 zM
-aU
+fb
 xE
 xE
 xE
@@ -29860,7 +29745,7 @@ dw
 Bm
 ix
 mh
-mh
+SX
 tt
 YJ
 YJ
@@ -29886,11 +29771,11 @@ Vz
 VV
 qv
 VV
-mj
+tV
 Mv
 MB
 VV
-AT
+Ik
 Vz
 Vz
 Vz
@@ -29984,13 +29869,13 @@ YJ
 YJ
 tt
 EZ
-mh
-mh
+SX
+SX
 dw
 Ak
 EZ
-mh
-mh
+SX
+SX
 YJ
 YJ
 Vz
@@ -30014,8 +29899,8 @@ Vz
 Vz
 ud
 AT
-AT
-AT
+Ik
+Ik
 VV
 VV
 aC
@@ -30105,20 +29990,20 @@ Rh
 fq
 xD
 ig
-Wg
+VP
 Tc
 MZ
 WK
 Qq
 Qq
-SG
-SG
-SG
+Jq
+Jq
+Jq
 Lw
-SG
-SG
+Jq
+Jq
 Oi
-SG
+Jq
 jt
 Qq
 Qq
@@ -30141,11 +30026,11 @@ Vz
 Vz
 Vz
 AT
+Ik
+Ik
 AT
-AT
-AT
-AT
-AT
+Ik
+Ik
 Vz
 Vz
 Vz
@@ -30217,7 +30102,7 @@ zM
 nT
 OI
 Xy
-SX
+Wm
 Zw
 wf
 Gy
@@ -30241,14 +30126,14 @@ WK
 Qq
 Qq
 jt
-SG
+Jq
 Lw
-SG
+Jq
 kz
 LV
-SG
+Jq
 Lw
-SG
+Jq
 Qq
 Qq
 Vz
@@ -30269,9 +30154,9 @@ Vz
 Vz
 Vz
 AT
-AT
-AT
-AT
+Ik
+Ik
+Ik
 Vz
 Vz
 Vz
@@ -30369,14 +30254,14 @@ qh
 WK
 Qq
 Qq
-SG
-SG
-SG
+Jq
+Jq
+Jq
 LV
 LV
 SG
-SG
-SG
+Jq
+Jq
 SG
 Qq
 Qq
@@ -30397,9 +30282,9 @@ Vz
 Vz
 Vz
 Vz
-AT
-AT
-AT
+Ik
+Ik
+Ik
 AT
 Vz
 Vz
@@ -30500,10 +30385,10 @@ Qq
 Qq
 jt
 Lw
-SG
+Jq
 NV
 TN
-SG
+Jq
 qi
 SG
 jt
@@ -31242,8 +31127,8 @@ yZ
 yZ
 yZ
 yZ
-AT
-AT
+Ik
+Ik
 TZ
 ov
 TS
@@ -31371,7 +31256,7 @@ yZ
 yZ
 yZ
 AT
-AT
+Ik
 AT
 rV
 ov
@@ -32417,7 +32302,7 @@ sI
 RZ
 sI
 ov
-rY
+jt
 ov
 sI
 RZ
@@ -32841,10 +32726,10 @@ jt
 jt
 iW
 iW
-KA
 iW
 iW
-KA
+iW
+iW
 iW
 iW
 iW
@@ -34023,7 +33908,7 @@ wq
 oz
 Qq
 SG
-SG
+Jq
 tH
 Er
 Er
@@ -34152,8 +34037,8 @@ Hy
 SG
 oz
 SG
-SG
-tH
+Jq
+aU
 Ld
 Ld
 Ld
@@ -34277,12 +34162,12 @@ jt
 KP
 tj
 dn
-SG
-SG
+Jq
+Jq
 SG
 oz
-SG
-tH
+Jq
+aU
 tH
 tH
 Ld
@@ -34406,14 +34291,14 @@ iW
 GB
 ma
 xz
-SG
-SG
-SG
-SG
-SG
-tH
-tH
-tH
+Jq
+Jq
+Jq
+Jq
+Jq
+aU
+aU
+aU
 Ns
 Pb
 cG
@@ -34535,12 +34420,12 @@ sC
 iW
 xs
 Ps
-SG
-SG
-SG
-SG
-SG
-tH
+Jq
+Jq
+Jq
+Jq
+Jq
+aU
 tH
 Ld
 Ns
@@ -34664,13 +34549,13 @@ jt
 iW
 GB
 tj
+Jq
+Jq
 SG
 SG
 SG
-SG
-SG
-tH
-tH
+aU
+aU
 tH
 vQ
 cG
@@ -34794,12 +34679,12 @@ IB
 FD
 ma
 SG
-SG
+Jq
 SG
 oz
 oz
-tH
-tH
+aU
+aU
 tH
 vQ
 uX
@@ -34923,12 +34808,12 @@ jt
 rW
 xz
 Hy
-SG
+Jq
 oz
 oz
 SG
-tH
-tH
+aU
+aU
 Ns
 Ns
 Pb
@@ -35052,11 +34937,11 @@ Dr
 iW
 Hy
 xz
+Jq
 SG
-SG
-SG
-SG
-tH
+Jq
+Jq
+aU
 tH
 Ld
 Ns
@@ -35181,11 +35066,11 @@ jt
 jt
 FD
 GB
-SG
-SG
-SG
-SG
-tH
+Jq
+Jq
+Jq
+Jq
+aU
 tH
 Ld
 Ns
@@ -35667,7 +35552,7 @@ TN
 jt
 jt
 jt
-rY
+jt
 jt
 mH
 iW
@@ -36077,7 +35962,7 @@ sI
 ov
 iW
 jt
-rY
+jt
 jt
 TS
 Qq
@@ -37562,7 +37447,7 @@ yZ
 yZ
 yZ
 AT
-AT
+Ik
 Lb
 AT
 aC
@@ -37690,9 +37575,9 @@ aC
 yZ
 yZ
 AT
-AT
-AT
-AT
+Ik
+Ik
+Ik
 AT
 TZ
 ov
@@ -37947,8 +37832,8 @@ bH
 aC
 yZ
 yZ
-AT
-AT
+Ik
+Ik
 yZ
 AT
 AT
@@ -38992,7 +38877,7 @@ GZ
 GZ
 GZ
 GZ
-Ik
+GZ
 GZ
 Rm
 EN
@@ -39635,7 +39520,7 @@ QS
 Ke
 Rm
 Rm
-OY
+nN
 EO
 Eo
 Rm
@@ -40186,7 +40071,7 @@ LG
 LG
 LG
 dg
-pH
+dg
 dg
 LG
 LG
@@ -40419,7 +40304,7 @@ kw
 dx
 dx
 dx
-tk
+dx
 dx
 dx
 dx
@@ -41484,7 +41369,7 @@ Kk
 IR
 IR
 IR
-LR
+se
 dx
 RV
 LG
@@ -42230,7 +42115,7 @@ RV
 RV
 RV
 RV
-cA
+RV
 dx
 dx
 RV
@@ -65920,7 +65805,7 @@ cq
 bH
 cq
 Gh
-jX
+pg
 lx
 lx
 QA
@@ -66167,7 +66052,7 @@ bH
 bH
 bH
 cq
-TE
+Gh
 lx
 pg
 kx
@@ -69033,7 +68918,7 @@ QA
 pg
 pg
 pg
-yG
+cz
 cq
 bH
 Lb
@@ -69138,7 +69023,7 @@ cq
 pg
 UB
 QF
-PK
+lx
 pg
 cq
 cq
@@ -69156,7 +69041,7 @@ vc
 QF
 pg
 pg
-PK
+lx
 lr
 vw
 pg
