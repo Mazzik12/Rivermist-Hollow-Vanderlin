@@ -6,8 +6,6 @@
 	icon_state = "bog"
 	ambientsounds = DRONING_BOG_DAY
 	ambientnight = DRONING_BOG_NIGHT
-	spookysounds = SPOOKY_FROG
-	spookynight = SPOOKY_GEN
 	background_track = 'sound/music/area/forest.ogg'
 	background_track_dusk = 'sound/music/area/forest.ogg'
 	background_track_night = 'sound/music/area/forest.ogg'
@@ -73,7 +71,7 @@
 				/mob/living/simple_animal/hostile/retaliate/raccoon = 35,
 				/mob/living/simple_animal/hostile/retaliate/direbear = 5,
 				/mob/living/simple_animal/hostile/retaliate/fox = 35,
-				/mob/living/carbon/human/species/skeleton/npc/easy = 10,
+				/mob/living/carbon/human/species/skeleton/npc/peasant = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 30)
 	first_time_text = "THE DARK FOREST"
 	converted_type = /area/indoors/shelter/woods
