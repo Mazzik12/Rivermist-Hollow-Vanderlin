@@ -669,7 +669,7 @@
 	attacked_atom = /obj/item/natural/cloth
 
 /datum/repeatable_crafting_recipe/crafting/oatbait
-	name = "swee bait (oat)"
+	name = "sweet bait (oat)"
 	output = /obj/item/bait/sweet
 	requirements = list(
 		/obj/item/natural/cloth = 1,
