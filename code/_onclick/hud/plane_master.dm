@@ -52,7 +52,7 @@
 	render_target = GAME_PLANE_RENDER_TARGET
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
-	filters += AMBIENT_OCCLUSION
+	add_filter("ambient_occlusion_filter", 1, drop_shadow_filter(x=0, y=-2, size=3, offset=1, color="#04080f96"))
 
 /atom/movable/screen/plane_master/area
 	name = "area plane master"
@@ -67,7 +67,7 @@
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/massive_obj/backdrop(mob/mymob)
-	filters += AMBIENT_OCCLUSION
+	add_filter("ambient_occlusion_filter", 1, drop_shadow_filter(x=0, y=-2, size=3, offset=1, color="#04080f96"))
 
 /atom/movable/screen/plane_master/ghost
 	name = "ghost plane master"
@@ -171,7 +171,7 @@
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/game_world_fov_hidden/backdrop(mob/mymob)
-	filters += AMBIENT_OCCLUSION
+	add_filter("ambient_occlusion_filter", 1, drop_shadow_filter(x=0, y=-2, size=3, offset=1, color="#04080f96"))
 
 /atom/movable/screen/plane_master/game_world_fov_hidden/Initialize()
 	. = ..()
@@ -184,7 +184,7 @@
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/game_world_above/backdrop(mob/mymob)
-	filters += AMBIENT_OCCLUSION
+	add_filter("ambient_occlusion_filter", 1, drop_shadow_filter(x=0, y=-2, size=3, offset=1, color="#04080f96"))
 
 /atom/movable/screen/plane_master/field_of_vision_blocker
 	name = "field of vision blocker plane master"
@@ -298,7 +298,7 @@
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/game_world_below/backdrop(mob/mymob)
-	filters += AMBIENT_OCCLUSION
+	add_filter("ambient_occlusion_filter", 1, drop_shadow_filter(x=0, y=-2, size=3, offset=1.5, color="#04080f96"))
 
 /atom/movable/screen/plane_master/game_world_walls
 	name = "game world walls"
@@ -307,4 +307,4 @@
 	blend_mode = BLEND_OVERLAY
 
 /atom/movable/screen/plane_master/game_world_walls/backdrop(mob/mymob)
-	filters += AMBIENT_OCCLUSION_WALLS
+	add_filter("ambient_occlusion_filter", 1, drop_shadow_filter(x=0, y=-2, size=8, offset=4, color="#000000ff"))
