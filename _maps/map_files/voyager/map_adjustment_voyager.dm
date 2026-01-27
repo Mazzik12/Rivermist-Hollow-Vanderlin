@@ -15,7 +15,6 @@
 		/datum/job/veteran,
 		/datum/job/grabber,
 		/datum/job/captain,
-		/datum/job/hand,
 		/datum/job/merchant,
 		/datum/job/lieutenant,
 		/datum/job/servant,

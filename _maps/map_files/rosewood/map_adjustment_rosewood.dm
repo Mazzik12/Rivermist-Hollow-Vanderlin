@@ -13,7 +13,6 @@
 	map_file_name = "rosewood.dmm"
 	species_adjust = list(
 		/datum/job/lord = POINTY_EARS,
-		/datum/job/hand = POINTY_EARS,
 		/datum/job/captain = POINTY_EARS
 	)
 

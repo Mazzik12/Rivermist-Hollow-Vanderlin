@@ -12,14 +12,7 @@
 	shared_occurence_type = SHARED_MINOR_THREAT
 	minor_roleset = TRUE
 
-	needed_job = list(
-		/datum/job/hand,
-		/datum/job/captain,
-		/datum/job/steward,
-		/datum/job/magician,
-		/datum/job/archivist,
-		/datum/job/minor_noble,
-	)
+	needed_job = null
 
 	restricted_roles = list(
 		/datum/job/lord,

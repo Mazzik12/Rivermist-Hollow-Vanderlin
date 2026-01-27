@@ -1,6 +1,6 @@
 //----------------- INFAREDBARON/HATS.DM ---------------------
 
-/obj/item/clothing/head/roguetown/helmet/citywatch
+/obj/item/clothing/head/roguetown/helmet/guildguard
 	name = "guild guard helm"
 	desc = "A reinforced steel helm issued to the guards of the Waterdeep Merchant’s Guild. Its weight and craftsmanship speak of coin-backed authority rather than civic duty."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/head.dmi'

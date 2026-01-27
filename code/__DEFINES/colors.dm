@@ -111,6 +111,24 @@
 #define CLOTHING_WHITE "#ffffff"
 #define CLOTHING_WET "#afafaf"
 
+//normal clothing
+#define CLOTHING_RED			"#8b2323"
+#define CLOTHING_PURPLE			"#8747b1"
+#define CLOTHING_BLACK			"#2b292e"
+#define CLOTHING_GREY			"#6c6c6c"
+#define CLOTHING_BROWN			"#61462c"
+#define CLOTHING_GREEN			"#428138"
+#define CLOTHING_DARK_GREEN		"#264d26"
+#define CLOTHING_BLUE			"#173266"
+#define CLOTHING_YELLOW			"#ffcd43"
+#define CLOTHING_TEAL			"#249589"
+#define CLOTHING_AZURE			"#007fff"
+#define CLOTHING_WHITE			"#ffffff"
+#define CLOTHING_ORANGE			"#df8405"
+#define CLOTHING_MAGENTA		"#962e5c"
+
+#define CLOTHING_WET			"#bbbbbb"
+
 /// Deprecated macro, should be removed
 #define CLOTHING_COLOR_NAMES	list("Ash Grey","Chalk White","Cream","White","Dark Ink","Plum Purple","Salmon","Blood Red", "Maroon","Red Ochre","Russet","Chestnut","Mustard Yellow","Yellow Ochre","Forest Green","Sky Blue","Teal", "Royal Black","Soot Black","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Bark Brown","Peasant Brown","Mud Brown","Pear Yellow","Spring Green","Bog Green","Royal Teal","Berry Blue", "Royal Blue", "Royal Purple","Dunked in Water" )
 

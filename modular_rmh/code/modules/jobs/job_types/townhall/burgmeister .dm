@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
 	bypass_lastclass = TRUE
 	give_bank_account = 500
@@ -31,8 +31,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 		EXP_TYPE_LEADERSHIP = 300
 	)
 
-/datum/job/burgmeister
-	...
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/grant_title)
+
 	job_subclasses = list(
 		/datum/job/advclass/burgmeister/marshall,
 		/datum/job/advclass/burgmeister/elected,
@@ -91,7 +91,10 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	    /datum/skill/combat/swords = 3,
 	    /datum/skill/combat/axesmaces = 3,
 	    /datum/skill/combat/shields = 3,
-	    /datum/skill/combat/wrestling = 2,
+	    /datum/skill/combat/bows = 3,
+	    /datum/skill/combat/crossbows = 3,
+	    /datum/skill/combat/firearms = 3,
+	    /datum/skill/combat/wrestling = 3,
 	    /datum/skill/misc/athletics = 3,
 	    /datum/skill/misc/sneaking = 1,
 	    /datum/skill/misc/reading = 2,
@@ -115,7 +118,7 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 		"Rapier" = /obj/item/weapon/sword/rapier/dec, \
 		"Cane Blade" = /obj/item/weapon/sword/rapier/caneblade, \
 		)
-	var/choice = spawned.select_equippable(spawned, selectable, time_limit = 1 MINUTES, message = "Choose your weapon", title = "NOBLE")
+	var/choice = spawned.select_equippable(spawned, selectable, time_limit = 1 MINUTES, message = "Choose your weapon", title = "BURGMEISTER")
 	if(!choice)
 		return
 	switch(choice)
@@ -138,27 +141,33 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 /datum/outfit/burgmeister/marshall
 	name = "Burgmeister Marshall"
 	head = null
-	cloak = /obj/item/clothing/cloak/half/colored/red
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/duke
+	mask = null
+	cloak = /obj/item/clothing/cloak/ordinatorcape/townhall
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/marshall
 	shirt = /obj/item/clothing/shirt/undershirt/fancy
-	pants = /obj/item/clothing/pants/trou/leather/advanced
-	shoes = /obj/item/clothing/shoes/boots/leather/advanced
-	backl = /obj/item/storage/backpack/satchel
-	backr = null
+	wrists = null
+	gloves = /obj/item/clothing/gloves/leather/duelgloves/townhall
+	pants = /obj/item/clothing/pants/trou/leather/advanced/colored/duelpants/townhall
+	shoes = /obj/item/clothing/shoes/nobleboot/duelboots/townhall
+	backr = /obj/item/storage/backpack/satchel
+	backl = null
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
-	ring = /obj/item/clothing/ring/active/nomag
+	beltl = /obj/item/key/lord
+	ring = /obj/item/clothing/ring/slave_control
+	backpack_contents = list(
+		/obj/item/storage/belt/pouch/bullets,
+		/obj/item/reagent_containers/glass/bottle/aflask,
+		/obj/item/gun/ballistic/revolver/grenadelauncher/pistol,
+	)
 
-/datum/outfit/burgmeister/marshall/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
-	. = ..()
-	// Clear all previous equipment
-	for(var/slot in list("head","cloak","armor","shirt","pants","shoes","backl","backr","belt","beltl","ring","l_hand"))
-		if(equipped_human[slot])
-			qdel(equipped_human[slot])
+// ─────────────────────────────
 
 /datum/job/advclass/burgmeister/elected
 	title = "Elected Burgmeister"
 	tutorial = "You were chosen by the townsfolk to serve as Burgmeister. Your social skills, perception, and wisdom allow you to maintain order and ensure the town prospers."
+
+	outfit = /datum/outfit/burgmeister/elected
 	category_tags = list(CAT_BURGMESITER)
 
 	jobstats = list(
@@ -179,7 +188,6 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	)
 
 	traits = list(
-	    TRAIT_NOBLE,
 	    TRAIT_EMPATH,
 	    TRAIT_EXTEROCEPTION,
 	    TRAIT_TUTELAGE,
@@ -193,7 +201,7 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 		"Rapier" = /obj/item/weapon/sword/rapier/dec, \
 		"Cane Blade" = /obj/item/weapon/sword/rapier/caneblade, \
 		)
-	var/choice = spawned.select_equippable(spawned, selectable, time_limit = 1 MINUTES, message = "Choose your weapon", title = "NOBLE")
+	var/choice = spawned.select_equippable(spawned, selectable, time_limit = 1 MINUTES, message = "Choose your weapon", title = "BURGMEISTER")
 	if(!choice)
 		return
 	switch(choice)
@@ -216,31 +224,36 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 /datum/outfit/burgmeister/elected
 	name = "Elected Burgmeister"
 	head = /obj/item/clothing/head/fancyhat
+	mask = null
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hand
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/burgmeister
 	shirt = null
+	wrists = null
+	gloves = null
 	pants = null
 	shoes = /obj/item/clothing/shoes/nobleboot
-	backl = /obj/item/storage/backpack/satchel
-	backr = null
+	backr = /obj/item/storage/backpack/satchel
+	backl = null
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
-	ring = /obj/item/clothing/ring/active/nomag
+	beltl = /obj/item/key/lord
+	ring = /obj/item/clothing/ring/slave_control
 
 /datum/outfit/burgmeister/elected/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
-	for(var/slot in list("head","cloak","armor","shirt","pants","shoes","backl","backr","belt","beltl","ring","l_hand"))
-		if(equipped_human[slot])
-			qdel(equipped_human[slot])
 	if(equipped_human.gender == MALE)
 		shirt = /obj/item/clothing/shirt/undershirt/fancy
 		pants = /obj/item/clothing/pants/tights/colored/black
 	else
 		shirt = /obj/item/clothing/shirt/dress/silkdress/colored/black
 
+// ─────────────────────────────
+
 /datum/job/advclass/burgmeister/patrician
 	title = "Patrician"
 	tutorial = "You are a wealthy Burgmeister whose influence comes from gold and heritage. Your resources and connections make you untouchable and influential."
+
+	outfit = /datum/outfit/burgmeister/patrician
 	category_tags = list(CAT_BURGMESITER)
 	give_bank_account = 2000
 
@@ -273,7 +286,7 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 		"Rapier" = /obj/item/weapon/sword/rapier/dec, \
 		"Cane Blade" = /obj/item/weapon/sword/rapier/caneblade, \
 		)
-	var/choice = spawned.select_equippable(spawned, selectable, time_limit = 1 MINUTES, message = "Choose your weapon", title = "NOBLE")
+	var/choice = spawned.select_equippable(spawned, selectable, time_limit = 1 MINUTES, message = "Choose your weapon", title = "BURGMEISTER")
 	if(!choice)
 		return
 	switch(choice)
@@ -296,31 +309,39 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 /datum/outfit/burgmeister/patrician
 	name = "Patrician Burgmeister"
 	head = /obj/item/clothing/head/crown/circlet
-	cloak = /obj/item/clothing/cloak/lordcloak
+	mask = null
+	cloak = null
 	armor = null
 	shirt = null
+	wrists = null
+	gloves = null
 	pants = null
 	shoes = /obj/item/clothing/shoes/nobleboot
-	backl = /obj/item/storage/backpack/satchel
-	backr = null
+	backr = /obj/item/storage/backpack/satchel
+	backl = null
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
-	ring = /obj/item/clothing/ring/active/nomag
+	beltl = /obj/item/key/lord
+	ring = /obj/item/clothing/ring/slave_control
+	l_hand = /obj/item/weapon/mace/cane/noble
 
 /datum/outfit/burgmeister/patrician/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
-	for(var/slot in list("head","cloak","armor","shirt","pants","shoes","backl","backr","belt","beltl","ring","l_hand"))
-		if(equipped_human[slot])
-			qdel(equipped_human[slot])
 	if(equipped_human.gender == MALE)
 		shirt = /obj/item/clothing/shirt/tunic/noblecoat
 		pants = /obj/item/clothing/pants/tights/colored/white
+		cloak = /obj/item/clothing/cloak/lordcloak
 	else
 		shirt = /obj/item/clothing/shirt/dress/royal
+		cloak = /obj/item/clothing/cloak/lordcloak/ladycloak
+
+// ─────────────────────────────
 
 /datum/job/advclass/burgmeister/scholar
 	title = "Scholar-Administrator"
 	tutorial = "You are a Burgmeister who governs with knowledge and wisdom. Your intelligence and insight ensure the town is managed efficiently and the laws are fair."
+
+	outfit = /datum/outfit/burgmeister/scholar
 	category_tags = list(CAT_BURGMESITER)
 
 	jobstats = list(
@@ -349,23 +370,21 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 
 /datum/outfit/burgmeister/scholar
 	name = "Scholar-Administrator Burgmeister"
-	head = /obj/item/clothing/head/fancyhat
-	cloak = /obj/item/clothing/cloak/cape/archivist
+	head = /obj/item/clothing/head/roguehood/colored/townhall
+	mask = /obj/item/clothing/face/spectacles
+	cloak = /obj/item/clothing/cloak/cape/puritan/townhall
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/magos
 	shirt = /obj/item/clothing/shirt/tunic/colored/black
+	wrists = null
+	gloves = null
 	pants = /obj/item/clothing/pants/tights/colored/black
 	shoes = /obj/item/clothing/shoes/nobleboot
-	backl = /obj/item/storage/backpack/satchel
-	backr = null
+	backr = /obj/item/storage/backpack/satchel
+	backl = null
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
-	ring = /obj/item/clothing/ring/active/nomag
-
-/datum/outfit/burgmeister/scholar/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
-	. = ..()
-	for(var/slot in list("head","cloak","armor","shirt","pants","shoes","backl","backr","belt","beltl","ring","l_hand"))
-		if(equipped_human[slot])
-			qdel(equipped_human[slot])
+	beltl = /obj/item/key/lord
+	ring = /obj/item/clothing/ring/slave_control
 
 //EX-LORD SYSTEM
 

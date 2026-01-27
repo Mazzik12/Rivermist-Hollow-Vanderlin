@@ -145,13 +145,13 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_GARRISON		"CAT_GARRISON"
 #define CTAG_FORGARRISON	"CAT_FORGARRISON"
 #define CTAG_MAGIE			"CAT_MAGIE" //for Mage Associate
-#define CTAG_HAND			"CAT_HAND"			// Hand class - Handles Hand class selector
 #define CTAG_VETERAN		"CAT_VETERAN"		// Veteran class - Handles Veteran class selector
 #define CTAG_ROYALKNIGHT	"CAT_ROYAL_KNIGHT"
 #define CTAG_MENATARMS		"CAT_MENATARMS"
 #define CTAG_SERVANT		"CAT_SERVANT" 		// Servant class - 4 type of servant to fill in someplace.
 
 #define CAT_BURGMESITER		"CAT_BURGMESITER"		// Burgmeister class - 4 types
+#define CAT_COUNCILOR		"CAT_COUNCILOR"		// Councilor class - 3 types
 
 // Character category and its buys
 #define TRIUMPH_CAT_CHARACTER "CHARACTER"

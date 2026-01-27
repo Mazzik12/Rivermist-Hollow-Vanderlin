@@ -57,7 +57,6 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 	vip = list(
 	/datum/job/lord,
 	/datum/job/steward,
-	/datum/job/hand,
 	)
 
 /obj/structure/door/secret/merchant
@@ -294,7 +293,6 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 	hidden_dc = 14
 	vip = list(
 		/datum/job/lord,
-		/datum/job/hand,
 	)
 
 /obj/structure/door/secret/keep/Initialize()

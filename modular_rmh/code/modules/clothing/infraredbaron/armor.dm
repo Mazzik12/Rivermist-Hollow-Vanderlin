@@ -1,6 +1,6 @@
 //----------------- INFAREDBARON SPRITEWORK/ARMOR.DM ---------------------
 
-/obj/item/clothing/suit/roguetown/armor/citywatch
+/obj/item/clothing/suit/roguetown/armor/guildguard
 	name = "guild guard cuirass"
 	desc = "A heavy, meticulously maintained suit of armor bearing the sigils of the Waterdeep Merchant’s Guild. Worn by guild guards sworn to protect caravans, vaults, and trade halls alike."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/armor.dmi'
@@ -36,8 +36,8 @@
 	item_state = "duchess"
 	ignore_sleeves_code = TRUE // No sleeves, otherwise arms will be over the sprite
 
-/obj/item/clothing/suit/roguetown/armor/leather/duke
-	name = "marshal uniform"
+/obj/item/clothing/suit/roguetown/armor/leather/marshall
+	name = "marshall uniform"
 	desc = "A formal uniform once worn by a city watch captain, now repurposed for a Burgmeister."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/armor.dmi'
 	mob_overlay_icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/onmob/armor.dmi'
@@ -59,7 +59,7 @@
 	salvage_result = /obj/item/natural/hide/cured
 	ignore_sleeves_code = TRUE // No sleeves, otherwise arms will be over the sprite
 
-/obj/item/clothing/suit/roguetown/armor/leather/hand
+/obj/item/clothing/suit/roguetown/armor/leather/burgmeister
 	name = "burgmeister's civic vestments"
 	desc = "Soft yet dignified garments worn by the elected Burgmeister."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/armor.dmi'
@@ -69,7 +69,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ARMOR //ugly hack to make it render over the head
 	ignore_sleeves_code = TRUE // No sleeves, otherwise arms will be over the sprite
 
-/obj/item/clothing/suit/roguetown/armor/leather/heir
+/obj/item/clothing/suit/roguetown/armor/leather/adjutant
 	name = "councilor's uniform"
 	desc = "A reinforced uniform worn by a former city watchman now serving as a councilor."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/armor.dmi'
@@ -123,7 +123,7 @@
 	slot_flags = ITEM_SLOT_ARMOR
 	ignore_sleeves_code = TRUE // No sleeves, otherwise arms will be over the sprite
 
-/obj/item/clothing/suit/roguetown/armor/leather/steward
+/obj/item/clothing/suit/roguetown/armor/leather/banker
 	name = "guild banker’s suit"
 	desc = "A finely stitched suit worn by a senior banker of the Waterdeep Merchant’s Guild."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/armor.dmi'

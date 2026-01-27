@@ -1,6 +1,6 @@
 //----------------- INFAREDBARON/CLOAKS.DM ---------------------
 
-/obj/item/clothing/cloak/citywatch
+/obj/item/clothing/cloak/guildguard
 	name = "guild guard cloak"
 	desc = "A dignified cloak trimmed in merchant heraldry. Commonly worn by guild guards to mark their allegiance and authority over trade interests."
 	icon = 'modular_rmh/icons/clothing/licensed-infraredbaron/cloaks.dmi'

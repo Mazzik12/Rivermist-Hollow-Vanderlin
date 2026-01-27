@@ -30,11 +30,7 @@ SUBSYSTEM_DEF(familytree)
 	*/
 	var/list/viable_spouses = list()
 	//These jobs are excluded from AddLocal()
-	var/excluded_jobs = list(
-		/datum/job/lord,
-		/datum/job/hand,
-		/datum/job/advclass/hand,
-		)
+	var/excluded_jobs = null
 	//This creates 2 families for each race roundstart so that siblings dont fail to be added to a family.
 	var/list/preset_family_species = list(
 		/datum/species/human/northern,
