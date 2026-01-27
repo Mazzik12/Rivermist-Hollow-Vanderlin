@@ -177,6 +177,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Unyielding" = TRAIT_UNDODGING,
 		"Allure" = TRAIT_ALLURE,
 		"Darkling" = TRAIT_DARKLING,
+		"TRAIT_RUNE_SEVERED" = TRAIT_RUNE_SEVERED,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
