@@ -20,6 +20,7 @@
     var/mutable_appearance/organ_overlay
     var/mutable_appearance/sleeve_overlay
     var/org_target = ORGAN_SLOT_VAGINA
+    loadout_blacklisted = TRUE
 
 /obj/item/portallight/proc/get_wearer()
     if(!linked_underwear)
@@ -108,6 +109,7 @@
     icon_state = "panties"
     gendered = TRUE
     slot_flags = ITEM_SLOT_UNDERWEAR
+    loadout_blacklisted = TRUE
 
     var/obj/item/portallight/linked_light = null
     var/mob/living/carbon/human/current_wearer = null

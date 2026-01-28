@@ -1236,6 +1236,13 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				else
 					user.cancel_looping_ambience()
 
+				if((prefs_variable & AMBIENTOCCLUSION) && user.client)
+					ambientocclusion = toggles & AMBIENTOCCLUSION
+					update_occlusion(user.client)
+				else
+					ambientocclusion = toggles & AMBIENTOCCLUSION
+					update_occlusion(user.client)
+
 				user.client?.update_ambience_pref()
 
 			else if(toggle_type == "Maptext Toggles")
@@ -1920,14 +1927,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					toggles ^= MIDROUND_ANTAG
 
 				if("ambientocclusion")
-					ambientocclusion = !ambientocclusion
-					if(parent && parent.screen && parent.screen.len)
-						var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in parent.screen
-						PM.backdrop(parent.mob)
-						PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in parent.screen
-						PM.backdrop(parent.mob)
-						PM = locate(/atom/movable/screen/plane_master/game_world_above) in parent.screen
-						PM.backdrop(parent.mob)
+					toggles ^= AMBIENTOCCLUSION
+					ambientocclusion = toggles & AMBIENTOCCLUSION
+					update_occlusion(parent)
 
 				if("auto_fit_viewport")
 					auto_fit_viewport = !auto_fit_viewport
@@ -2436,3 +2438,17 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	</tr>
 	"}
 
+/proc/update_occlusion(client/parent_cl)
+	if(parent_cl && parent_cl.screen && parent_cl.screen.len)
+		var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in parent_cl.screen
+		PM.backdrop(parent_cl.mob)
+		PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in parent_cl.screen
+		PM.backdrop(parent_cl.mob)
+		PM = locate(/atom/movable/screen/plane_master/game_world_above) in parent_cl.screen
+		PM.backdrop(parent_cl.mob)
+		PM = locate(/atom/movable/screen/plane_master/game_world_below) in parent_cl.screen
+		PM.backdrop(parent_cl.mob)
+		PM = locate(/atom/movable/screen/plane_master/massive_obj) in parent_cl.screen
+		PM.backdrop(parent_cl.mob)
+		PM = locate(/atom/movable/screen/plane_master/game_world_walls) in parent_cl.screen
+		PM.backdrop(parent_cl.mob)

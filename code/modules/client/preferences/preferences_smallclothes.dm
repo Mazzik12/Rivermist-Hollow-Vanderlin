@@ -325,7 +325,9 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 	popup.open(FALSE)
 
 /proc/get_global_selectable_undies()
-	var/list/blacklisted_undies = list()
+	var/list/blacklisted_undies = list(
+		/obj/item/clothing/undies/portalpanties,
+	)
 
 	var/list/undie_types = typesof(/obj/item/clothing/undies) - blacklisted_undies
 
@@ -334,6 +336,8 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 
 	for(var/undie_type in undie_types)
 		var/obj/item/clothing/undies/undie_instance = undie_type
+		if(undie_instance.loadout_blacklisted)
+			continue
 		var/undie_name = initial(undie_instance.name)
 
 		if(!name_to_type[undie_name])
@@ -378,6 +382,8 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 
 	for(var/legwear_type in legwear_types)
 		var/obj/item/clothing/legwears/legwear_instance = legwear_type
+		if(legwear_instance.loadout_blacklisted)
+			continue
 		var/legwear_name = initial(legwear_instance.name)
 
 		if(!name_to_type[legwear_name])
