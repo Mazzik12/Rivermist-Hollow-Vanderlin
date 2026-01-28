@@ -641,4 +641,4 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DARKLING "Darkling"
 
 // Resurrection rune Severed
-#define TRAIT_RUNE_SEVERED				"mute"
+#define TRAIT_RUNE_SEVERED				"runesevered"
