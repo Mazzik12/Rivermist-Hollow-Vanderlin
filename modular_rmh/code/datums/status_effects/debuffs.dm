@@ -428,7 +428,8 @@
 	id = "darkling_glare"
 	alert_type = /atom/movable/screen/alert/status_effect/darkling_glare
 	effectedstats = list(STATKEY_PER = -1)
-	duration = 10 SECONDS
+	duration = 1 MINUTES
+	status_type = STATUS_EFFECT_REFRESH
 
 /atom/movable/screen/alert/status_effect/darkling_glare
 	name = "Sunlight Sensitivity"
