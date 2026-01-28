@@ -81,7 +81,7 @@
 	neck = /obj/item/clothing/neck/gorget
 	cloak = /obj/item/clothing/cloak/captain/town_watch
 	armor = /obj/item/clothing/armor/plate
-	shirt = /obj/item/clothing/armor/gambeson
+	shirt = /obj/item/clothing/armor/gambeson/heavy
 	wrists = /obj/item/clothing/wrists/bracers/jackchain
 	gloves = /obj/item/clothing/gloves/plate
 	pants = /obj/item/clothing/pants/chainlegs
@@ -89,18 +89,19 @@
 	backr = /obj/item/storage/backpack/satchel/black
 	backl = /obj/item/weapon/shield/tower/metal
 	belt = /obj/item/storage/belt/leather/watch_captain
-	beltr = /obj/item/weapon/sword/decorated
+	beltr = /obj/item/weapon/scabbard/sword/noble
 	beltl = /obj/item/weapon/mace/stunmace
 	ring = /obj/item/clothing/ring/slave_control
-	l_hand = /obj/item/flashlight/flare/torch/lantern
-	r_hand = /obj/item/storage/keyring/watch_captain
+	l_hand = /obj/item/weapon/sword/decorated
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/storage/belt/pouch/bullets,
 		/obj/item/reagent_containers/glass/bottle/aflask,
 		/obj/item/gun/ballistic/revolver/grenadelauncher/pistol,
 		/obj/item/clothing/neck/slave_collar,
-		/obj/item/rope/chain = 1,
+		/obj/item/reagent_containers/glass/bottle/stronghealthpot,
+		/obj/item/flashlight/flare/torch/lantern,
 	)
 
 /datum/outfit/watch_captain/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
