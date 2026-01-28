@@ -1,5 +1,6 @@
 /datum/job/councilor
 	title = "Councilor"
+	f_title = "Councilwoman"
 	var/council_title = "Councilor"
 	tutorial = "You are the Burgmeister’s appointed Councilor. \
 	While the Burgmeister speaks for Rivermist Hollow, you ensure that their decisions are recorded, enforced, and understood. \
@@ -14,6 +15,8 @@
 	allowed_races = ALL_RACES_LIST
 	bypass_lastclass = TRUE
 	selection_color = JCOLOR_TOWNHALL
+
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch)
 
 	give_bank_account = 120
 	noble_income = 18
@@ -43,6 +46,9 @@
 // ─────────────────────────────
 // SUBCLASSES
 // ─────────────────────────────
+/datum/job/advclass/councilor
+	exp_types_granted = list(EXP_TYPE_NOBLE)
+
 
 /datum/job/advclass/councilor/adjutant
 	title = "Adjutant"
@@ -130,6 +136,8 @@
 	beltr = /obj/item/storage/belt/pouch/coins/rich
 	beltl = /obj/item/storage/keyring/rmh_councilor
 	ring = /obj/item/clothing/ring/slave_control
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar
@@ -186,6 +194,7 @@
 	beltl = /obj/item/storage/keyring/rmh_councilor
 	ring = /obj/item/clothing/ring/slave_control
 	l_hand = /obj/item/weapon/mace/cane/noble
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar
@@ -252,6 +261,8 @@
 	beltr = /obj/item/storage/belt/pouch/coins/rich
 	beltl = /obj/item/storage/keyring/rmh_councilor
 	ring = /obj/item/clothing/ring/slave_control
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar

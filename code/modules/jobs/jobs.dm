@@ -22,7 +22,12 @@ GLOBAL_PROTECT(townhall_positions)
 
 
 GLOBAL_LIST_INIT(townwatch_positions, list(
-	/datum/job/guardsman::title,
+	/datum/job/watch_captain::title,
+	/datum/job/watch_sergeant::title,
+	/datum/job/watch_veteran::title,
+	/datum/job/watch_warden::title,
+	/datum/job/watch_guard::title,
+
 ))
 
 GLOBAL_PROTECT(townwatch_positions)

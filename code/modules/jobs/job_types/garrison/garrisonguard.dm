@@ -196,8 +196,3 @@
 	backpack_contents = list(
 		/obj/item/rope/chain = 1
 	)
-
-/mob/proc/haltyell()
-	set name = "HALT!"
-	set category = "Noises"
-	emote("haltyell")

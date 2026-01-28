@@ -8,7 +8,6 @@
 	map_file_name = "WhitePalacePass.dmm"
 	blacklist = list(
 		/datum/job/shophand, //Unneeded honestly.
-		/datum/job/dungeoneer,
 	)
 	// Limited positions to ensure core roles are filled.
 	slot_adjust = list(
@@ -22,6 +21,5 @@
 		/datum/job/miner = 4,
 		/datum/job/fisher = 2,
 		/datum/job/farmer = 3,
-		/datum/job/guardsman = 6,
 		/datum/job/artificer = 2,
 	)

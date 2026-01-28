@@ -3,6 +3,7 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 
 /datum/job/burgmeister
 	title = "Burgmeister"
+	f_title = "Burgmeisterin"
 	var/ruler_title = "Burgmeister"
 	tutorial = "In the Duskmar Duchy, while lords and ladies rule from afar, the daily governance of Rivermist Hollow falls to you, the Burgmeister. \
 		Chosen not by blood but by the will of the townsfolk, you embody merit, authority, and trust within the community. \
@@ -20,6 +21,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	give_bank_account = 500
 	selection_color = JCOLOR_TOWNHALL
 	can_have_apprentices = FALSE
+
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch)
 
 	advclass_cat_rolls = list(CAT_BURGMESITER = 20)
 
@@ -69,6 +72,9 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 		shirt = /obj/item/clothing/shirt/dress/silkdress/colored/black
 
 //SUBCLASSES
+
+/datum/job/advclass/burgmeister
+	exp_types_granted = list(EXP_TYPE_NOBLE)
 
 /datum/job/advclass/burgmeister/marshall
 	title = "Ex-Guard Captain"
@@ -156,6 +162,9 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
 	ring = /obj/item/clothing/ring/slave_control
+	l_hand = null
+	r_hand = null
+
 	backpack_contents = list(
 		/obj/item/storage/belt/pouch/bullets,
 		/obj/item/reagent_containers/glass/bottle/aflask,
@@ -241,6 +250,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
 	ring = /obj/item/clothing/ring/slave_control
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar
@@ -332,6 +343,7 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
 	ring = /obj/item/clothing/ring/slave_control
 	l_hand = /obj/item/weapon/mace/cane/noble
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar
@@ -398,6 +410,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
 	ring = /obj/item/clothing/ring/slave_control
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar

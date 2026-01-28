@@ -14,3 +14,7 @@
 
 /obj/item/clothing/cloak/cape/colored/townhall
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/cloak/captain/town_watch
+	name = "watch captain's cape"
+	desc = "A cape with a gold-embroidered heraldry of Duskmar Duchy."

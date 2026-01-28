@@ -21,7 +21,6 @@
 	blacklist = list(
 		// RACES_PLAYER_GRENZ
 		/datum/job/advclass/combat/swordmaster,
-		/datum/job/advclass/veteran/merc,
 	)
 
 	migrant_blacklist = list(

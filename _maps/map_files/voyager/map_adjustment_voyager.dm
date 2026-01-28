@@ -12,15 +12,12 @@
 		/datum/job/carpenter,
 		/datum/job/gaffer,
 		/datum/job/matron,
-		/datum/job/veteran,
 		/datum/job/grabber,
 		/datum/job/captain,
 		/datum/job/merchant,
-		/datum/job/lieutenant,
 		/datum/job/servant,
 		/datum/job/bapprentice,
 		/datum/job/minor_noble,
-		/datum/job/guardsman,
 		/datum/job/archivist,
 	)
 	slot_adjust = list(

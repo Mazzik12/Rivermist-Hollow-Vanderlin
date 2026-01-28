@@ -7,3 +7,10 @@
 	name = "chaperon hat"
 	desc = "A comfortable and fashionable headgear."
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/head/helmet/sargebarbute/town_watch
+	name = "captain barbute"
+
+/obj/item/clothing/head/helmet/kettle/slit/atarms/town_watch
+	name = "sergeant kettle"
+	desc = "A lightweight steel helmet decorated for the sergeant of the town watch."

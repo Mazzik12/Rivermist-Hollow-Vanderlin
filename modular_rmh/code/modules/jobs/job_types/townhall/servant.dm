@@ -15,6 +15,7 @@
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = RACES_PLAYER_ALL
+	selection_color = JCOLOR_TOWNHALL
 
 	advclass_cat_rolls = list(CAT_SERVANT = 20)
 
@@ -84,6 +85,8 @@
 	beltr = /obj/item/storage/keyring/rmh_servant
 	beltl = /obj/item/storage/belt/pouch/coins/poor
 	ring = null
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/recipe_book/cooking = 1
@@ -136,6 +139,8 @@
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	beltl = /obj/item/storage/keyring/rmh_servant
 	ring = null
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/recipe_book/cooking = 1
@@ -189,6 +194,8 @@
 	beltr = null
 	beltl = null
 	ring = null
+	l_hand = null
+	r_hand = null
 
 /datum/outfit/servant/concubine/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()

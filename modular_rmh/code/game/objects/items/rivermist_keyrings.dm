@@ -6,3 +6,6 @@
 
 /obj/item/storage/keyring/rmh_servant
 	keys = list(/obj/item/key/manor, /obj/item/key/guest)
+
+/obj/item/storage/keyring/watch_captain
+	keys = list(/obj/item/key/garrison, /obj/item/key/forrestgarrison, /obj/item/key/veteran, /obj/item/key/lieutenant, /obj/item/key/dungeon, /obj/item/key/captain, /obj/item/key/atarms)

@@ -142,7 +142,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
-#define CTAG_GARRISON		"CAT_GARRISON"
 #define CTAG_FORGARRISON	"CAT_FORGARRISON"
 #define CTAG_MAGIE			"CAT_MAGIE" //for Mage Associate
 #define CTAG_VETERAN		"CAT_VETERAN"		// Veteran class - Handles Veteran class selector
@@ -150,9 +149,12 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_MENATARMS		"CAT_MENATARMS"
 #define CTAG_SERVANT		"CAT_SERVANT" 		// Servant class - 4 type of servant to fill in someplace.
 
+//TOWNHALL
 #define CAT_BURGMESITER		"CAT_BURGMESITER"		// Burgmeister class - 4 types
 #define CAT_COUNCILOR		"CAT_COUNCILOR"		// Councilor class - 3 types
-#define CAT_SERVANT			"CAT_SERVANT"		// Councilor class - 3 types
+#define CAT_SERVANT			"CAT_SERVANT"		// Servant class - 3 types
+//TOWNWATCH
+#define CAT_WATCHMAN		"CAT_WATCHMAN"		// Town Watch Guard class - 3 types
 
 // Character category and its buys
 #define TRIUMPH_CAT_CHARACTER "CHARACTER"
