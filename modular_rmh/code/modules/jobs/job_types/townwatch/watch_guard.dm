@@ -112,7 +112,7 @@
 	shoes = /obj/item/clothing/shoes/boots/armor/light
 	backr = /obj/item/storage/backpack/satchel/black
 	backl = /obj/item/weapon/shield/heater
-	belt = /obj/item/storage/belt/leather/watch_captain
+	belt = /obj/item/storage/belt/leather/town_watch
 	beltr = null
 	beltl = /obj/item/weapon/mace/stunmace
 	ring = /obj/item/clothing/ring/slave_control
@@ -177,7 +177,7 @@
 	shoes = /obj/item/clothing/shoes/boots/armor/light
 	backr = /obj/item/storage/backpack/satchel/black
 	backl = null
-	belt = /obj/item/storage/belt/leather/watch_captain
+	belt = /obj/item/storage/belt/leather/town_watch
 	beltr = null
 	beltl = /obj/item/weapon/mace/stunmace
 	ring = /obj/item/clothing/ring/slave_control
@@ -257,7 +257,7 @@
 	shoes = /obj/item/clothing/shoes/boots/leather/advanced
 	backr = /obj/item/storage/backpack/satchel/black
 	backl = null
-	belt = /obj/item/storage/belt/leather/watch_captain
+	belt = /obj/item/storage/belt/leather/town_watch
 	beltr = null
 	beltl = /obj/item/weapon/mace/stunmace
 	ring = /obj/item/clothing/ring/slave_control

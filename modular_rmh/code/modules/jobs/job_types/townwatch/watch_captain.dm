@@ -88,7 +88,7 @@
 	shoes = /obj/item/clothing/shoes/boots/armor/light
 	backr = /obj/item/storage/backpack/satchel/black
 	backl = /obj/item/weapon/shield/tower/metal
-	belt = /obj/item/storage/belt/leather/watch_captain
+	belt = /obj/item/storage/belt/leather/steel/watch_captain
 	beltr = /obj/item/weapon/scabbard/sword/noble
 	beltl = /obj/item/weapon/mace/stunmace
 	ring = /obj/item/clothing/ring/slave_control
