@@ -35,7 +35,7 @@
 
 /obj/structure/fluff/statue/selune/guard/update_overlays()
 	. = ..()
-	. += emissive_appearance(icon, "selune_guard_overlay")
+	. += emissive_appearance(icon, "selune_guard_overlay", alpha = 60)
 
 /obj/structure/fluff/statue/selune/guard_left
 	name = "awakened statue of Selûne"
@@ -47,4 +47,4 @@
 
 /obj/structure/fluff/statue/selune/guard_left/update_overlays()
 	. = ..()
-	. += emissive_appearance(icon, "selune_guard_left_overlay")
+	. += emissive_appearance(icon, "selune_guard_left_overlay", alpha = 60)
