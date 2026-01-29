@@ -403,31 +403,31 @@
 
 /datum/status_effect/debuff/flatboobs/permanent/lite
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/flatboobslite
-	examine_text = span_notice("They have flat goodies!")
+	examine_text = span_notice("They are as flat as a board!")
 	nodrawback = TRUE
 	effectedstats = list("speed" = 2)
 
 /datum/status_effect/debuff/vsmallboobs/permanent/lite
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/vsmallboobslite
-	examine_text = span_notice("They have very small goodies!")
+	examine_text = span_notice("")
 	nodrawback = TRUE
 	effectedstats = list("speed" = 2)
 
 /datum/status_effect/debuff/smallboobs/permanent/lite
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/smallboobslite
-	examine_text = span_notice("They have small goodies!")
+	examine_text = span_notice("")
 	nodrawback = TRUE
 	effectedstats = list("speed" = 1)
 
 /datum/status_effect/debuff/largeboobs/permanent/lite
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/largeboobslite
-	examine_text = span_notice("They have large GOODS!")
+	examine_text = span_notice("")
 	nodrawback = TRUE
 	effectedstats = list("constitution" = 1, "speed" = -1)
 	
 /datum/status_effect/debuff/bigboobs/permanent/lite
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobslite
-	examine_text = span_notice("They have massive GOODS!")
+	examine_text = span_notice("")
 	nodrawback = TRUE
 	effectedstats = list("constitution" = 2, "speed" = -2)
 
