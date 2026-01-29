@@ -16,7 +16,8 @@
 	bypass_lastclass = TRUE
 	selection_color = JCOLOR_TOWNHALL
 
-	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch)
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch,
+					/datum/action/cooldown/spell/undirected/list_target/convert_role/servant)
 
 	give_bank_account = 120
 	noble_income = 18

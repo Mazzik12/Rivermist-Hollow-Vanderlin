@@ -7,7 +7,6 @@
 	charge_required = FALSE
 	antimagic_flags = MAGIC_RESISTANCE_HOLY
 	associated_skill = /datum/skill/magic/holy
-	required_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 
 	possible_shapes = list(/mob/living/simple_animal/hostile/retaliate/troll)
 
@@ -41,6 +40,5 @@
 	. = ..()
 	if(!.)
 		return
-	required_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
 	spell_cost = 100
 	spell_type = SPELL_MIRACLE

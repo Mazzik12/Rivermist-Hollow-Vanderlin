@@ -22,7 +22,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	selection_color = JCOLOR_TOWNHALL
 	can_have_apprentices = FALSE
 
-	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch)
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch,
+					/datum/action/cooldown/spell/undirected/list_target/convert_role/servant)
 
 	advclass_cat_rolls = list(CAT_BURGMESITER = 20)
 
@@ -114,7 +115,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	    TRAIT_BLINDFIGHTING,
 	    TRAIT_DODGEEXPERT,
 	    TRAIT_BREADY,
-	    TRAIT_EMPATH
+	    TRAIT_EMPATH,
+	    TRAIT_OLDPARTY
 	)
 
 /datum/job/advclass/burgmeister/marshall/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -475,3 +477,14 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 		)
 
 		last_announcement_time = world.time
+
+//RECRUIT SERVANT
+/datum/action/cooldown/spell/undirected/list_target/convert_role/servant
+	name = "Recruit Servant"
+	button_icon_state = "recruit_servant"
+
+	new_role = "Servant"
+	recruitment_faction = "Servants"
+	recruitment_message = "Join the Town Hall servants, %RECRUIT!"
+	accept_message = "I serve the Burgmeister!"
+	refuse_message = "I refuse."

@@ -71,7 +71,7 @@
 
 /mob/proc/haltyell()
 	set name = "HALT!"
-	set category = "Town Watch"
+	set category = "Noises"
 	emote("haltyell")
 
 /datum/outfit/watch_captain
@@ -117,6 +117,7 @@
 	recruitment_faction = "Town Watch"
 	recruitment_message = "Join the Town Watch, %RECRUIT!"
 	accept_message = "I swear fealty to the Burgmeister and the Town Watch!"
+	refuse_message = "I refuse."
 
 /datum/action/cooldown/spell/undirected/list_target/convert_role/guard/on_conversion(mob/living/cast_on)
 	. = ..()

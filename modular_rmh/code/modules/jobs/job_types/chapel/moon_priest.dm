@@ -54,6 +54,10 @@
 
 	languages = list(/datum/language/celestial)
 
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/chapel_acolyte,
+
+	)
+
 /datum/job/moon_priest/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	spawned.verbs |= /mob/living/carbon/human/proc/churchannouncement
@@ -89,7 +93,8 @@
 
 	backpack_contents = list(
 		/obj/item/needle/blessed = 1,
-		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2
+		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
+		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
 //ANNOUNCEMENT
@@ -106,3 +111,15 @@
 			return FALSE
 		priority_announce("[inputty]", title = "The [get_role_title()] Speaks", sound = 'sound/misc/bell.ogg')
 		src.log_talk("[TIMETOTEXT4LOGS] [inputty]", LOG_SAY, tag="Priest announcement")
+
+//CONVERSION
+
+/datum/action/cooldown/spell/undirected/list_target/convert_role/chapel_acolyte
+	name = "Recruit Acolyte"
+	button_icon_state = "recruit_templar"
+
+	new_role = "Chapel Acolyte"
+	recruitment_faction = "Town Chapel"
+	recruitment_message = "Serve the Divines, %RECRUIT!"
+	accept_message = "FOR THE DIVINES!"
+	refuse_message = "I refuse."

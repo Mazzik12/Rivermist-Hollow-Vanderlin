@@ -54,6 +54,10 @@
 
 	languages = list(/datum/language/celestial)
 
+	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/chapel_acolyte,
+
+	)
+
 /datum/job/heart_priest/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	spawned.verbs |= /mob/living/carbon/human/proc/churchannouncement
@@ -90,5 +94,6 @@
 	backpack_contents = list(
 		/obj/item/needle/blessed = 1,
 		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
-		/obj/item/reagent_containers/glass/bottle/beer/emberwine = 1
+		/obj/item/reagent_containers/glass/bottle/beer/emberwine = 1,
+		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)

@@ -94,7 +94,8 @@
 
 	backpack_contents = list(
 		/obj/item/needle/blessed = 1,
-		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2
+		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
+		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
 // ─────────────────────────────
@@ -158,7 +159,8 @@
 
 	backpack_contents = list(
 		/obj/item/needle/blessed = 1,
-		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2
+		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
+		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
 // ─────────────────────────────
@@ -222,5 +224,6 @@ datum/job/advclass/acolyte/nun_regal
 
 	backpack_contents = list(
 		/obj/item/needle/blessed = 1,
-		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2
+		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
+		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
