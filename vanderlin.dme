@@ -3840,6 +3840,7 @@
 #include "modular_rmh\code\datums\sexcon\sexcon_reagents.dm"
 #include "modular_rmh\code\datums\status_effects\buffs.dm"
 #include "modular_rmh\code\datums\status_effects\debuffs.dm"
+#include "modular_rmh\code\datums\status_effects\quirk_boobs.dm"
 #include "modular_rmh\code\datums\stress\negative_events.dm"
 #include "modular_rmh\code\datums\stress\positive_events.dm"
 #include "modular_rmh\code\datums\traits\_quirk.dm"
