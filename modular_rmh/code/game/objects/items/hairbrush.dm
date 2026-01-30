@@ -6,7 +6,8 @@
 	force = 0
 	throwforce = 0
 	slot_flags = ITEM_SLOT_HIP
-	//варсы и тд
+	icon = 'icons/roguetown/items/misc.dmi'
+	icon_state = "brush_0"
 
 /obj/item/hairbrush/attack(mob/living/M, mob/living/user)
 	combhair(M, user)

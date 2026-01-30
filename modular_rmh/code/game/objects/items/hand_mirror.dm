@@ -3,8 +3,8 @@
 
 	name = "Hand mirror"
 	desc = "An old, vintage mirror that will allow you to see yourself beautiful. Or allow a vampire to see what's happening behind it."
-	icon = 'modular_rmh/icons/obj/items/hand_mirror.dmi'
-	icon_state = "h_mirror"
+	icon = 'icons/roguetown/items/misc.dmi'
+	icon_state = "handmirror"
 	//price
 	force = 0
 	throwforce = 0
