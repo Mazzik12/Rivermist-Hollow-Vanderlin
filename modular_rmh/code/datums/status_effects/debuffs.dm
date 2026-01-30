@@ -479,6 +479,8 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
+	if(duration == -1) //hack for applied status
+		return
 	to_chat(user, span_warning("Gah! My tits shrink to very small sizes!"))
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
 
@@ -492,6 +494,8 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
+	if(duration == -1) //hack for applied status
+		return
 	to_chat(user, span_warning("Gah! My tits shrink to small sizes!"))
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
 	if(forgan)
@@ -504,6 +508,8 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
+	if(duration == -1) //hack for applied status
+		return
 	to_chat(user, span_warning("Gah! My tits expand to large sizes!"))
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
 	if(forgan)
@@ -515,6 +521,8 @@
 	. = ..()
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
+		return
+	if(duration == -1) //hack for applied status
 		return
 	to_chat(user, span_warning("Gah! My tits expand to impossible sizes!"))
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
@@ -531,6 +539,8 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
+	if(duration == -1) //hack for applied status
+		return
 	to_chat(user, span_notice("Phew, My bits expand back to the way they were."))
 	//return to pref sizes.
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
@@ -543,6 +553,8 @@
 	. = ..()
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
+		return
+	if(duration == -1) //hack for applied status
 		return
 	to_chat(user, span_notice("Phew, My bits expand back to the way they were."))
 	//return to pref sizes.
@@ -557,6 +569,8 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
+	if(duration == -1) //hack for applied status
+		return
 	to_chat(user, span_notice("Phew, My bits expand back to the way they were."))
 	//return to pref sizes.
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
@@ -570,6 +584,8 @@
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
 		return
+	if(duration == -1) //hack for applied status
+		return
 	to_chat(user, span_notice("Phew, My bits shrunk back to the way they were."))
 	//return to pref sizes.
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
@@ -582,6 +598,8 @@
 	. = ..()
 	var/mob/living/carbon/human/species/user = owner
 	if(!user)
+		return
+	if(duration == -1) //hack for applied status
 		return
 	to_chat(user, span_notice("Phew, My bits shrunk back to the way they were."))
 	//return to pref sizes.
