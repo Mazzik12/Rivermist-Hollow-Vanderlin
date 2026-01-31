@@ -853,7 +853,7 @@ GLOBAL_LIST_EMPTY(donator_races)
 	else
 		apply_customizers_to_character(C)
 
-	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(SEND_SIGNAL), C, COMSIG_SPECIES_GAIN, src, old_species), 1)
 
 
 /datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
