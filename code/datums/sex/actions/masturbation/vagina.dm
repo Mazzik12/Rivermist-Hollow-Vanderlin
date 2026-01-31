@@ -37,3 +37,7 @@
 /datum/sex_action/masturbate/vagina/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	user.visible_message(span_warning("[user] stops stroking."))
+
+/datum/sex_action/masturbate/vagina/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target, must_flip)
+	user.visible_message(span_love("[user] creams themself!"))
+	return ORGASM_LOCATION_SELF

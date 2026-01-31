@@ -46,6 +46,10 @@
 	. = ..()
 	user.visible_message(span_warning("[user] stops jerking off."))
 
+/datum/sex_action/masturbate/penis/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target, must_flip)
+	user.visible_message(span_love("[user] blows their load!"))
+	return ORGASM_LOCATION_SELF
+
 /datum/sex_action/masturbate/penis/lock_sex_object(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	sex_locks |= new /datum/sex_session_lock(user, ORGAN_SLOT_PENIS)
