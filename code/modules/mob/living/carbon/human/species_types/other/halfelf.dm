@@ -206,14 +206,4 @@
 
 /datum/species/human/halfelf/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
 	. = ..()
-
-	spawn(100)
-		if(!C || !C.client)
-			return
-		species_stat_pick(
-			C,
-			"Half-Elf Versatility",
-			"Choose an attribute to gain +1:",
-			2,
-			FALSE
-		)
+	addtimer(CALLBACK(src, PROC_REF(species_stat_pick), C, "Half-Elf Versatility", "Choose an attribute to gain +1:", 1, FALSE), 100)

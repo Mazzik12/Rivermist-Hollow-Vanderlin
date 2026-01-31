@@ -181,20 +181,9 @@
 
 /datum/species/human/northern/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
 	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(species_stat_pick), C, "Human Versatility", "Choose an attribute to gain +1:", 1, FALSE), 100)
 
-	spawn(100)
-		if(!C || !C.client)
-			return
-
-		species_stat_pick(
-			C,
-			"Human Versatility",
-			"Choose an attribute to gain +1:",
-			1,
-			FALSE
-		)
-
-/proc/species_stat_pick(
+/datum/species/proc/species_stat_pick(
 	mob/living/carbon/human/C,
 	title,
 	message,

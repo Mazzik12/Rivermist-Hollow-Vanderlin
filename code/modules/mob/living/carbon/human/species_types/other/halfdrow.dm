@@ -207,24 +207,16 @@
 /datum/species/human/halfdrow/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
 	. = ..()
 
-	spawn(100)
-		if(!C || !C.client)
-			return
+	addtimer(CALLBACK(src, PROC_REF(species_stat_pick), C, "Half-Drow Versatility", "Choose an attribute to gain +1:", 1, FALSE), 100)
+	addtimer(CALLBACK(src, PROC_REF(give_darkling), C), 50)
 
-		species_stat_pick(
-			C,
-			"Half-Drow Versatility",
-			"Choose an attribute to gain +1:",
-			1,
-			FALSE
-		)
 
-	spawn(50)
-		if(!C || QDELETED(C))
-			return
+/datum/species/human/halfdrow/proc/give_darkling(mob/living/carbon/human/C)
+	if(!C || QDELETED(C))
+		return
 
-		if(!C.GetComponent(/datum/component/darkling))
-			C.AddComponent(/datum/component/darkling)
+	if(!C.GetComponent(/datum/component/darkling))
+		C.AddComponent(/datum/component/darkling)
 
 /datum/species/human/halfdrow/on_species_loss(mob/living/carbon/human/C)
 	. = ..()

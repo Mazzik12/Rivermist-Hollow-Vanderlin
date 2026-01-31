@@ -218,12 +218,11 @@
 /datum/species/elf/dark/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
 
-	spawn(5)
-		if(!C || QDELETED(C))
-			return
+	if(!C || QDELETED(C))
+		return
 
-		if(!C.GetComponent(/datum/component/darkling))
-			C.AddComponent(/datum/component/darkling)
+	if(!C.GetComponent(/datum/component/darkling))
+		addtimer(CALLBACK(src, PROC_REF(GetComponent), C, /datum/component/darkling), 50)
 
 /datum/species/elf/dark/on_species_loss(mob/living/carbon/human/C)
 	. = ..()
