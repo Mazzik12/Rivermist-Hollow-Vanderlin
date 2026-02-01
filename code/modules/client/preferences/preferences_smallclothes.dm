@@ -373,6 +373,11 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 		/obj/item/clothing/legwears/fishnet/blue,
 		/obj/item/clothing/legwears/fishnet/red,
 		/obj/item/clothing/legwears/fishnet/purple,
+		/obj/item/clothing/legwears/stockings_wg/white,
+		/obj/item/clothing/legwears/stockings_wg/black,
+		/obj/item/clothing/legwears/stockings_wg/blue,
+		/obj/item/clothing/legwears/stockings_wg/red,
+		/obj/item/clothing/legwears/stockings_wg/purple,
 		)
 
 	var/list/legwear_types = typesof(/obj/item/clothing/legwears) - blacklisted_legwear
