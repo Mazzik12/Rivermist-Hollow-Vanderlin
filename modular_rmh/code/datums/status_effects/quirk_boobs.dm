@@ -22,7 +22,7 @@
 	var/obj/item/organ/genitals/forgan = user.getorganslot(ORGAN_SLOT_BREASTS)
 	if(forgan)
 		initialbreasts = forgan.organ_size
-		forgan.organ_size = BREAST_SIZE_ENORMOUS+2
+		forgan.organ_size = 6 // max selectable is 5
 	user.update_body_parts(TRUE)
 
 /datum/status_effect/debuff/boobs_quirk/on_remove()
