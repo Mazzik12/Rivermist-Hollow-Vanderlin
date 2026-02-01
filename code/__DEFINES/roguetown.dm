@@ -139,15 +139,9 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ALLCLASS		"CAT_ALLCLASS"		// jus a define for allclass to not deal with actively typing strings
 #define CTAG_PILGRIM 		"CAT_PILGRIM"  		// Pilgrim classes
 #define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
-#define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
-#define CTAG_FORGARRISON	"CAT_FORGARRISON"
 #define CTAG_MAGIE			"CAT_MAGIE" //for Mage Associate
-#define CTAG_VETERAN		"CAT_VETERAN"		// Veteran class - Handles Veteran class selector
-#define CTAG_ROYALKNIGHT	"CAT_ROYAL_KNIGHT"
-#define CTAG_MENATARMS		"CAT_MENATARMS"
-#define CTAG_SERVANT		"CAT_SERVANT" 		// Servant class - 4 type of servant to fill in someplace.
 
 //TOWNHALL
 #define CAT_BURGMESITER		"CAT_BURGMESITER"		// Burgmeister class - 4 types
@@ -157,6 +151,21 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CAT_WATCHMAN		"CAT_WATCHMAN"		// Town Watch Guard class - 3 types
 //CHAPEL
 #define CAT_CHAPEL			"CAT_CHAPEL"		// Chapel acolyte class - 3 types
+//SCHOLARS
+#define CAT_GUILDWIZARD		"GUILDWIZARD"		// Guild wizard class - 2 types
+#define CAT_ARCHIVIST		"ARCHIVIST"			// Archivist class -
+//TRADERS
+#define CAT_SHOPHAND		"SHOPHAND"			// Waterdeep assistant class - 3 types
+//TAVERN
+#define CAT_AHEAD			"AHEAD"				// Adventurer's guild head class - 2 types
+#define CAT_AASSIST			"AASSIST"			// Adventurer's guild assistant class - 2 types
+#define CAT_WAITRESS		"WAITRESS"			// Waitress class -
+//TOWN
+#define CAT_TOWNER 			"CAT_TOWNER"  		// Towner class - Villagers can use it
+#define CAT_PERFORMER		"PERFORMER"			// Performer class - 2 types
+#define CAT_ARTISAN			"ARTISAN"			// Artisan class -
+#define CAT_ARTISANAP		"ARTISANAP"			// Artisan apprentice class -
+
 
 // Character category and its buys
 #define TRIUMPH_CAT_CHARACTER "CHARACTER"

@@ -9,7 +9,7 @@
 	spawn_positions = 3
 	selection_color = JCOLOR_CHAPEL
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	display_order = JDO_HEART_ACOLYTE
+	display_order = JDO_CHAPEL_ACOLYTE
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -109,6 +109,10 @@
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
+/datum/outfit/acolyte/base/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
 // ─────────────────────────────
 
 /datum/job/advclass/acolyte/selune
@@ -117,6 +121,8 @@
 	You keep night vigils, aid travelers and the vulnerable, and assist Moon Priests."
 	outfit = /datum/outfit/acolyte/selune
 	category_tags = list(CAT_CHAPEL)
+
+	allowed_patrons = list(/datum/patron/faerun/good_gods/Selune)
 
 	spells = list(/datum/action/cooldown/spell/undirected/touch/orison,
 		/datum/action/cooldown/spell/healing,
@@ -181,6 +187,10 @@
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
+/datum/outfit/acolyte/selune/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
 // ─────────────────────────────
 
 /datum/job/advclass/acolyte/sune
@@ -189,6 +199,8 @@
 	This chapel welcomes many faiths, and your duty is simple service, learning, and aid."
 	outfit = /datum/outfit/acolyte/sune
 	category_tags = list(CAT_CHAPEL)
+
+	allowed_patrons = list(/datum/patron/faerun/good_gods/Sune)
 
 	spells = list(/datum/action/cooldown/spell/undirected/touch/orison,
 		/datum/action/cooldown/spell/healing,
@@ -255,6 +267,10 @@
 		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
+
+/datum/outfit/acolyte/sune/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 
 // ─────────────────────────────
 
@@ -331,6 +347,10 @@
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
+/datum/outfit/acolyte/nun/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
 // ─────────────────────────────
 
 datum/job/advclass/acolyte/nun_regal
@@ -405,6 +425,10 @@ datum/job/advclass/acolyte/nun_regal
 		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
+
+/datum/outfit/acolyte/nun_regal/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 
 // ─────────────────────────────
 
@@ -481,6 +505,10 @@ datum/job/advclass/acolyte/nun_regal
 		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
+
+/datum/outfit/acolyte/warrior_priest/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 
 /datum/job/advclass/acolyte/warrior_priest/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
@@ -565,3 +593,7 @@ datum/job/advclass/acolyte/nun_regal
 		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 2,
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
+
+/datum/outfit/acolyte/love/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)

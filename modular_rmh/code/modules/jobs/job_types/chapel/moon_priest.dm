@@ -124,6 +124,10 @@
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
 
+/datum/outfit/moon_priest/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
 //ANNOUNCEMENT
 
 /mob/living/carbon/human/proc/churchannouncement()

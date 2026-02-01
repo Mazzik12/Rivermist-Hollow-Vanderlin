@@ -120,3 +120,7 @@
 		/obj/item/reagent_containers/glass/bottle/beer/emberwine = 1,
 		/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater = 1,
 	)
+
+/datum/outfit/heart_priest/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
