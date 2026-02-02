@@ -17,7 +17,6 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	spawn_positions = 1
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
-	bypass_lastclass = TRUE
 	give_bank_account = 500
 	selection_color = JCOLOR_TOWNHALL
 	can_have_apprentices = FALSE

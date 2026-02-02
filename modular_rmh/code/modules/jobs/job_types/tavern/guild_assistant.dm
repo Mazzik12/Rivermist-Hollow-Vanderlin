@@ -8,7 +8,6 @@
 	faction = FACTION_TOWN
 	total_positions = 1
 	spawn_positions = 1
-	bypass_lastclass = TRUE
 	give_bank_account = TRUE
 	cmode_music = 'sound/music/cmode/adventurer/CombatIntense.ogg'
 

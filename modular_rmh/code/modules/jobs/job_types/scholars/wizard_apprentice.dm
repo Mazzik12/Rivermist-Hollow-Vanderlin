@@ -41,11 +41,6 @@
 		/datum/action/cooldown/spell/undirected/conjure_item/light,
 	)
 
-/datum/job/guild_wizard_apprentice/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-	if(spawned.gender == MALE && spawned.dna?.species  && spawned.dna.species.id != SPEC_ID_MEDICATOR)
-		spawned.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
-
 /datum/outfit/guild_wizard_apprentice
 	name = "Apprentice Wizard"
 	head = null

@@ -132,6 +132,7 @@
 #define JDO_WAITRESS 19.5
 //TOWN
 #define JDO_TOWNER 20
+#define JDO_TOWN_MOUTH 20.5
 #define JDO_BARBER 21
 #define JDO_PERFORMER 21.5
 #define JDO_ARTISAN 22

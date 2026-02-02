@@ -25,3 +25,6 @@
 /obj/item/clothing/cloak/half/shadowcloak/warrior_priest
 	name = "dark cloak"
 	desc = "A heavy leather cloak held together by a gilded pin."
+
+/obj/item/clothing/cloak/cape/colored/wizard
+	color = CLOTHING_BLACK

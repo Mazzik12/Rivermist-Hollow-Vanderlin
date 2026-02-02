@@ -9,7 +9,6 @@
 	faction = FACTION_TOWN
 	total_positions = 4
 	spawn_positions = 4
-	bypass_lastclass = TRUE
 	give_bank_account = TRUE
 	can_have_apprentices = FALSE
 

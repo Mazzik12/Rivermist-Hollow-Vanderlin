@@ -9,7 +9,6 @@
 	faction = FACTION_TOWN
 	total_positions = 8
 	spawn_positions = 8
-	bypass_lastclass = TRUE
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST

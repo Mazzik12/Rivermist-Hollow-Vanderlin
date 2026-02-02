@@ -155,7 +155,7 @@
 	head = null
 	mask = null
 	neck = null
-	cloak = /obj/item/clothing/cloak/cape
+	cloak = /obj/item/clothing/cloak/cape/colored/wizard
 	armor = null
 	shirt = null
 	wrists = null

@@ -7,3 +7,6 @@
 
 /obj/item/clothing/shirt/robe/colored/moon_acolyte
 	color = "#62656C"
+
+/obj/item/clothing/shirt/undershirt/lowcut/colored/black
+	color = CLOTHING_BLACK

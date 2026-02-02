@@ -1,7 +1,7 @@
 /obj/item/clothing/shirt/undershirt/blouse
 	name = "blouse"
 	desc = "A finely tailored blouse made from soft, lightweight fabric, with delicate buttons and subtly decorated cuffs."
-	icon_state = "fancyshirt"
+	icon_state = "blouse"
 	icon = 'modular_rmh/icons/clothing/vladegeg/formal.dmi'
 	mob_overlay_icon = 'modular_rmh/icons/clothing/vladegeg/onmob/formal.dmi'
 	sleeved = 'modular_rmh/icons/clothing/vladegeg/onmob/helpers/formal_sleeves.dmi'

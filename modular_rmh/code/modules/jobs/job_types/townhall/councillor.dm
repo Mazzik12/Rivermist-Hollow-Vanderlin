@@ -13,7 +13,6 @@
 	spawn_positions = 1
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
-	bypass_lastclass = TRUE
 	selection_color = JCOLOR_TOWNHALL
 
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/town_watch,
