@@ -15,3 +15,6 @@
 
 /obj/item/storage/keyring/town_chapel
 	keys = list(/obj/item/key/priest, /obj/item/key/church)
+
+/obj/item/storage/keyring/master_wizard
+	keys = list(/obj/item/key/tower, /obj/item/key/mage)

@@ -32,7 +32,6 @@
 		STATKEY_CON = 2,
 		STATKEY_END = 2,
 		STATKEY_PER = 1,
-		STATKEY_INT = 0,
 		STATKEY_SPD = 1
 	)
 

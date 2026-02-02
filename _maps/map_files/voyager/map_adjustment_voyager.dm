@@ -6,21 +6,5 @@
 
 /datum/map_adjustment/voyager
 	map_file_name = "voyager.dmm"
-	blacklist = list(
-		/datum/job/artificer,
-		/datum/job/armorsmith,
-		/datum/job/carpenter,
-		/datum/job/gaffer,
-		/datum/job/matron,
-		/datum/job/grabber,
-		/datum/job/captain,
-		/datum/job/merchant,
-		/datum/job/servant,
-		/datum/job/bapprentice,
-		/datum/job/minor_noble,
-		/datum/job/archivist,
-	)
-	slot_adjust = list(
-		/datum/job/farmer = 1000,
-		/datum/job/miner = 1000,
-	)
+	blacklist = null
+	slot_adjust = null

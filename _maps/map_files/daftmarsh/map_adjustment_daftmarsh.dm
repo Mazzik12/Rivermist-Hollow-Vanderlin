@@ -7,22 +7,6 @@
 /datum/map_adjustment/daftmarsh
 	map_file_name = "daftmarsh.dmm"
 	// Disabled for Daftmarsh.
-	blacklist = list(
-		/datum/job/shophand, //Unneeded honestly.
-		/datum/job/minor_noble, //Minor nobles will have to approach via pilgrim waves and be guests that way.
-	)
+	blacklist = null
 	// Limited positions to ensure core roles are filled.
-	slot_adjust = list(
-		/datum/job/feldsher = 1,
-		/datum/job/cook = 1,
-		/datum/job/servant = 2,
-		/datum/job/carpenter = 2, //Towner roles don't need nearly as many, here.
-		/datum/job/mason = 2,
-		/datum/job/hunter = 2,
-		/datum/job/bard = 3,
-		/datum/job/miner = 4,
-		/datum/job/fisher = 4, //Thematically fitting for them to be more common than most.
-		/datum/job/farmer = 4, //Not like this would ever be filled ANYWAYS.
-		/datum/job/adventurer = 8, //Not sure on this one but I generally want to cut down on the non-town roles.
-		/datum/job/clinicapprentice = 2,
-	)
+	slot_adjust = null

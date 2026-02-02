@@ -46,7 +46,9 @@ GLOBAL_PROTECT(chapel_positions)
 
 
 GLOBAL_LIST_INIT(scholars_positions, list(
-	/datum/job/archivist::title,
+	/datum/job/guild_master_wizard::title,
+	/datum/job/guild_wizard::title,
+	/datum/job/guild_wizard_apprentice::title,
 ))
 GLOBAL_PROTECT(scholars_positions)
 

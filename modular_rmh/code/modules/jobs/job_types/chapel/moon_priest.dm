@@ -18,13 +18,14 @@
 	outfit = /datum/outfit/moon_priest
 	selection_color = JCOLOR_CHAPEL
 
+	give_bank_account = 200
+
 	exp_type = list(EXP_TYPE_CHURCH)
 	exp_types_granted = list(EXP_TYPE_CHURCH, EXP_TYPE_CLERIC)
 	exp_requirements = list(EXP_TYPE_CHURCH = 700)
 
 	allowed_patrons = list(/datum/patron/faerun/good_gods/Selune)
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 2,
 		STATKEY_INT = 3,
 		STATKEY_CON = 1,

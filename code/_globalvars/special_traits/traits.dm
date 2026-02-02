@@ -333,27 +333,6 @@
 	ADD_TRAIT(character, TRAIT_NOBLE, "[type]")
 	character.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
-/datum/special_trait/burdened
-	name = "The Burdened One"
-	greet_text = span_notice("You are a true instrument of creation, the most blessed of Malum, nothing will stop your toil, be it sleep or fatigue.")
-	weight = 10
-	req_text = "Worship Malum, must be a carpenter, elder, smith, artificer or miner."
-	allowed_jobs = list(/datum/job/carpenter, /datum/job/armorsmith, /datum/job/weaponsmith, /datum/job/artificer, /datum/job/bapprentice, /datum/job/miner) // no combat roles
-
-/datum/special_trait/burdened/on_apply(mob/living/carbon/human/character, silent)
-	ADD_TRAIT(character, TRAIT_MALUMFIRE, "[type]")
-	ADD_TRAIT(character, TRAIT_NOSLEEP, "[type]") // can't learn any new skills
-	ADD_TRAIT(character, TRAIT_NOENERGY, "[type]")
-	character.change_stat(STATKEY_END, 4) // Never stop.
-	character.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-	character.adjust_skillrank(/datum/skill/craft/weaponsmithing, 3, TRUE)
-	character.adjust_skillrank(/datum/skill/craft/armorsmithing, 3, TRUE)
-	character.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
-	character.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
-	character.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
-	character.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE)
-	character.cmode_music = 'sound/music/cmode/towner/CombatPrisoner.ogg'  // has a burdened vibe to it
-
 /datum/special_trait/richpouch
 	name = "Rich Pouch"
 	greet_text = span_notice("I've recently found a pouch filled with mammons, probably belonging to some noble.")

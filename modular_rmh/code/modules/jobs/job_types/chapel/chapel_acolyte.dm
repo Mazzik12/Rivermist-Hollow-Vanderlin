@@ -17,6 +17,8 @@
 
 	advclass_cat_rolls = list(CAT_CHAPEL = 20)
 
+	give_bank_account = 80
+
 	job_subclasses = list(
 		/datum/job/advclass/acolyte/base,
 		/datum/job/advclass/acolyte/nun,
@@ -57,7 +59,6 @@
 	)
 
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 1,
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
@@ -135,7 +136,6 @@
 	)
 
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 2,
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
@@ -215,7 +215,6 @@
 	)
 
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 1,
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
@@ -292,7 +291,6 @@
 	)
 
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 1,
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
@@ -371,7 +369,6 @@ datum/job/advclass/acolyte/nun_regal
 	)
 
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 1,
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
@@ -541,7 +538,6 @@ datum/job/advclass/acolyte/nun_regal
 	)
 
 	jobstats = list(
-		STATKEY_STR = 0,
 		STATKEY_PER = 1,
 		STATKEY_INT = 2,
 		STATKEY_CON = 1,
