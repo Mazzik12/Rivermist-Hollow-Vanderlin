@@ -58,21 +58,24 @@
 
 /datum/outfit/hunter
 	name = "Hunter"
-	pants = /obj/item/clothing/pants/tights/colored/random
-	shirt = /obj/item/clothing/shirt/shortshirt/colored/random
-	shoes = /obj/item/clothing/shoes/boots/leather
-	neck = /obj/item/storage/belt/pouch/coins/poor
 	head = /obj/item/clothing/head/brimmed
+	mask = null
+	neck = /obj/item/storage/belt/pouch/coins/poor
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
-
+	armor = null
+	shirt = /obj/item/clothing/shirt/shortshirt/colored/random
+	wrists = null
+	gloves = /obj/item/clothing/gloves/leather
+	pants = /obj/item/clothing/pants/tights/colored/random
+	shoes = /obj/item/clothing/shoes/boots/leather
 	backr = /obj/item/storage/backpack/satchel
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-
 	belt = /obj/item/storage/belt/leather
-	beltr = /obj/item/ammo_holder/quiver/arrows
-	beltl = /obj/item/storage/meatbag
-
-	gloves = /obj/item/clothing/gloves/leather
+	beltl = /obj/item/ammo_holder/quiver/arrows
+	beltr = /obj/item/storage/meatbag
+	ring = null
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/flint = 1,

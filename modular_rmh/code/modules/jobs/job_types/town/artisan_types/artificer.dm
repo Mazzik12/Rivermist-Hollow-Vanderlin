@@ -1,26 +1,19 @@
-/datum/job/artificer
+/datum/job/advclass/artisan/artificer
 	title = "Artificer"
 	tutorial = "You are a learned craftsperson of mechanisms and materials. \
-	Gears, pulleys, constructs, and clever devices answer to your hand. \
-	Where others see mystery, you see technology."
-	department_flag = TOWN
-	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_TOWN
-	total_positions = 3
-	spawn_positions = 3
-	bypass_lastclass = TRUE
-	allowed_races = RACES_PLAYER_ALL
+	Gears, pulleys, constructs, and clever devices answer to your hand."
+
+	apprentice_name = "Artificer Apprentice"
+	can_have_apprentices = TRUE
 
 	outfit = /datum/outfit/artificer
-	give_bank_account = 8
-	cmode_music = 'sound/music/cmode/adventurer/CombatDream.ogg'
+	category_tags = list(CAT_ARTISAN)
 
+	give_bank_account = 8
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
 	exp_type = list(EXP_TYPE_LIVING)
-	exp_requirements = list(
-		EXP_TYPE_LIVING = 600
-	)
+	exp_requirements = list(EXP_TYPE_LIVING = 600)
 
 	jobstats = list(
 		STATKEY_STR = 1,
@@ -45,36 +38,34 @@
 		/datum/skill/labor/mathematics = 2,
 	)
 
-/datum/job/artificer/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-	spawned.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
-	spawned.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,3), TRUE)
-	spawned.adjust_skillrank(/datum/skill/labor/lumberjacking, rand(1,3), TRUE)
+	traits = list(
+		TRAIT_TUTELAGE,
+		)
 
 /datum/outfit/artificer
 	name = "Artificer"
 	head = /obj/item/clothing/head/articap
+	mask = /obj/item/clothing/face/goggles
+	neck = null
+	cloak = null
 	armor = /obj/item/clothing/armor/leather/jacket/artijacket
-	pants = /obj/item/clothing/pants/trou/artipants
 	shirt = /obj/item/clothing/shirt/undershirt/artificer
+	wrists = null
+	gloves = null
+	pants = /obj/item/clothing/pants/trou/artipants
 	shoes = /obj/item/clothing/shoes/simpleshoes/buckle
+	backr = null
+	backl = /obj/item/storage/backpack/backpack/artibackpack
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/storage/belt/pouch/coins/mid
 	beltl = /obj/item/weapon/mace/cane/bronze
-	mask = /obj/item/clothing/face/goggles
-	backl = /obj/item/storage/backpack/backpack
 	ring = /obj/item/clothing/ring/silver/makers_guild
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/weapon/hammer/steel = 1,
 		/obj/item/flashlight/flare/torch/lantern = 1,
 		/obj/item/weapon/knife/villager = 1,
 		/obj/item/weapon/chisel = 1,
-		/obj/item/storage/keyring/artificer = 1
 	)
-
-/datum/outfit/artificer/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
-	. = ..()
-	if(equipped_human.dna.species.id == SPEC_ID_DWARF || equipped_human.dna.species.id == SPEC_ID_DUERGAR)
-		head = /obj/item/clothing/head/helmet/leather/minershelm
-		equipped_human.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'

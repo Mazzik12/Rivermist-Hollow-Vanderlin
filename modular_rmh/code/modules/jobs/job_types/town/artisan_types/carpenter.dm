@@ -1,19 +1,14 @@
-/datum/job/carpenter
+/datum/job/advclass/artisan/carpenter
 	title = "Carpenter"
-	tutorial = "Others may regard your work as crude and demeaning, but you understand deep in your soul the beauty of woodchopping. \
-	For it is by your axe that the great trees of forests are felled, and it is by your hands from which the shining beacon of civilization is built."
-	department_flag = TOWN
-	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_TOWN
-	total_positions = 6
-	spawn_positions = 4
-	bypass_lastclass = TRUE
+	tutorial = "From forest timber to finished beam, you shape the bones of the town."
 
-	allowed_races = RACES_PLAYER_ALL
+	apprentice_name = "Carpenter Apprentice"
+	can_have_apprentices = TRUE
+
 	outfit = /datum/outfit/carpenter
-	give_bank_account = 8
-	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
+	category_tags = list(CAT_ARTISAN)
 
+	give_bank_account = 8
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
 	jobstats = list(
@@ -40,31 +35,30 @@
 		/datum/skill/labor/lumberjacking = 3,
 	)
 
-	traits = list()
-
-/datum/job/carpenter/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-	spawned.adjust_skillrank(/datum/skill/misc/athletics, pick(0,1), TRUE)
-
-	if(prob(5))
-		spawned.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		spawned.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		spawned.adjust_skillrank(/datum/skill/labor/lumberjacking, 1, TRUE)
-		spawned.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
+	traits = list(
+		TRAIT_TUTELAGE,
+		)
 
 /datum/outfit/carpenter
 	name = "Carpenter"
+	head = null
+	mask = null
 	neck = /obj/item/clothing/neck/coif
+	cloak = null
 	armor = /obj/item/clothing/armor/gambeson/light/striped
-	pants = /obj/item/clothing/pants/trou
 	shirt = /obj/item/clothing/shirt/undershirt/colored/random
 	wrists = /obj/item/clothing/wrists/bracers/leather
+	gloves = null
+	pants = /obj/item/clothing/pants/trou
 	shoes = /obj/item/clothing/shoes/boots/leather
-	belt = /obj/item/storage/belt/leather
-	beltr = /obj/item/storage/belt/pouch/coins/poor
-	beltl = /obj/item/weapon/hammer/steel
 	backr = /obj/item/weapon/axe/iron
 	backl = /obj/item/storage/backpack/backpack
+	belt = /obj/item/storage/belt/leather
+	beltr = /obj/item/storage/belt/pouch/coins/mid
+	beltl = /obj/item/weapon/hammer/steel
+	ring = /obj/item/clothing/ring/silver/makers_guild
+	l_hand = /obj/item/storage/keyring/guild_artisan
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/flint = 1,
@@ -79,4 +73,3 @@
 		/obj/item/clothing/head/hatblu,
 		/obj/item/clothing/head/brimmed,
 	)
-

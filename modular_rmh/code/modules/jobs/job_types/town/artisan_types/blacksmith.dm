@@ -1,22 +1,14 @@
-/datum/job/blacksmith
+/datum/job/advclass/artisan/blacksmith
 	title = "Blacksmith"
-	tutorial = "Steel is your craft, whether shaped for war, work, or protection. \
-	You trained for many years at the forge, learning to draw iron into blade, tool, \
-	and armor alike. From mending ploughshares to fitting guards for battle, \
-	your work supports Rivermist Hollow and any who pass through in need of good steel. \
-	In Faerûn, few trades are as widely respected as a steady hand at the anvil."
-	department_flag = TOWN
-	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	faction = FACTION_TOWN
-	total_positions = 1
-	spawn_positions = 1
-	bypass_lastclass = TRUE
+	tutorial = "Steel is your craft, whether shaped for war, work, or protection."
 
-	allowed_races = RACES_PLAYER_ALL
+	apprentice_name = "Smithy Apprentice"
+	can_have_apprentices = TRUE
 
 	outfit = /datum/outfit/blacksmith
-	give_bank_account = 30
+	category_tags = list(CAT_ARTISAN)
 
+	give_bank_account = 30
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
 	jobstats = list(
@@ -42,25 +34,31 @@
 	)
 
 	traits = list(
+		TRAIT_TUTELAGE,
 		TRAIT_MALUMFIRE,
 		TRAIT_SEEPRICES,
 	)
 
-	exp_type = list(EXP_TYPE_LIVING)
-	exp_requirements = list(EXP_TYPE_LIVING = 600)
-
 /datum/outfit/blacksmith
 	name = "Blacksmith"
 	head = /obj/item/clothing/head/hatfur
-	ring = /obj/item/clothing/ring/silver/makers_guild
-	backl = /obj/item/weapon/hammer/sledgehammer
-	pants = /obj/item/clothing/pants/trou
-	shoes = /obj/item/clothing/shoes/boots/leather
-	shirt = /obj/item/clothing/shirt/shortshirt
-	belt = /obj/item/storage/belt/leather
-	beltl = /obj/item/storage/belt/pouch/coins/poor
-	beltr = /obj/item/key/blacksmith
+	mask = null
+	neck = null
 	cloak = /obj/item/clothing/cloak/apron/brown
+	armor = null
+	shirt = null
+	wrists = /obj/item/storage/keyring/guild_artisan
+	gloves = null
+	pants = /obj/item/clothing/pants/trou
+	shoes = null
+	backr = null
+	backl = /obj/item/weapon/hammer/sledgehammer
+	belt = /obj/item/storage/belt/leather
+	beltl = /obj/item/storage/belt/pouch/coins/mid
+	beltr = null
+	ring = /obj/item/clothing/ring/silver/makers_guild
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/recipe_book/blacksmithing = 1,

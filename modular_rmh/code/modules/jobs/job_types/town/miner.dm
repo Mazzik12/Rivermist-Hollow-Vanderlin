@@ -63,7 +63,7 @@
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/weapon/pick
 	beltr = /obj/item/flashlight/flare/torch/lantern
-	ring = null
+	ring = /obj/item/clothing/ring/silver/makers_guild
 	l_hand = null
 	r_hand = null
 

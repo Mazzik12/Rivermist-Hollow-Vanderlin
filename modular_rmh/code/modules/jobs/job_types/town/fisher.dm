@@ -46,14 +46,24 @@
 
 /datum/outfit/fisher
 	name = "Fisher"
-	neck = /obj/item/storage/belt/pouch/coins/poor
-	armor = /obj/item/clothing/armor/gambeson/light/striped
 	head = /obj/item/clothing/head/fisherhat
-	belt = /obj/item/storage/belt/leather
-	beltr = /obj/item/cooking/pan
-	beltl = /obj/item/flint
-	backl = /obj/item/storage/backpack/satchel
+	mask = null
+	neck = /obj/item/storage/belt/pouch/coins/poor
+	cloak = null
+	armor = /obj/item/clothing/armor/gambeson/light/striped
+	shirt = null
+	wrists = null
+	gloves = null
+	pants = null
+	shoes = null
 	backr = /obj/item/fishingrod/fisher
+	backl = /obj/item/storage/backpack/satchel
+	belt = /obj/item/storage/belt/leather
+	beltl = /obj/item/flint
+	beltr = /obj/item/cooking/pan
+	ring = null
+	l_hand = null
+	r_hand = null
 
 	backpack_contents = list(
 		/obj/item/weapon/shovel/small = 1,

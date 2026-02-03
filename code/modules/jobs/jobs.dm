@@ -84,6 +84,8 @@ GLOBAL_LIST_INIT(town_positions, list(
 	/datum/job/barber_surgeon::title,
 	/datum/job/town_mouth::title,
 	/datum/job/town_performer::title,
+	/datum/job/artisan::title,
+	/datum/job/artisan_apprentice::title,
 	/datum/job/miner::title,
 	/datum/job/farmhand::title,
 	/datum/job/hunter::title,
