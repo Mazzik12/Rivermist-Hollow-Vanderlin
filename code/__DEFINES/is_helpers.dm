@@ -183,13 +183,13 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 //Tavern
 	#define is_adventurers_guildmaster_job(job_type) (istype(job_type, /datum/job/adventurers_guildmaster))
 	#define is_adventurers_assistant_job(job_type) (istype(job_type, /datum/job/adventurers_assistant))
-
+//Town
+	#define is_performer_job(job_type) (istype(job_type, /datum/job/town_performer))
 
 
 // Nobility
 	#define is_lord_job(job_type) (istype(job_type, /datum/job/lord))
 // Peasantry
-	#define is_jester_job(job_type) (istype(job_type, /datum/job/jester))
 	#define is_adventurer_job(job_type) (istype(job_type, /datum/job/advclass/adventurer))
 	#define is_mercenary_job(job_type) (istype(job_type, /datum/job/advclass/mercenary))
 	#define is_pilgrim_job(job_type) (istype(job_type, /datum/job/advclass/pilgrim))

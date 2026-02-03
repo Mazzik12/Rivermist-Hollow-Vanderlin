@@ -54,6 +54,12 @@
 		/datum/skill/craft/cooking = 2
 	)
 
+	traits = list(
+		TRAIT_GOODLOVER,
+		TRAIT_BEAUTIFUL,
+		TRAIT_EMPATH
+	)
+
 /datum/outfit/tavern_wench/waitress
 	name = "Tavern Waitress"
 	head = null
@@ -120,7 +126,10 @@
 	)
 
 	traits = list(
-		TRAIT_SEEPRICES
+		TRAIT_SEEPRICES,
+		TRAIT_GOODLOVER,
+		TRAIT_BEAUTIFUL,
+		TRAIT_EMPATH
 	)
 
 /datum/outfit/tavern_wench/courtesan
@@ -171,6 +180,12 @@
 		/datum/skill/misc/medicine = 2,
 		/datum/skill/misc/sneaking = 2,
 		/datum/skill/craft/cooking = 1
+	)
+
+	traits = list(
+		TRAIT_GOODLOVER,
+		TRAIT_BEAUTIFUL,
+		TRAIT_EMPATH
 	)
 
 /datum/outfit/tavern_wench/bath_wench

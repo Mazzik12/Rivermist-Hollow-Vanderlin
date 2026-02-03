@@ -34,3 +34,7 @@
 
 /obj/item/clothing/armor/corset/colored/black
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/armor/gambeson/sophisticated_coat/colored/random/Initialize()
+	color = pick_assoc(GLOB.noble_dyes)
+	return ..()

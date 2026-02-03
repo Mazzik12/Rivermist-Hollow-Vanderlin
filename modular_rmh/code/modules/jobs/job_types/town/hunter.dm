@@ -1,9 +1,9 @@
 /datum/job/hunter
 	title = "Hunter"
 	f_title = "Huntress"
-	tutorial = "Silent and yet full of life, the forests of Dendor grant you both happiness and misery. \
-	In tales you've heard of small woodland creechers frolicking, now there is only the beastspawn of Graggar and Dendor... \
-	And yet you seek beasts small enough to skin, scalp, and sell. Take heed, lest you become a beast yourself."
+	tutorial = "The wetlands and woodlands near Rivermist Hollow are rich with game, \
+	if you know where to look and when to tread lightly. \
+	You track deer, boar, and smaller beasts, supplying meat, hides, and bone to the town."
 	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN

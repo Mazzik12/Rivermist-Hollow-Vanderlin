@@ -24,3 +24,6 @@
 
 /obj/item/storage/keyring/adventurers_guild
 	keys = list(/obj/item/key/gaffer, /obj/item/key/mercenary)
+
+/obj/item/storage/keyring/guild_artisan
+	keys = list(/obj/item/key/artificer, /obj/item/key/blacksmith, /obj/item/key/tailor, /obj/item/key/miner)

@@ -1,8 +1,8 @@
 /datum/job/fisher
 	title = "Fisher"
-	tutorial = "Abyssor is angry. Neglected and shunned, his boons yet shy from your hook. \
-	Alone, in the stillness of nature, your bag is empty, and yet you fish. Pluck the children of god from their trance, \
-	and stare into the water to see the reflection of a drowned body in the making."
+	tutorial = "Rivers and marshwaters sustain Rivermist Hollow, \
+	and you know their currents, shallows, and quiet eddies. \
+	With net, line, or trap, you bring in fish enough for tables and trade alike."
 	department_flag = TOWN
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN

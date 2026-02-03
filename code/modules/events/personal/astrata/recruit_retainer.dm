@@ -43,7 +43,7 @@
 		if(human_mob.get_spell(/datum/action/cooldown/spell/undirected/list_target/convert_role))
 			continue
 
-		if(istype(human_mob.mind?.assigned_role, /datum/job/minor_noble) || human_mob.job == "Noble")
+		if(istype(human_mob.mind?.assigned_role, /datum/job/advclass/towner/patrician) || human_mob.job == "Patrician")
 			minor_nobles += human_mob
 		else
 			valid_targets += human_mob

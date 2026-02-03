@@ -141,7 +141,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
-#define CTAG_MAGIE			"CAT_MAGIE" //for Mage Associate
 
 //TOWNHALL
 #define CAT_BURGMESITER		"CAT_BURGMESITER"		// Burgmeister class - 4 types

@@ -84,7 +84,7 @@
 
 			if(!rod_jobs)
 				rod_jobs = GLOB.lords_positions | GLOB.keep_positions | GLOB.townhall_positions | GLOB.townwatch_positions | list(
-				/datum/job/jester::title,
+				/datum/job/town_performer::title,
 				/datum/job/servant::title,
 			)
 

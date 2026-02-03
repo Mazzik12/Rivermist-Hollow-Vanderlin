@@ -30,6 +30,11 @@
 		EXP_TYPE_MERCENARY = 120
 	)
 
+	job_subclasses = list(
+		/datum/job/advclass/adventurers_guildmaster/ranger,
+		/datum/job/advclass/adventurers_guildmaster/spellsword,
+	)
+
 //SUBCLASSES
 
 /datum/job/advclass/adventurers_guildmaster/ranger
