@@ -78,16 +78,12 @@
 
 /datum/action/cooldown/spell/undirected/message/cast(atom/cast_on)
 	. = ..()
-
-/datum/action/cooldown/spell/undirected/message/cast(atom/cast_on)
-	. = ..()
 	// Saving values to local variables
 	var/datum/weakref/temp_ref = recipient_ref
 	var/temp_message = message
 	var/temp_anonymous = anonymous
 
 	var/mob/living/recipient = temp_ref?.resolve()
-
 	owner.log_message("[key_name(owner)] sent a spell message to [key_name(recipient)]; message: [temp_message]", LOG_GAME)
 	if(QDELETED(recipient))
 		return
