@@ -34,6 +34,10 @@
 		/datum/skill/misc/reading = 1
 	)
 
+	traits = list(
+		TRAIT_DEADNOSE,
+	)
+
 /datum/job/fisher/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	if(spawned.age == AGE_OLD)

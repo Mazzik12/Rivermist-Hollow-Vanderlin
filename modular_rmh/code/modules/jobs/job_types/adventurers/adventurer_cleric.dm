@@ -1,12 +1,57 @@
 /datum/job/adventurer_cleric
 	title = "Adventurer Cleric"
-	tutorial = "Clerics are representatives of the gods they worship, wielding potent divine magic for good or ill."
+	tutorial = "Clerics are representatives of the gods they worship, wielding potent divine magic for good or ill. \
+	ALLOWED PATRONS: Garl Glittergold, Helm, Mystra, Oghma, Tempus, Tymora, Silvanus, Jergal, Bahamut, Corellon Larethian, \
+	Eilistraee, Ilmater, Lathander, Mielikki, Moradin, Selune, Tyr, Yondalla, Sune, Sharess, Torm, Milil, Deneir, \
+	Mask, Vlaakith, Lolth, Shar, Gruumsh, Laduguer, Talos, Tiamat, Malar, Maglubiyet, Umberlee, Loviatar, Asmodeus. \
+	DRAWS DIVINE POWER FROM AN ACTUAL DEITY OF ALL ALIGNMENTS AND DOMAINS."
 	department_flag = ADVENTURERS
 	faction = FACTION_FOREIGNERS
 	total_positions = 5
 	spawn_positions = 5
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_CLERIC
+
+	allowed_patrons = list(
+		/datum/patron/faerun/neutral_gods/Garl_Glittergold,
+		/datum/patron/faerun/neutral_gods/Helm,
+		/datum/patron/faerun/neutral_gods/Mystra,
+		/datum/patron/faerun/neutral_gods/Oghma,
+		/datum/patron/faerun/neutral_gods/Tempus,
+		/datum/patron/faerun/neutral_gods/Tymora,
+		/datum/patron/faerun/neutral_gods/Silvanus,
+		/datum/patron/faerun/neutral_gods/Jergal,
+
+		/datum/patron/faerun/good_gods/Bahamut,
+		/datum/patron/faerun/good_gods/Corellon,
+		/datum/patron/faerun/good_gods/Eilistraee,
+		/datum/patron/faerun/good_gods/Ilmater,
+		/datum/patron/faerun/good_gods/Lathander,
+		/datum/patron/faerun/good_gods/Mielikki,
+		/datum/patron/faerun/good_gods/Moradin,
+		/datum/patron/faerun/good_gods/Selune,
+		/datum/patron/faerun/good_gods/Tyr,
+		/datum/patron/faerun/good_gods/Yondalla,
+		/datum/patron/faerun/good_gods/Sune,
+		/datum/patron/faerun/good_gods/Sharess,
+		/datum/patron/faerun/good_gods/Torm,
+		/datum/patron/faerun/good_gods/Milil,
+		/datum/patron/faerun/good_gods/Deneir,
+
+		/datum/patron/faerun/evil_gods/Mask,
+		/datum/patron/faerun/evil_gods/Vlaakith,
+		/datum/patron/faerun/evil_gods/Lolth,
+		/datum/patron/faerun/evil_gods/Shar,
+		/datum/patron/faerun/evil_gods/Gruumsh,
+		/datum/patron/faerun/evil_gods/Laduguer,
+		/datum/patron/faerun/evil_gods/Talos,
+		/datum/patron/faerun/evil_gods/Tiamat,
+		/datum/patron/faerun/evil_gods/Malar,
+		/datum/patron/faerun/evil_gods/Maglubiyet,
+		/datum/patron/faerun/evil_gods/Umberlee,
+		/datum/patron/faerun/evil_gods/Loviatar,
+		/datum/patron/faerun/evil_gods/Asmodeus
+	)
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -17,9 +62,19 @@
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
 
+	magic_user = TRUE
+	spell_points = 30
+	attunements_max = 10
+	attunements_min = 5
+
 /datum/job/adventurer_cleric/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	to_chat(spawned, "<br><font color='#855b14'><span class='bold'>If I wanted to make mammons by selling my services, or completing quests, the Adventurers Guild would be a good place to start.</span></font><br>")
+	var/holder = spawned.patron?.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_cleric()
+		devotion.grant_to(spawned)
 
 /datum/job/adventurer_cleric/set_spawn_and_total_positions(count)
 	// Calculate the new spawn positions

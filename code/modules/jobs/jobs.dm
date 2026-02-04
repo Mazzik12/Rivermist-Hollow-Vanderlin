@@ -96,7 +96,10 @@ GLOBAL_PROTECT(town_positions)
 
 
 GLOBAL_LIST_INIT(outsiders_positions, list(
-	/datum/job/adventurer_barbarian::title,
+	/datum/job/forest_warden::title,
+	/datum/job/forest_ranger::title,
+	/datum/job/grove_druid::title,
+	/datum/job/swamp_witch::title,
 ))
 GLOBAL_PROTECT(outsiders_positions)
 
@@ -116,12 +119,6 @@ GLOBAL_LIST_INIT(adventurers_positions, list(
 	/datum/job/adventurer_wizard::title,
 ))
 GLOBAL_PROTECT(adventurers_positions)
-
-
-
-GLOBAL_LIST_INIT(allmig_positions, list(
-	/datum/job/adventurer_barbarian::title,
-	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(
 	"Adventurer",

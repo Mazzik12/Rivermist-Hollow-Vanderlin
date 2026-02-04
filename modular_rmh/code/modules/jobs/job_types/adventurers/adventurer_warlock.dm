@@ -1,12 +1,24 @@
 /datum/job/adventurer_warlock
 	title = "Adventurer Warlock"
-	tutorial = "Bound by a pact to an all-powerful patron, warlocks trade their loyalty for supernatural abilities and unique magic."
+	tutorial = "Bound by a pact to an all-powerful patron, warlocks trade their loyalty for supernatural abilities and unique magic. \
+	ALLOWED PATRONS: Asmodeus, Shar, Vlaakith, Lolth, Tiamat\
+	GAIN POWER THROUGH PACTS OR PSYCHIC BONDS, SO THEIR PATRONS ARE MANIPULATIVE, ELDRITCH, OR TYRANNICAL BEINGS."
 	department_flag = ADVENTURERS
-	faction = FACTION_FOREIGNERS
+	faction = FACTION_NEUTRAL
 	total_positions = 5
 	spawn_positions = 5
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_WARLOCK
+
+	allowed_patrons = list(
+		/datum/patron/faerun/evil_gods/Asmodeus,
+		/datum/patron/faerun/evil_gods/Blissara,
+		/datum/patron/faerun/evil_gods/Shar,
+		/datum/patron/faerun/evil_gods/Vlaakith,
+		/datum/patron/faerun/evil_gods/Lolth,
+		/datum/patron/faerun/evil_gods/Tiamat
+	)
+
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -16,6 +28,11 @@
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+	magic_user = TRUE
+	spell_points = 25
+	attunements_max = 10
+	attunements_min = 5
 
 /datum/job/adventurer_warlock/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

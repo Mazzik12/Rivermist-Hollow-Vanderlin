@@ -95,10 +95,8 @@
 	switch(dress_choice)
 		if("Light blue dress")
 			spawned.put_in_hands(new /obj/item/clothing/shirt/dress/skyrim_dress(get_turf(spawned)), TRUE)
-	switch(dress_choice)
 		if("Waitress dress")
 			spawned.put_in_hands(new /obj/item/clothing/shirt/dress/skyrim_taven(get_turf(spawned)), TRUE)
-	switch(dress_choice)
 		if("Sexy dress")
 			spawned.put_in_hands(new /obj/item/clothing/shirt/dress/gen/sexy(get_turf(spawned)), TRUE)
 

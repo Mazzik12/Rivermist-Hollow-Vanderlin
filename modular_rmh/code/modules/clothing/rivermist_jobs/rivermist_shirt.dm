@@ -16,3 +16,6 @@
 
 /obj/item/clothing/shirt/dress/silkdress/colored/waterdeep_guild
 	color = "#50638B"
+
+/obj/item/clothing/shirt/dress/gen/sexy/colored/black
+	color = CLOTHING_BLACK

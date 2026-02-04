@@ -1,12 +1,23 @@
 /datum/job/adventurer_ranger
 	title = "Adventurer Ranger"
-	tutorial = "Rangers are unrivalled scouts and trackers, honing a deep connection with nature in order to hunt their favoured prey."
+	tutorial = "Rangers are unrivalled scouts and trackers, honing a deep connection with nature in order to hunt their favoured prey. \
+	ALLOWED PATRONS: Silvanus, Mielikki, Selune, Malar. \
+	HUNTERS AND GUARDIANS OF THE WILD, THEY FOLLOW PATRONS TIED TO NATURE, THE HUNT, AND SURVIVAL."
 	department_flag = ADVENTURERS
-	faction = FACTION_FOREIGNERS
+	faction = FACTION_NEUTRAL
 	total_positions = 5
 	spawn_positions = 5
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_RANGER
+
+	allowed_patrons = list(
+		/datum/patron/faerun/neutral_gods/Silvanus,
+
+		/datum/patron/faerun/good_gods/Mielikki,
+		/datum/patron/faerun/good_gods/Selune,
+
+		/datum/patron/faerun/evil_gods/Malar
+	)
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -16,6 +27,11 @@
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+	magic_user = TRUE
+	spell_points = 20
+	attunements_max = 10
+	attunements_min = 5
 
 /datum/job/adventurer_ranger/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

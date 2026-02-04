@@ -1,9 +1,10 @@
 /obj/item/clothing/gloves/leather/thaumgloves
 	name = "alchemist gloves"
 	desc = "Sturdy leather gloves treated to resist heat, spills, and harsh reagents. Commonly worn by alchemists."
+	icon_state = "thaumgloves"
+	item_state = "thaumgloves"
 	icon = 'modular_rmh/icons/clothing/thaumgloves.dmi'
 	mob_overlay_icon = 'modular_rmh/icons/clothing/onmob/thaumgloves.dmi'
-	icon_state = "apothgloves"
 
 /datum/repeatable_crafting_recipe/leather/standalone/gloves/thaumgloves
 	name = "alchemist gloves"

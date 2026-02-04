@@ -1,7 +1,11 @@
 /datum/job/acolyte
 	title = "Chapel Acolyte"
 	tutorial = "You are a humble servant of the gods. \
-	This chapel welcomes many faiths, and your duty is simple service, learning, and aid."
+	This chapel welcomes many faiths, and your duty is simple service, learning, and aid. \
+	ALLOWED PATRONS: Garl Glittergold, Helm, Mystra, Oghma, Tempus, Tymora, Silvanus, Jergal, Bahamut, Corellon Larethian, \
+	Eilistraee, Ilmater, Lathander, Mielikki, Moradin, Selune, Tyr, Yondalla, Sune, Sharess, Torm, Milil, Deneir, \
+	Mask, Vlaakith, Lolth, Shar, Gruumsh, Laduguer, Talos, Tiamat, Malar, Maglubiyet, Umberlee, Loviatar, Asmodeus. \
+	DRAWS DIVINE POWER FROM AN ACTUAL DEITY OF ALL ALIGNMENTS AND DOMAINS."
 	job_flags = (JOB_NEW_PLAYER_JOINABLE | JOB_EQUIP_RANK)
 	department_flag = CHAPEL
 	faction = FACTION_TOWN
@@ -10,6 +14,48 @@
 	selection_color = JCOLOR_CHAPEL
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_CHAPEL_ACOLYTE
+
+	allowed_patrons = list(
+		/datum/patron/faerun/neutral_gods/Garl_Glittergold,
+		/datum/patron/faerun/neutral_gods/Helm,
+		/datum/patron/faerun/neutral_gods/Mystra,
+		/datum/patron/faerun/neutral_gods/Oghma,
+		/datum/patron/faerun/neutral_gods/Tempus,
+		/datum/patron/faerun/neutral_gods/Tymora,
+		/datum/patron/faerun/neutral_gods/Silvanus,
+		/datum/patron/faerun/neutral_gods/Jergal,
+
+		/datum/patron/faerun/good_gods/Bahamut,
+		/datum/patron/faerun/good_gods/Corellon,
+		/datum/patron/faerun/good_gods/Eilistraee,
+		/datum/patron/faerun/good_gods/Ilmater,
+		/datum/patron/faerun/good_gods/Lathander,
+		/datum/patron/faerun/good_gods/Mielikki,
+		/datum/patron/faerun/good_gods/Moradin,
+		/datum/patron/faerun/good_gods/Selune,
+		/datum/patron/faerun/good_gods/Tyr,
+		/datum/patron/faerun/good_gods/Yondalla,
+		/datum/patron/faerun/good_gods/Sune,
+		/datum/patron/faerun/good_gods/Sharess,
+		/datum/patron/faerun/good_gods/Torm,
+		/datum/patron/faerun/good_gods/Milil,
+		/datum/patron/faerun/good_gods/Deneir,
+
+		/datum/patron/faerun/evil_gods/Mask,
+		/datum/patron/faerun/evil_gods/Vlaakith,
+		/datum/patron/faerun/evil_gods/Lolth,
+		/datum/patron/faerun/evil_gods/Shar,
+		/datum/patron/faerun/evil_gods/Gruumsh,
+		/datum/patron/faerun/evil_gods/Laduguer,
+		/datum/patron/faerun/evil_gods/Talos,
+		/datum/patron/faerun/evil_gods/Tiamat,
+		/datum/patron/faerun/evil_gods/Malar,
+		/datum/patron/faerun/evil_gods/Maglubiyet,
+		/datum/patron/faerun/evil_gods/Umberlee,
+		/datum/patron/faerun/evil_gods/Loviatar,
+		/datum/patron/faerun/evil_gods/Asmodeus
+	)
+
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -279,6 +325,7 @@
 	You offer comfort through presence, warmth, and guided devotion, where desire is sanctified rather than denied."
 	outfit = /datum/outfit/acolyte/nun
 	category_tags = list(CAT_CHAPEL)
+	allowed_sexes = list(FEMALE)
 
 	spells = list(/datum/action/cooldown/spell/undirected/touch/orison,
 		/datum/action/cooldown/spell/healing,
@@ -357,6 +404,7 @@ datum/job/advclass/acolyte/nun_regal
 	Through ritual, elegance, and sacred allure, you embody devotion elevated into ceremony."
 	outfit = /datum/outfit/acolyte/nun_regal
 	category_tags = list(CAT_CHAPEL)
+	allowed_sexes = list(FEMALE)
 
 	spells = list(/datum/action/cooldown/spell/undirected/touch/orison,
 		/datum/action/cooldown/spell/healing,
@@ -434,6 +482,7 @@ datum/job/advclass/acolyte/nun_regal
 	tutorial = "A devout sentinel of the chapel, wielding faith as her weapon. She walks day and night, defending the weak and punishing darkness wherever it stirs."
 	outfit = /datum/outfit/acolyte/warrior_priest
 	category_tags = list(CAT_CHAPEL)
+	allowed_sexes = list(FEMALE)
 
 	spells = list(/datum/action/cooldown/spell/undirected/touch/orison,
 		/datum/action/cooldown/spell/healing,
@@ -528,6 +577,7 @@ datum/job/advclass/acolyte/nun_regal
 	tutorial = "A tender, spreading warmth, healing hearts, and inspiring love. She turns every gesture into a blessing of beauty and passion."
 	outfit = /datum/outfit/acolyte/love
 	category_tags = list(CAT_CHAPEL)
+	allowed_sexes = list(FEMALE)
 
 	spells = list(/datum/action/cooldown/spell/undirected/touch/orison,
 		/datum/action/cooldown/spell/healing,

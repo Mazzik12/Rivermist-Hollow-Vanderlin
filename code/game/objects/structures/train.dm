@@ -36,7 +36,7 @@
 		return //doublechecks that people actually want to leave the round
 	if(user.incapacitated(IGNORE_GRAB) || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
-	say("[user] [departing_mob == user ? "is departing for [SSmapping.config.immigrant_origin]" : "is sending [departing_mob] to [SSmapping.config.immigrant_origin]!"]")
+	say("[user] [departing_mob == user ? "is departing" : "is sending [departing_mob] away!"]")
 	in_use = TRUE //Just sends a simple message to chat that some-one is leaving
 	if(!do_after(user, 5 SECONDS, src))
 		in_use = FALSE

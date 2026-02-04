@@ -36,6 +36,7 @@
 
 	outfit =/datum/outfit/servant/butler
 	category_tags = list(CAT_SERVANT)
+	allowed_sexes = list(MALE)
 
 	jobstats = list(
 		STATKEY_INT = 3,
@@ -102,6 +103,7 @@
 
 	outfit =/datum/outfit/servant/maid
 	category_tags = list(CAT_SERVANT)
+	allowed_sexes = list(FEMALE)
 
 	jobstats = list(
 		STATKEY_SPD = 3,

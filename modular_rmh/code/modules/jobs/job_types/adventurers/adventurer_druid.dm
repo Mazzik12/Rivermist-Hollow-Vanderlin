@@ -1,12 +1,25 @@
 /datum/job/adventurer_druid
 	title = "Adventurer Druid"
-	tutorial = "Druids channel the elemental forces of nature and share a deep kinship with animals. Mastery of Wild Shape allows them to transform into beasts from all over the Realms."
+	tutorial = "Druids channel the elemental forces of nature and share a deep kinship with animals. Mastery of Wild Shape allows them to transform into beasts from all over the Realms. \
+	ALLOWED PATRONS: Silvanus, Mielikki, Malar, Talos, Umberlee. \
+	ALIGNED WITH NATURE, THEIR PATRONS ARE THOSE REPRESENTING LIFE, WILDERNESS, AND PRIMAL FORCES."
 	department_flag = ADVENTURERS
-	faction = FACTION_FOREIGNERS
+	faction = FACTION_NEUTRAL
 	total_positions = 5
 	spawn_positions = 5
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_DRUID
+
+	allowed_patrons = list(
+		/datum/patron/faerun/neutral_gods/Silvanus,
+
+		/datum/patron/faerun/good_gods/Mielikki,
+
+		/datum/patron/faerun/evil_gods/Malar,
+		/datum/patron/faerun/evil_gods/Talos,
+		/datum/patron/faerun/evil_gods/Umberlee
+	)
+
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -16,6 +29,11 @@
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+	magic_user = TRUE
+	spell_points = 30
+	attunements_max = 10
+	attunements_min = 5
 
 /datum/job/adventurer_druid/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

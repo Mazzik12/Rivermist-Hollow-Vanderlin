@@ -163,7 +163,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CAT_ARTISAN			"ARTISAN"			// Artisan class - 5 types
 #define CAT_ARTISANAP		"ARTISANAP"			// Artisan apprentice class -5 types
 //OUTSIDERS
-#define CAT_FOREST_RANGER	"FOREST_RANGER"		// Forest ranger class
+#define CAT_FOREST_RANGER	"FOREST_RANGER"		// Forest ranger class - 3 types
 #define CAT_SWAMP_WITCH		"SWAMP_WITCH"		// Swamp witch class - 3 types
 //ADVENTURERS
 #define CAT_ADVENTURER_BARBARIAN 	"CAT_ADVENTURER_BARBARIAN"  // Adventurer Barbarian classes

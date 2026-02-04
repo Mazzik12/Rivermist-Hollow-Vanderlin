@@ -56,3 +56,26 @@
 
 /datum/job/advclass/combat
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+//SO IT WOULD BE EASIER TO MAKE OUTFITS
+/*datum/outfit
+	name = "Sample Outfit"
+	head = null
+	mask = null
+	neck = null
+	cloak = null
+	armor = null
+	shirt = null
+	wrists = null
+	gloves = null
+	pants = null
+	shoes = null
+	backr = null
+	backl = null
+	belt = null
+	beltl = null
+	beltr = null
+	ring = null
+	l_hand = null
+	r_hand = null
+*/

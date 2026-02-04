@@ -2,7 +2,7 @@
 	title = "Adventurer Sorcerer"
 	tutorial = "Sorcerers are natural spellcasters, drawing on inherent magic from a gift or bloodline."
 	department_flag = ADVENTURERS
-	faction = FACTION_FOREIGNERS
+	faction = FACTION_NEUTRAL
 	total_positions = 5
 	spawn_positions = 5
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
@@ -16,6 +16,11 @@
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+	magic_user = TRUE
+	spell_points = 30
+	attunements_max = 15
+	attunements_min = 5
 
 /datum/job/adventurer_sorcerer/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

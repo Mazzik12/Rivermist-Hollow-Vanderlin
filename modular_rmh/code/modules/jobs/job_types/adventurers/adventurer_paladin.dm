@@ -1,12 +1,26 @@
 /datum/job/adventurer_paladin
 	title = "Adventurer Paladin"
-	tutorial = "A promise made so deeply that it becomes divine in itself flows through a paladin, burning bright enough to inspire allies and smite foes."
+	tutorial = "A promise made so deeply that it becomes divine in itself flows through a paladin, burning bright enough to inspire allies and smite foes. \
+	ALLOWED PATRONS: Helm, Tempus, Bahamut, Tyr, Torm, Lathander, Ilmater, Selune. \
+	BOUND BY OATHS, THEY MAY ONLY FOLLOW GODS WHO EMBODY LAW, JUSTICE, OR RIGHTEOUS BATTLE."
 	department_flag = ADVENTURERS
-	faction = FACTION_FOREIGNERS
+	faction = FACTION_NEUTRAL
 	total_positions = 5
 	spawn_positions = 5
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_PALADIN
+
+	allowed_patrons = list(
+		/datum/patron/faerun/neutral_gods/Helm,
+		/datum/patron/faerun/neutral_gods/Tempus,
+
+		/datum/patron/faerun/good_gods/Bahamut,
+		/datum/patron/faerun/good_gods/Tyr,
+		/datum/patron/faerun/good_gods/Torm,
+		/datum/patron/faerun/good_gods/Lathander,
+		/datum/patron/faerun/good_gods/Ilmater,
+		/datum/patron/faerun/good_gods/Selune
+	)
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
@@ -17,9 +31,19 @@
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
 
+	magic_user = TRUE
+	spell_points = 20
+	attunements_max = 10
+	attunements_min = 5
+
 /datum/job/adventurer_paladin/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	to_chat(spawned, "<br><font color='#855b14'><span class='bold'>If I wanted to make mammons by selling my services, or completing quests, the Adventurers Guild would be a good place to start.</span></font><br>")
+	var/holder = spawned.patron?.devotion_holder
+	if(holder)
+		var/datum/devotion/devotion = new holder()
+		devotion.make_templar()
+		devotion.grant_to(spawned)
 
 /datum/job/adventurer_paladin/set_spawn_and_total_positions(count)
 	// Calculate the new spawn positions
