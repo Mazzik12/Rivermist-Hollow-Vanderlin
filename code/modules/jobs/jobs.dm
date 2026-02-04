@@ -96,21 +96,31 @@ GLOBAL_PROTECT(town_positions)
 
 
 GLOBAL_LIST_INIT(outsiders_positions, list(
-	/datum/job/adventurer::title,
+	/datum/job/adventurer_barbarian::title,
 ))
 GLOBAL_PROTECT(outsiders_positions)
 
 
 
 GLOBAL_LIST_INIT(adventurers_positions, list(
-	/datum/job/adventurer::title,
+	/datum/job/adventurer_barbarian::title,
+	/datum/job/adventurer_bard::title,
+	/datum/job/adventurer_cleric::title,
+	/datum/job/adventurer_druid::title,
+	/datum/job/adventurer_monk::title,
+	/datum/job/adventurer_paladin::title,
+	/datum/job/adventurer_ranger::title,
+	/datum/job/adventurer_rogue::title,
+	/datum/job/adventurer_sorcerer::title,
+	/datum/job/adventurer_warlock::title,
+	/datum/job/adventurer_wizard::title,
 ))
 GLOBAL_PROTECT(adventurers_positions)
 
 
 
 GLOBAL_LIST_INIT(allmig_positions, list(
-	/datum/job/adventurer::title,
+	/datum/job/adventurer_barbarian::title,
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(

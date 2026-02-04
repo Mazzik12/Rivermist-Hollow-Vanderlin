@@ -138,7 +138,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 
 #define CTAG_ALLCLASS		"CAT_ALLCLASS"		// jus a define for allclass to not deal with actively typing strings
 #define CTAG_PILGRIM 		"CAT_PILGRIM"  		// Pilgrim classes
-#define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
 
@@ -161,8 +160,24 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 //TOWN
 #define CAT_TOWNER 			"CAT_TOWNER"  		// Towner class - 3 types
 #define CAT_PERFORMER		"PERFORMER"			// Performer class - 2 types
-#define CAT_ARTISAN			"ARTISAN"			// Artisan class -
-#define CAT_ARTISANAP		"ARTISANAP"			// Artisan apprentice class -
+#define CAT_ARTISAN			"ARTISAN"			// Artisan class - 5 types
+#define CAT_ARTISANAP		"ARTISANAP"			// Artisan apprentice class -5 types
+//OUTSIDERS
+#define CAT_FOREST_RANGER	"FOREST_RANGER"		// Forest ranger class
+#define CAT_SWAMP_WITCH		"SWAMP_WITCH"		// Swamp witch class - 3 types
+//ADVENTURERS
+#define CAT_ADVENTURER_BARBARIAN 	"CAT_ADVENTURER_BARBARIAN"  // Adventurer Barbarian classes
+#define CAT_ADVENTURER_BARD	 		"CAT_ADVENTURER_BARD"  		// Adventurer Bard classes
+#define CAT_ADVENTURER_CLERIC	 	"CAT_ADVENTURER_CLERIC"  	// Adventurer Cleric classes
+#define CAT_ADVENTURER_DRUID	 	"CAT_ADVENTURER_DRUID"  	// Adventurer Druid classes
+#define CAT_ADVENTURER_FIGHTER 		"CAT_ADVENTURER_FIGHTER"  	// Adventurer Fighter classes
+#define CAT_ADVENTURER_MONK	 		"CAT_ADVENTURER_MONK"  		// Adventurer Monk classes
+#define CAT_ADVENTURER_PALADIN 		"CAT_ADVENTURER_PALADIN"  	// Adventurer Paladin classes
+#define CAT_ADVENTURER_RANGER	 	"CAT_ADVENTURER_RANGER"  	// Adventurer Ranger classes
+#define CAT_ADVENTURER_ROGUE	 	"CAT_ADVENTURER_ROGUE"  	// Adventurer Rogue classes
+#define CAT_ADVENTURER_SORCERER		"CAT_ADVENTURER_SORCERER"  	// Adventurer Sorcerer classes
+#define CAT_ADVENTURER_WARLOCK 		"CAT_ADVENTURER_WARLOCK"  	// Adventurer Warlock classes
+#define CAT_ADVENTURER_WIZARD	 	"CAT_ADVENTURER_WIZARD"  	// Adventurer Wizard classes
 
 
 // Character category and its buys

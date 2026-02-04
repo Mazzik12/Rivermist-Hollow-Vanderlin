@@ -18,12 +18,5 @@
 
 #undef POINTY_EARS
 
-	blacklist = list(
-		// RACES_PLAYER_GRENZ
-		/datum/job/advclass/combat/swordmaster,
-	)
-
-	migrant_blacklist = list(
-		/datum/migrant_wave/crusade,
-		/datum/migrant_wave/grenzelhoft_visit,
-	)
+	blacklist = null
+	migrant_blacklist = null
