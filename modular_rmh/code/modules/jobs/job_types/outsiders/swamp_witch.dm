@@ -252,6 +252,8 @@
 		/datum/action/cooldown/spell/aoe/on_turf/ensnare,
 		/datum/action/cooldown/spell/conjure/web,
 		/datum/action/cooldown/spell/enchantment/green_flame,
+		/datum/action/cooldown/spell/enrapture,
+		/datum/action/cooldown/spell/forced_orgasm,
 	)
 
 /datum/outfit/swamp_witch/hex
@@ -268,7 +270,7 @@
 	shoes = /obj/item/clothing/shoes/anklets
 	backr = null
 	backl = /obj/item/storage/backpack/satchel
-	belt = /obj/item/storage/belt/leather
+	belt = /obj/item/storage/belt/leather/cloth/lady
 	beltl = null
 	beltr = null
 	ring = /obj/item/clothing/ring/active/nomag

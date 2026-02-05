@@ -258,6 +258,8 @@
 		/datum/action/cooldown/spell/instill_perfection,
 		/datum/action/cooldown/spell/undirected/conjure_item/light,
 		/datum/action/cooldown/spell/essence/toxic_cleanse,
+		/datum/action/cooldown/spell/enrapture,
+		/datum/action/cooldown/spell/forced_orgasm,
 	)
 
 	jobstats = list(
@@ -585,6 +587,8 @@ datum/job/advclass/acolyte/nun_regal
 		/datum/action/cooldown/spell/essence/healing_spring,
 		/datum/action/cooldown/spell/instill_perfection,
 		/datum/action/cooldown/spell/undirected/conjure_item/light,
+		/datum/action/cooldown/spell/enrapture,
+		/datum/action/cooldown/spell/forced_orgasm,
 	)
 
 	jobstats = list(
