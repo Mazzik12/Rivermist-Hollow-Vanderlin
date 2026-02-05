@@ -1,32 +1,9 @@
-/datum/job/grove_druid
-	title = "Grove Druid"
-	tutorial = "You are a sworn guardian of the sacred grove near Rivermist Hollow. Through Silvanus and the Old Faith, you tend living things, keep the balance of nature, and ward the wilds from corruption. \
-	ALLOWED PATRONS: Silvanus, Mielikki, Malar, Talos, Umberlee. \
-	ALIGNED WITH NATURE, THEIR PATRONS ARE THOSE REPRESENTING LIFE, WILDERNESS, AND PRIMAL FORCES."
-	department_flag = OUTSIDERS
-	faction = FACTION_NEUTRAL
-	total_positions = 3
-	spawn_positions = 3
-	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
-	display_order = JDO_GROVE_DRUID
+/datum/job/advclass/combat/adventurer_druid/circle_land
+	title = "Circle of Land Druid"
+	tutorial = "You channel the natural arcana flowing through the earth and creatures atop it to cast powerful druidic magic"
 
-	allowed_patrons = list(
-		/datum/patron/faerun/neutral_gods/Silvanus,
-
-		/datum/patron/faerun/good_gods/Mielikki,
-
-		/datum/patron/faerun/evil_gods/Malar,
-		/datum/patron/faerun/evil_gods/Talos,
-		/datum/patron/faerun/evil_gods/Umberlee
-	)
-
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
-	allowed_races = ALL_RACES_LIST
-
-	selection_color = JCOLOR_OUTSIDERS
-	outfit = /datum/outfit/grove_druid
-
-	exp_types_granted = list(EXP_TYPE_MAGICK)
+	outfit = /datum/outfit/adventurer_druid/circle_land
+	category_tags = list(CAT_ADVENTURER_DRUID)
 
 	jobstats = list(
 		STATKEY_WIL = 2,
@@ -51,11 +28,6 @@
 		TRAIT_BESTIALSENSE,
 	)
 
-	magic_user = TRUE
-	spell_points = 20
-	attunements_max = 5
-	attunements_min = 1
-
 	spells = list(
 		/datum/action/cooldown/spell/healing,
 		/datum/action/cooldown/spell/healing/greater,
@@ -78,16 +50,8 @@
 		/datum/action/cooldown/spell/projectile/lightning,
 	)
 
-/datum/job/grove_druid/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-	var/holder = spawned.patron?.devotion_holder
-	if(holder)
-		var/datum/devotion/devotion = new holder()
-		devotion.make_cleric()
-		devotion.grant_to(spawned)
-
-/datum/outfit/grove_druid
-	name = "Grove Druid"
+/datum/outfit/adventurer_druid/circle_land
+	name = "Circle of Land Druid"
 	head = null
 	mask = null
 	neck = null
@@ -107,11 +71,11 @@
 	l_hand = null
 	r_hand = null
 
-/datum/outfit/grove_druid/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+/datum/outfit/adventurer_druid/circle_land/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 
-/datum/job/grove_druid/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+/datum/job/advclass/combat/adventurer_druid/circle_land/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	var/shapes = list("Crow", "Cat", "Fox", "Mole", "Raccoon", "Saiga", "Smallrat", "Spider", "Wolf", "Direbear")
 	var/shape_choice = browser_input_list(spawned, "CHOOSE YOUR WILD SHAPE.", "WHO ARE YOU", shapes)
