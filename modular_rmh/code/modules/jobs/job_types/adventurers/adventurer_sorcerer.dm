@@ -1,5 +1,6 @@
 /datum/job/adventurer_sorcerer
 	title = "Adventurer Sorcerer"
+	f_title = "Adventurer Sorceress"
 	tutorial = "Sorcerers are natural spellcasters, drawing on inherent magic from a gift or bloodline."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL

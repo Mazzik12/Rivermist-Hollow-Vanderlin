@@ -28,3 +28,7 @@
 
 /obj/item/clothing/cloak/cape/colored/wizard
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/cloak/cape/colored/random/Initialize()
+	color = pick_assoc(GLOB.noble_dyes)
+	return ..()

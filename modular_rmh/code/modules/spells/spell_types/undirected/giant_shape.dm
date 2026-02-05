@@ -7,14 +7,17 @@
 	desc = "Borrow power from the Giant."
 	button_icon_state = "trollshape"
 
-	invocation = "FOR THE POWER OF GIANTS!!"
-	invocation_type = INVOCATION_SHOUT
+	antimagic_flags = NONE
+
+	associated_skill = /datum/skill/combat/unarmed
+	associated_stat = STATKEY_STR
 
 	charge_required = FALSE
-	cooldown_time = 3.5 MINUTES
-	spell_cost = 40
+	has_visual_effects = FALSE
+	cooldown_time = 2 MINUTES
+	spell_type = SPELL_STAMINA
 
-	sound = 'sound/vo/mobs/troll/aggro2.ogg'
+	spell_cost = 20
 
 	// Im sorry
 	var/stage = GIANT_SHAPE_STAGE_1
@@ -40,14 +43,14 @@
 			barbarian.Immobilize(3 SECONDS)
 			next_stage_time = 3 SECONDS
 		if(GIANT_SHAPE_STAGE_2)
-			playsound(barbarian, 'sound/foley/sewflesh.ogg', 100, TRUE)
 			to_chat(barbarian, span_warning("I am growing STRONGER!"))
 			barbarian.do_jitter_animation(4 SECONDS)
 			barbarian.Immobilize(4 SECONDS)
 			next_stage_time = 4 SECONDS
 		if(GIANT_SHAPE_STAGE_3)
+			barbarian.emote("rage", forced = TRUE)
 			playsound(barbarian, 'sound/vo/mobs/troll/idle1.ogg', 100, TRUE)
-			to_chat(barbarian, span_warning("I manifest the power of a troll!"))
+			to_chat(barbarian, span_warning("I manifest the power of a giant!"))
 			barbarian.apply_status_effect(/datum/status_effect/buff/giant_shape)
 			return
 		else

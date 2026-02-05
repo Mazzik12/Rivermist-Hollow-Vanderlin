@@ -19,3 +19,7 @@
 
 /obj/item/clothing/shirt/dress/gen/sexy/colored/black
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/shirt/robe/colored/random/Initialize()
+	color = pick_assoc(GLOB.noble_dyes)
+	return ..()

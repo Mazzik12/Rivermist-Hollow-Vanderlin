@@ -22,6 +22,7 @@
 		/datum/job/advclass/swamp_witch/alchemist,
 		/datum/job/advclass/swamp_witch/cinder,
 		/datum/job/advclass/swamp_witch/hex,
+		/datum/job/advclass/swamp_witch/wild,
 	)
 
 	exp_types_granted = list(EXP_TYPE_MAGICK)
@@ -287,5 +288,83 @@
 	)
 
 /datum/outfit/swamp_witch/hex/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
+// ─────────────────────────────
+
+/datum/job/advclass/swamp_witch/wild
+	title = "Wild Magic Witch"
+	tutorial = "You harness the raw, untamed currents of magic. \
+	Spells you cast can have unpredictable side effects, ranging from minor quirks to chaotic surges. \
+	Caution and improvisation are your allies — and your enemies."
+
+	outfit = /datum/outfit/swamp_witch/wild
+	category_tags = list(CAT_SWAMP_WITCH)
+
+	magic_user = TRUE
+	spell_points = 25
+	attunements_max = 10
+	attunements_min = 5
+
+	jobstats = list(
+		STATKEY_WIL = 2,
+		STATKEY_INT = 2,
+		STATKEY_PER = 1
+	)
+
+	skills = list(
+		/datum/skill/magic/arcane = 3,
+		/datum/skill/misc/reading = 2,
+		/datum/skill/misc/athletics = 1
+	)
+
+	traits = list(
+		TRAIT_GOODLOVER,
+		TRAIT_BEAUTIFUL,
+		TRAIT_WILDMAGIC,
+	)
+
+	spells = list(
+		/datum/action/cooldown/spell/undirected/shapeshift/crow,
+		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
+		/datum/action/cooldown/spell/undirected/conjure_item/light,
+		/datum/action/cooldown/spell/status/guidance,
+		/datum/action/cooldown/spell/essence/silence,
+		/datum/action/cooldown/spell/essence/neutralize,
+		/datum/action/cooldown/spell/mimicry,
+	)
+
+/datum/outfit/swamp_witch/wild
+	name = "Wild Magic Witch"
+	head = /obj/item/clothing/head/wizhat/witch
+	mask = null
+	neck = null
+	cloak = /obj/item/clothing/cloak/cape/colored/wizard
+	armor = /obj/item/clothing/armor/corset
+	shirt = /obj/item/clothing/shirt/undershirt/lowcut
+	wrists = null
+	gloves = /obj/item/clothing/gloves/leather
+	pants = /obj/item/clothing/pants/skirt/colored/black
+	shoes = /obj/item/clothing/shoes/boots/leather
+	backr = null
+	backl = /obj/item/storage/backpack/satchel
+	belt = /obj/item/storage/belt/leather
+	beltl = null
+	beltr = null
+	ring = /obj/item/clothing/ring/active/nomag
+	l_hand = null
+	r_hand = null
+
+	backpack_contents = list(
+		/obj/item/scrying = 1,
+		/obj/item/chalk = 1,
+		/obj/item/reagent_containers/glass/bottle/killersice = 1,
+		/obj/item/book/granter/spellbook/adept = 1,
+		/obj/item/weapon/knife/dagger/silver/arcyne = 1,
+		/obj/item/storage/belt/pouch/coins/mid,
+	)
+
+/datum/outfit/swamp_witch/wild/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)

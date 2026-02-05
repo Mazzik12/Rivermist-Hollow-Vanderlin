@@ -639,3 +639,4 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 // Other RMH traits:
 #define TRAIT_ALLURE "Allure"
 #define TRAIT_DARKLING "Darkling"
+#define TRAIT_WILDMAGIC "Wildmagic"

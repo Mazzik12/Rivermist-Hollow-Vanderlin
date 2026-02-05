@@ -8,3 +8,6 @@
 
 /obj/item/clothing/pants/tights/colored/moon_priest
 	color = "#62656C"
+
+/obj/item/clothing/pants/skirt/colored/black
+	color = CLOTHING_BLACK

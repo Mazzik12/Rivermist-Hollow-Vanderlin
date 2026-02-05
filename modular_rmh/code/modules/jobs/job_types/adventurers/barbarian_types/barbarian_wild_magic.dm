@@ -1,18 +1,16 @@
-/datum/job/advclass/combat/adventurer_barbarian/berserker
-	title = "Berserker"
-	tutorial = "Violence is both a means and an end. \
-	You follow a path of untrammelled fury, slick with blood, as you thrill in the chaos of battle, heedless of your own well-being."
+/datum/job/advclass/combat/adventurer_barbarian/wild_magic
+	title = "Wild Magic"
+	tutorial = "The wild influence of magic has transformed you, \
+	suffusing you with an arcane power that churns within you, waiting to be released."
 
-	outfit = /datum/outfit/adventurer_barbarian/berserker
+	outfit = /datum/outfit/adventurer_barbarian/wild_magic
 	category_tags = list(CAT_ADVENTURER_BARBARIAN)
 
 	jobstats = list(
 		STATKEY_STR = 3,
-		STATKEY_PER = -1,
-		STATKEY_END = 1,
+		STATKEY_END = 2,
 		STATKEY_CON = 2,
-		STATKEY_INT = -1,
-		STATKEY_SPD = 1
+		STATKEY_INT = -2,
 	)
 
 	skills = list(
@@ -24,10 +22,10 @@
 		/datum/skill/misc/swimming = 4,
 		/datum/skill/misc/climbing = 4,
 		/datum/skill/misc/athletics = 4,
+		/datum/skill/misc/sewing = 2,
 		/datum/skill/craft/cooking = 1,
 		/datum/skill/labor/butchering = 1,
 		/datum/skill/misc/medicine = 1,
-		/datum/skill/misc/sneaking = 3
 	)
 
 	traits = list(
@@ -40,10 +38,10 @@
 	)
 
 	spells = list(
-		/datum/action/cooldown/spell/undirected/barbrage
+		/datum/action/cooldown/spell/undirected/wildrage
 	)
 
-/datum/job/advclass/combat/adventurer_barbarian/berserker/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+/datum/job/advclass/combat/adventurer_barbarian/wild_magic/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	var/static/list/selectableweapon = list(
 		"MY BARE HANDS!!!" = /obj/item/weapon/knife/dagger/steel,
@@ -67,8 +65,8 @@
 		if("Sword")
 			spawned.clamped_adjust_skillrank(/datum/skill/combat/swords, 4, 4, TRUE)
 
-/datum/outfit/adventurer_barbarian/berserker
-	name = "Berserker"
+/datum/outfit/adventurer_barbarian/wild_magic
+	name = "Wild Magic"
 	head = /obj/item/clothing/head/helmet/horned
 	mask = /obj/item/clothing/face/skullmask
 	neck = /obj/item/clothing/neck/chaincoif/iron

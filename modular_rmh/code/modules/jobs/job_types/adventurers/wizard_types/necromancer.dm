@@ -51,16 +51,25 @@
 
 /datum/outfit/adventurer_wizard/necromancer
 	name = "Necromancer Wizard"
-	pants = /obj/item/clothing/pants/chainlegs
-	shoes = /obj/item/clothing/shoes/shortboots
+	head = null
+	mask = null
 	neck = /obj/item/clothing/neck/chaincoif
+	cloak = null
+	armor = null
 	shirt = /obj/item/clothing/shirt/tunic/colored
 	wrists = /obj/item/clothing/wrists/bracers
 	gloves = /obj/item/clothing/gloves/chain
+	pants = /obj/item/clothing/pants/chainlegs
+	shoes = /obj/item/clothing/shoes/shortboots
+	backr = null
+	backl = null
 	belt = /obj/item/storage/belt/leather/black
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/reagent_containers/glass/bottle/manapot
+	ring = null
+	l_hand = null
 	r_hand = /obj/item/weapon/polearm/woodstaff
+
 	backpack_contents = list(
 		/obj/item/book/granter/spellbook/adept = 1,
 		/obj/item/chalk = 1,

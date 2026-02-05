@@ -34,10 +34,16 @@
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/human/C = owner
-		playsound(C, 'sound/gore/flesh_eat_03.ogg', 100, TRUE)
 		to_chat(C, span_warning("My body shrinking back."))
-		C.apply_status_effect(/datum/status_effect/debuff/barbfalter)
 		C.resize = (1/1.2)
 		C.update_transform()
 		C.RemoveElement(/datum/element/footstep, FOOTSTEP_MOB_HEAVY, 1, -2)
 		C.AddElement(/datum/element/footstep, C.footstep_type, 1, -6)
+
+//WILDRAGE
+
+/datum/status_effect/buff/wildrage
+	id = "wildrage"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
+	effectedstats = list(STATKEY_STR = 1, STATKEY_END = 1, STATKEY_PER = -1, STATKEY_INT = -1)
+	duration = 30 SECONDS
