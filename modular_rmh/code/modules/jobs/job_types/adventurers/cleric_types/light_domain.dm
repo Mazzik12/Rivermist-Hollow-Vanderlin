@@ -49,67 +49,35 @@
 /datum/job/advclass/combat/adventurer_cleric/light_domain/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 
+	var/static/list/selectable = list( \
+		"Silver Rungu" = /obj/item/weapon/mace/silver/rungu, \
+		"Silver Sengese" = /obj/item/weapon/sword/scimitar/sengese/silver \
+	)
+	var/choice = spawned.select_equippable(player_client, selectable, message = "What is your weapon of choice?")
+	if(!choice)
+		return
+
+	switch(choice)
+		if("Silver Rungu")
+			spawned.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
+		if("Silver Sengese")
+			spawned.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+
 	var/holder = spawned.patron?.devotion_holder
 	if(holder)
 		var/datum/devotion/devotion = new holder()
 		devotion.make_cleric()
 		devotion.grant_to(spawned)
 
-	var/list/selectableweapon = list(
-		"Sword" = pick(list(/obj/item/weapon/sword/iron, /obj/item/weapon/sword/scimitar/messer, /obj/item/weapon/sword/sabre/scythe)),
-		"Axe" = /obj/item/weapon/axe/iron,
-		"Mace" = pick(list(/obj/item/weapon/mace/bludgeon, /obj/item/weapon/mace/warhammer, /obj/item/weapon/mace/spiked, /obj/item/weapon/hammer/sledgehammer)),
-		"Spear" = /obj/item/weapon/polearm/spear,
-		"Flail" = pick(list(/obj/item/weapon/flail, /obj/item/weapon/flail/militia)),
-		"Great flail" = /obj/item/weapon/flail/peasant,
-		"Goedendag" = /obj/item/weapon/mace/goden,
-		"Great axe" = /obj/item/weapon/polearm/halberd/bardiche/woodcutter,
-	)
-
-	var/weaponchoice = spawned.select_equippable(player_client, selectableweapon, message = "Choose Your Specialisation", title = "Warrior of the ten!")
-	if(!weaponchoice)
-		return
-
-	var/grant_shield = TRUE
-	var/weapon_skill_path
-
-	switch(weaponchoice)
-		if("Sword")
-			weapon_skill_path = /datum/skill/combat/swords
-		if("Axe", "Mace", "Goedendag", "Great axe")
-			weapon_skill_path = /datum/skill/combat/axesmaces
-		if("Spear")
-			weapon_skill_path = /datum/skill/combat/polearms
-		if("Flail", "Great flail")
-			weapon_skill_path = /datum/skill/combat/whipsflails
-
-	if(weapon_skill_path)
-		spawned.adjust_skillrank(weapon_skill_path, 3, TRUE)
-
-	switch(weaponchoice)
-		if("Great flail", "Goedendag", "Great axe")
-			grant_shield = FALSE
-		if("Spear")
-			var/obj/item/weapon/shield/tower/buckleriron/buckler = new /obj/item/weapon/shield/tower/buckleriron()
-			if(!spawned.equip_to_appropriate_slot(buckler))
-				qdel(buckler)
-			grant_shield = FALSE
-
-	if(grant_shield)
-		var/shield_path = pick(list(/obj/item/weapon/shield/heater, /obj/item/weapon/shield/wood))
-		var/obj/item/shield = new shield_path()
-		if(!spawned.equip_to_appropriate_slot(shield))
-			qdel(shield)
-
 
 /datum/outfit/adventurer_cleric/light_domain
 	name = "Light Domain"
-	head = /obj/item/clothing/head/helmet/skullcap
+	head = /obj/item/clothing/head/helmet/ironpot/lakkariancap
 	mask = null
 	neck = /obj/item/clothing/neck/chaincoif/iron
 	cloak = /obj/item/clothing/cloak/tabard/crusader
-	armor = /obj/item/clothing/armor/chainmail/iron
-	shirt = /obj/item/clothing/armor/gambeson
+	armor = /obj/item/clothing/armor/gambeson/heavy/lakkarijupon
+	shirt = /obj/item/clothing/shirt/undershirt/fancy
 	wrists = null
 	gloves = /obj/item/clothing/gloves/leather
 	pants = /obj/item/clothing/pants/trou/leather
@@ -128,8 +96,3 @@
 /datum/outfit/adventurer_cleric/light_domain/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
-
-	head = pick(/obj/item/clothing/head/helmet/skullcap, /obj/item/clothing/head/helmet/ironpot, /obj/item/clothing/head/helmet/sallet/iron, /obj/item/clothing/head/helmet/leather/headscarf)
-	neck = pick(/obj/item/clothing/neck/chaincoif/iron, /obj/item/clothing/neck/gorget, /obj/item/clothing/neck/highcollier/iron, /obj/item/clothing/neck/coif/cloth, /obj/item/clothing/neck/coif)
-	armor = pick(/obj/item/clothing/armor/chainmail/iron, /obj/item/clothing/armor/leather/splint, /obj/item/clothing/armor/cuirass/iron)
-	backl = pick(/obj/item/storage/backpack/satchel, /obj/item/storage/backpack/satchel/cloth)
