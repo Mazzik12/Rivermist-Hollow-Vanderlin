@@ -3,7 +3,7 @@
 	tutorial = "Dwarven rangers are scouts, hunters, and wardens of the wild marches beyond the clanholds. \
 	They patrol mountain passes, track beasts that threaten trade routes, and map safe paths through untamed lands."
 
-	allowed_races = list(SPEC_ID_DWARF)
+	allowed_races = list(SPEC_ID_DWARF, SPEC_ID_DUERGAR)
 	outfit = /datum/outfit/adventurer_ranger/dwarf_ranger
 	category_tags = list(CAT_ADVENTURER_RANGER)
 

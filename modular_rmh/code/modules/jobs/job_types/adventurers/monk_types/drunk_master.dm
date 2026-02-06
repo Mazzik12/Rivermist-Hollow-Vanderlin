@@ -67,7 +67,8 @@
 
 	backpack_contents = list(
 		/obj/item/flashlight/flare/torch/lantern = 1,
-		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 1
+		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 1,
+		/obj/item/reagent_containers/glass/bottle/beer = 2,
 	)
 
 /datum/outfit/adventurer_monk/drunk_master/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
