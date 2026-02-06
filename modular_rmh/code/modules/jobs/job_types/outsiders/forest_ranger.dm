@@ -75,6 +75,7 @@
 		TRAIT_SEEDKNOW,
 		TRAIT_FORAGER,
 		TRAIT_DEADNOSE,
+		TRAIT_BESTIALSENSE,
 	)
 
 /datum/outfit/forest_ranger/pathfinder
@@ -107,6 +108,7 @@
 
 /datum/job/advclass/forest_ranger/pathfinder/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+	spawned.update_sight()
 	var/skulls = list("Normal skull", "Small skull")
 	var/skull_choice = browser_input_list(spawned, "WHAT IS YOUR SKULL SIZE?.", "THINK", skulls)
 
@@ -157,6 +159,7 @@
 		TRAIT_FORAGER,
 		TRAIT_KNOWBANDITS,
 		TRAIT_DEADNOSE,
+		TRAIT_BESTIALSENSE,
 	)
 
 /datum/outfit/forest_ranger/scout
@@ -189,6 +192,7 @@
 
 /datum/job/advclass/forest_ranger/scout/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+	spawned.update_sight()
 	var/skulls = list("Normal skull", "Small skull")
 	var/skull_choice = browser_input_list(spawned, "WHAT IS YOUR SKULL SIZE?.", "THINK", skulls)
 
@@ -241,6 +245,7 @@
 		TRAIT_SEEDKNOW,
 		TRAIT_KNOWBANDITS,
 		TRAIT_DEADNOSE,
+		TRAIT_BESTIALSENSE,
 	)
 
 /datum/outfit/forest_ranger/vanguard
@@ -273,6 +278,7 @@
 
 /datum/job/advclass/forest_ranger/vanguard/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+	spawned.update_sight()
 	var/skulls = list("Normal skull", "Small skull")
 	var/skull_choice = browser_input_list(spawned, "WHAT IS YOUR SKULL SIZE?.", "THINK", skulls)
 

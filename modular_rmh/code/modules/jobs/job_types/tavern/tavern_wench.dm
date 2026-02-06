@@ -57,7 +57,8 @@
 	traits = list(
 		TRAIT_GOODLOVER,
 		TRAIT_BEAUTIFUL,
-		TRAIT_EMPATH
+		TRAIT_EMPATH,
+		TRAIT_EXTEROCEPTION
 	)
 
 /datum/outfit/tavern_wench/waitress

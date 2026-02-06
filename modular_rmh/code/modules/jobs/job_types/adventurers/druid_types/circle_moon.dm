@@ -74,3 +74,7 @@
 /datum/outfit/adventurer_druid/circle_moon/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
+/datum/job/advclass/combat/adventurer_druid/circle_moon/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	spawned.update_sight()

@@ -25,7 +25,8 @@
 		/datum/skill/misc/sneaking = 3,
 		/datum/skill/misc/stealing = 1,
 		/datum/skill/misc/lockpicking = 1,
-		/datum/skill/misc/athletics = 3
+		/datum/skill/misc/athletics = 3,
+		/datum/skill/misc/music, 4
 	)
 
 	traits = list(

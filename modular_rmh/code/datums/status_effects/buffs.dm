@@ -47,3 +47,28 @@
 	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
 	effectedstats = list(STATKEY_STR = 1, STATKEY_END = 1, STATKEY_PER = -1, STATKEY_INT = -1)
 	duration = 30 SECONDS
+
+//DRUNKMASTER
+
+/datum/status_effect/buff/drunk_master
+	id = "drunk master"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/drunk
+	effectedstats = list(STATKEY_STR = 5, STATKEY_PER = 5, STATKEY_CON = 5, STATKEY_END = 5, STATKEY_SPD = 5, STATKEY_LCK = 5)
+	duration = 12 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/drunk_master
+	name = "Drunk Master"
+	desc = span_nicegreen("I feel drunkly strong!")
+	icon_state = "drunk"
+
+/datum/status_effect/buff/drunk_master/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stress_event/drunk)
+
+/datum/status_effect/buff/drunk_master/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stress_event/drunk)

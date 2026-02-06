@@ -77,6 +77,7 @@
 
 /datum/job/advclass/combat/adventurer_druid/circle_land/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+	spawned.update_sight()
 	var/shapes = list("Crow", "Cat", "Fox", "Mole", "Raccoon", "Saiga", "Smallrat", "Spider", "Wolf", "Direbear")
 	var/shape_choice = browser_input_list(spawned, "CHOOSE YOUR WILD SHAPE.", "WHO ARE YOU", shapes)
 

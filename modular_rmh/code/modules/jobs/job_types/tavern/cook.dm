@@ -36,6 +36,10 @@
 		/datum/skill/labor/farming = 1
 	)
 
+	traits = list(
+		TRAIT_EXTEROCEPTION
+	)
+
 /datum/outfit/cook
 	name = "Cook"
 	head = /obj/item/clothing/head/cookhat

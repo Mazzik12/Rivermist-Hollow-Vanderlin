@@ -62,10 +62,12 @@
 		TRAIT_SEEDKNOW,
 		TRAIT_OLDPARTY,
 		TRAIT_DEADNOSE,
+		TRAIT_BESTIALSENSE,
 	)
 
 /datum/job/forest_warden/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+	spawned.update_sight()
 	spawned.verbs |= /mob/proc/haltyell
 
 /datum/outfit/forest_warden

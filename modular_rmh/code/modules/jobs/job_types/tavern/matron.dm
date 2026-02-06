@@ -63,7 +63,8 @@
 		TRAIT_KITTEN_MOM,
 		TRAIT_GOODLOVER,
 		TRAIT_BEAUTIFUL,
-		TRAIT_EMPATH
+		TRAIT_EMPATH,
+		TRAIT_RECOGNIZE_ADDICTS
 	)
 
 	languages = list(/datum/language/thievescant)

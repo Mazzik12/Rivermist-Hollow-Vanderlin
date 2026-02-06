@@ -75,3 +75,7 @@
 /datum/outfit/adventurer_druid/troll_skin/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+
+/datum/job/advclass/combat/adventurer_druid/troll_skin/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	spawned.update_sight()

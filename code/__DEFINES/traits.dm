@@ -640,3 +640,4 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ALLURE "Allure"
 #define TRAIT_DARKLING "Darkling"
 #define TRAIT_WILDMAGIC "Wildmagic"
+#define TRAIT_DRUNKMASTER "Drunkmaster"

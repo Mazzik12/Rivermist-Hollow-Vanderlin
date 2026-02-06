@@ -36,6 +36,7 @@
 		TRAIT_SEEDKNOW,
 		TRAIT_FORAGER,
 		TRAIT_DEADNOSE,
+		TRAIT_BESTIALSENSE,
 	)
 
 /datum/outfit/adventurer_ranger/beastmaster
@@ -70,6 +71,7 @@
 
 /datum/job/advclass/combat/adventurer_ranger/beastmaster/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+	spawned.update_sight()
 	var/companions = list("Direbear", "Crow", "Wolf", "Spider")
 	var/companion_choice = browser_input_list(spawned, "CHOOSE YOUR COMPANION.", "WHO IS YOUR FRIEND", companions)
 
