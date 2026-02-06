@@ -12,7 +12,6 @@
 
 	allowed_patrons = list(
 		/datum/patron/faerun/evil_gods/Asmodeus,
-		/datum/patron/faerun/evil_gods/Blissara,
 		/datum/patron/faerun/evil_gods/Shar,
 		/datum/patron/faerun/evil_gods/Vlaakith,
 		/datum/patron/faerun/evil_gods/Lolth,

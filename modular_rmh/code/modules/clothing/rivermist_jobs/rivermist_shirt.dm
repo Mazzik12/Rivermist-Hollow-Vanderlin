@@ -23,3 +23,12 @@
 /obj/item/clothing/shirt/robe/colored/random/Initialize()
 	color = pick_assoc(GLOB.noble_dyes)
 	return ..()
+
+/obj/item/clothing/shirt/undershirt/easttats/exiled
+	name = "Tribal Tattoos"
+	desc = "Detailed tribal tattoos carved upon half-orc warriors to inspire courage within those who bear them, always on proud display to the world."
+	prevent_crits = null
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/item/clothing/shirt/undershirt/sash/colored/sembian
+	color = CLOTHING_MAGE_BLUE

@@ -11,3 +11,6 @@
 
 /obj/item/clothing/pants/skirt/colored/black
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/pants/skirt/patkilt/colored/sembian
+	color = CLOTHING_MAGE_BLUE

@@ -1,8 +1,8 @@
-/datum/job/advclass/combat/adventurer_fighter/sembian
+/datum/job/advclass/combat/adventurer_fighter/sembian_count
 	title = "Sembian Count"
 	tutorial = "A Sembian count of the eastern Heartlands, visiting on formal state business."
 
-	outfit = /datum/outfit/adventurer_fighter/sembian
+	outfit = /datum/outfit/adventurer_fighter/sembian_count
 	category_tags = list(CAT_ADVENTURER_FIGHTER)
 	total_positions = 1
 
@@ -37,7 +37,7 @@
 		/datum/action/cooldown/spell/undirected/call_bird/grenzel
 	)
 
-/datum/job/advclass/combat/adventurer_fighter/sembian/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+/datum/job/advclass/combat/adventurer_fighter/sembian_count/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	var/prev_real_name = spawned.real_name
 	var/prev_name = spawned.name
@@ -47,7 +47,7 @@
 	spawned.real_name = "[honorary] [prev_real_name]"
 	spawned.name = "[honorary] [prev_name]"
 
-/datum/outfit/adventurer_fighter/sembian
+/datum/outfit/adventurer_fighter/sembian_count
 	name = "Sembian Count"
 	head = /obj/item/clothing/head/helmet/skullcap/grenzelhoft
 	mask = null
@@ -70,7 +70,7 @@
 
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/veryrich = 1)
 
-/datum/outfit/adventurer_fighter/sembian/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+/datum/outfit/adventurer_fighter/sembian_count/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	if(equipped_human.gender == FEMALE)
 		armor = /obj/item/clothing/armor/gambeson/heavy/dress/alt

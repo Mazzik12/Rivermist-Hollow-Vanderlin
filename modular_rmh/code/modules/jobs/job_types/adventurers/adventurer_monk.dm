@@ -1,22 +1,12 @@
 /datum/job/adventurer_monk
 	title = "Adventurer Monk"
-	tutorial = "Some reach enlightenment by languid meditation - others do so in the heat of battle. Monks manipulate ki to empower their own strikes and debilitate their foes. \
-	ALLOWED PATRONS: Jergal, Ilmater, Tyr. \
-	SEEKERS OF DISCIPLINE, ENDURANCE, AND FATE, THEIR PATRONS GUIDE PERSONAL MASTERY AND RIGHTEOUS SUFFERING."
+	tutorial = "Some reach enlightenment by languid meditation - others do so in the heat of battle. Monks manipulate ki to empower their own strikes and debilitate their foes."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
 	total_positions = 10
 	spawn_positions = 10
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_MONK
-
-	allowed_patrons = list(
-		/datum/patron/faerun/neutral_gods/Jergal,
-
-		/datum/patron/faerun/good_gods/Ilmater,
-		/datum/patron/faerun/good_gods/Tyr
-	)
-
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = ALL_RACES_LIST
