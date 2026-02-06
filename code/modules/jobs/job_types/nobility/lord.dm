@@ -21,7 +21,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	)
 	allowed_races = RACES_PLAYER_ROYALTY
 	outfit = /datum/outfit/lord
-	bypass_lastclass = TRUE
 	give_bank_account = 500
 	selection_color = "#7851A9"
 	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'

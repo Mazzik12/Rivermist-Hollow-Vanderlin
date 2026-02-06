@@ -36,6 +36,7 @@
 	spells = list(
 		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
 		/datum/action/cooldown/spell/eyebite,
+		/datum/action/cooldown/spell/chill_touch,
 		/datum/action/cooldown/spell/projectile/sickness,
 		/datum/action/cooldown/spell/conjure/raise_lesser_undead/necromancer,
 		/datum/action/cooldown/spell/gravemark,

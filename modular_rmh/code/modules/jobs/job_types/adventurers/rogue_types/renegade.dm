@@ -56,7 +56,7 @@
 	head = /obj/item/clothing/head/leather/inqhat/vigilante
 	mask = /obj/item/clothing/face/spectacles/inqglasses
 	neck = /obj/item/clothing/neck/highcollier/iron/renegadecollar
-	cloak = null
+	cloak = /obj/item/clothing/cloak/poncho/colored/random
 	armor = /obj/item/clothing/armor/leather/jacket/leathercoat/colored/wretchrenegade
 	shirt = /obj/item/clothing/armor/gambeson/heavy/colored/dark
 	wrists = /obj/item/clothing/wrists/bracers/leather/advanced

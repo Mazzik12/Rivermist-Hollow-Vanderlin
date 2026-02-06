@@ -35,3 +35,7 @@
 
 /obj/item/clothing/cloak/cape/colored/brown
 	color = CLOTHING_BROWN
+
+/obj/item/clothing/cloak/poncho/colored/random/Initialize()
+	color = pick_assoc(GLOB.common_dyes)
+	return ..()
