@@ -1,9 +1,9 @@
-/datum/job/advclass/combat/adventurer_fighter/calishite
+/datum/job/advclass/combat/adventurer_fighter/calishite_emir
 	title = "Calishite Trade-Emir"
 	f_title = "Calishite Trade-Amirah"
 	tutorial = "A Calishite emir and merchant-prince, traveling Faerûn on guild business."
 
-	outfit = /datum/outfit/adventurer_fighter/calishite
+	outfit = /datum/outfit/adventurer_fighter/calishite_emir
 	category_tags = list(CAT_ADVENTURER_FIGHTER)
 	total_positions = 1
 
@@ -36,7 +36,7 @@
 
 	languages = list(/datum/language/zalad)
 
-/datum/job/advclass/combat/adventurer_fighter/calishite/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+/datum/job/advclass/combat/adventurer_fighter/calishite_emir/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	var/prev_real_name = spawned.real_name
 	var/prev_name = spawned.name
@@ -46,7 +46,7 @@
 	spawned.real_name = "[honorary] [prev_real_name]"
 	spawned.name = "[honorary] [prev_name]"
 
-/datum/outfit/adventurer_fighter/calishite
+/datum/outfit/adventurer_fighter/calishite_emir
 	name = "Calishite Trade-Emir"
 	head = /obj/item/clothing/head/crown/circlet
 	mask = null
@@ -69,7 +69,7 @@
 
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/veryrich = 1)
 
-/datum/outfit/adventurer_fighter/calishite/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+/datum/outfit/adventurer_fighter/calishite_emir/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	if(equipped_human.gender == FEMALE)
 		shirt = /obj/item/clothing/shirt/dress/silkdress/colored/black
