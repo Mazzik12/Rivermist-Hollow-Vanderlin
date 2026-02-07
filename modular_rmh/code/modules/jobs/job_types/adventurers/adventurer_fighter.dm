@@ -3,8 +3,8 @@
 	tutorial = "Fighters have mastered the art of combat, wielding weapons with unmatched skill and wearing armour like a second skin."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_FIGHTER
 
@@ -16,6 +16,36 @@
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_fighter/abyssal,
+		/datum/job/advclass/combat/adventurer_fighter/amnian_merc,
+		/datum/job/advclass/combat/adventurer_fighter/black_swordsman,
+		/datum/job/advclass/combat/adventurer_fighter/boltslinger,
+		/datum/job/advclass/combat/adventurer_fighter/bombardier_tinkerer,
+		/datum/job/advclass/combat/adventurer_fighter/calishite_emir,
+		/datum/job/advclass/combat/adventurer_fighter/calishite_mercenary,
+		/datum/job/advclass/combat/adventurer_fighter/disgraced,
+		/datum/job/advclass/combat/adventurer_fighter/dragoon,
+		/datum/job/advclass/combat/adventurer_fighter/eldritch_knight,
+		/datum/job/advclass/combat/adventurer_fighter/elven_blademaster,
+		/datum/job/advclass/combat/adventurer_fighter/enforcer,
+		/datum/job/advclass/combat/adventurer_fighter/fallen_hand,
+		/datum/job/advclass/combat/adventurer_fighter/fallen_lord,
+		/datum/job/advclass/combat/adventurer_fighter/lancer,
+		/datum/job/advclass/combat/adventurer_fighter/hedgeknight,
+		/datum/job/advclass/combat/adventurer_fighter/housecarl,
+		/datum/job/advclass/combat/adventurer_fighter/longbeard,
+		/datum/job/advclass/combat/adventurer_fighter/qualinesti,
+		/datum/job/advclass/combat/adventurer_fighter/sellsword_hireling,
+		/datum/job/advclass/combat/adventurer_fighter/sembian_count,
+		/datum/job/advclass/combat/adventurer_fighter/sembian_merc,
+		/datum/job/advclass/combat/adventurer_fighter/sembian_spearman,
+		/datum/job/advclass/combat/adventurer_fighter/underdweller,
+		/datum/job/advclass/combat/adventurer_fighter/verderer,
+		/datum/job/advclass/combat/adventurer_fighter/warrior,
+		/datum/job/advclass/combat/adventurer_fighter/winged_rescuer,
+	)
 
 /datum/job/adventurer_fighter/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

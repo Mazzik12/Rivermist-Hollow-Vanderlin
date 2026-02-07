@@ -23,6 +23,12 @@
 		EXP_TYPE_GARRISON = 600
 	)
 
+	job_subclasses = list(
+		/datum/job/advclass/forest_ranger/pathfinder,
+		/datum/job/advclass/forest_ranger/scout,
+		/datum/job/advclass/forest_ranger/vanguard,
+	)
+
 /datum/job/forest_ranger/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	spawned.verbs |= /mob/proc/haltyell

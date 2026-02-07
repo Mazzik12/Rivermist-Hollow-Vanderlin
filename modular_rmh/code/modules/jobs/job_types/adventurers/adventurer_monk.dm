@@ -3,8 +3,8 @@
 	tutorial = "Some reach enlightenment by languid meditation - others do so in the heat of battle. Monks manipulate ki to empower their own strikes and debilitate their foes."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_MONK
 
@@ -16,6 +16,12 @@
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT, EXP_TYPE_CLERIC)
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_monk/drunk_master,
+		/datum/job/advclass/combat/adventurer_monk/open_hand,
+		/datum/job/advclass/combat/adventurer_monk/shadow,
+	)
 
 /datum/job/adventurer_monk/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

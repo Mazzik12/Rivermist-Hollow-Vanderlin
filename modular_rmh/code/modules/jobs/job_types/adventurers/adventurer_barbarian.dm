@@ -6,8 +6,8 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	tutorial = "The strong embrace the wild that hides inside - keen instincts, primal physicality, and most of all, an unbridled, unquenchable rage."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_BARBARIAN
 
@@ -19,6 +19,16 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	scales = TRUE
 
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT)
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_barbarian/wild_magic,
+		/datum/job/advclass/combat/adventurer_barbarian/berserker,
+		/datum/job/advclass/combat/adventurer_barbarian/exiled,
+		/datum/job/advclass/combat/adventurer_barbarian/giant,
+		/datum/job/advclass/combat/adventurer_barbarian/rat_wildman,
+		/datum/job/advclass/combat/adventurer_barbarian/seaelf_reaver,
+		/datum/job/advclass/combat/adventurer_barbarian/spearmaiden,
+	)
 
 /datum/job/adventurer_barbarian/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

@@ -3,8 +3,8 @@
 	tutorial = "Wizards master the arcane by specialising in individual schools of magic, combining ancient spells with modern research."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_WIZARD
 
@@ -21,6 +21,13 @@
 	spell_points = 50
 	attunements_max = 15
 	attunements_min = 10
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_wizard/evocation_wizard,
+		/datum/job/advclass/combat/adventurer_wizard/hedge_wizard,
+		/datum/job/advclass/combat/adventurer_wizard/necromancer,
+		/datum/job/advclass/combat/adventurer_wizard/sell_wizard,
+	)
 
 /datum/job/adventurer_wizard/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

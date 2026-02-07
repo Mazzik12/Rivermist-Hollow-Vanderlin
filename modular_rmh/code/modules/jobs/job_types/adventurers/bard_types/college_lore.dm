@@ -1,5 +1,5 @@
 /datum/job/advclass/combat/adventurer_bard/college_lore
-	title = "College of Lore Bard"
+	title = "College of Lore"
 	tutorial = "You pursue beauty and truth, collecting knowledge from scholarly tomes to peasants' tales, \
 	and use your gifts to hold both audiences and enemies spellbound."
 
@@ -55,10 +55,9 @@
 		title = "BARD"
 	)
 	spawned.inspiration = new /datum/inspiration(spawned)
-	spawned.clamped_adjust_skillrank(/datum/skill/misc/music, 4, 4, TRUE)
 
 /datum/outfit/adventurer_bard/college_lore
-	name = "College of Lore Bard"
+	name = "College of Lore"
 	head = /obj/item/clothing/head/bardhat
 	mask = null
 	neck = /obj/item/storage/belt/pouch/coins/poor

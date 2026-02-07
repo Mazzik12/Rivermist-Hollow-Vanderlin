@@ -5,8 +5,8 @@
 	ALIGNED WITH NATURE, THEIR PATRONS ARE THOSE REPRESENTING LIFE, WILDERNESS, AND PRIMAL FORCES."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_DRUID
 
@@ -34,6 +34,12 @@
 	spell_points = 30
 	attunements_max = 10
 	attunements_min = 5
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_druid/circle_land,
+		/datum/job/advclass/combat/adventurer_druid/circle_moon,
+		/datum/job/advclass/combat/adventurer_druid/troll_skin,
+	)
 
 /datum/job/adventurer_druid/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

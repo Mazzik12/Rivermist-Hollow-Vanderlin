@@ -178,13 +178,16 @@
 
 /datum/job/advclass/adventurers_guildmaster/eldritch_knight/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
-	var/boundweapons = list("Spear", "Arming Sword", "Longsword", "Greatsword", "Axe", "Greataxe", "Mace", "Flail", "Greatflail")
+	var/boundweapons = list("Spear", "Rapier", "Arming Sword", "Longsword", "Greatsword", "Axe", "Greataxe", "Mace", "Flail", "Greatflail")
 	var/boundweapon_choice = browser_input_list(spawned, "CHOOSE YOUR WEAPON.", "WHAT DID YOU BIND", boundweapons)
 
 	switch(boundweapon_choice)
 		if("Spear")
 			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_spear)
 			spawned.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+		if("Rapier")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_rapier)
+			spawned.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		if("Arming Sword")
 			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_armingsword)
 			spawned.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)

@@ -44,9 +44,9 @@
 	pants = /obj/item/clothing/pants/tights/colored/random
 	shoes = /obj/item/clothing/shoes/shortboots
 	backr = null
-	backl = null
-	belt = /obj/item/storage/belt/leather
 	backl = /obj/item/storage/backpack/satchel
+	belt = /obj/item/storage/belt/leather
+	beltl = null
 	beltr = /obj/item/reagent_containers/glass/bottle/manapot
 	ring = null
 	l_hand = null

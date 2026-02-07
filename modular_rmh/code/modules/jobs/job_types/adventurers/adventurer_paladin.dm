@@ -5,8 +5,8 @@
 	BOUND BY OATHS, THEY MAY ONLY FOLLOW GODS WHO EMBODY LAW, JUSTICE, OR RIGHTEOUS BATTLE."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_PALADIN
 
@@ -35,6 +35,14 @@
 	spell_points = 20
 	attunements_max = 10
 	attunements_min = 5
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_paladin/immortal,
+		/datum/job/advclass/combat/adventurer_paladin/conquest,
+		/datum/job/advclass/combat/adventurer_paladin/crown,
+		/datum/job/advclass/combat/adventurer_paladin/devotion,
+		/datum/job/advclass/combat/adventurer_paladin/vengeance,
+	)
 
 /datum/job/adventurer_paladin/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

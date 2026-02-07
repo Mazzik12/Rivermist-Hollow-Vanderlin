@@ -4,8 +4,8 @@
 	tutorial = "Sorcerers are natural spellcasters, drawing on inherent magic from a gift or bloodline."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_SORCERER
 
@@ -22,6 +22,11 @@
 	spell_points = 30
 	attunements_max = 15
 	attunements_min = 5
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_sorcerer/desert_sorceress,
+		/datum/job/advclass/combat/adventurer_sorcerer/wild_magic,
+	)
 
 /datum/job/adventurer_sorcerer/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

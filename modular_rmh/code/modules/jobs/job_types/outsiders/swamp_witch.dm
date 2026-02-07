@@ -99,7 +99,7 @@
 	wrists = null
 	gloves = /obj/item/clothing/gloves/leather/thaumgloves
 	pants = null
-	shoes = /obj/item/clothing/shoes/nobleboot/thighboots
+	shoes = /obj/item/clothing/shoes/heels
 	backr = null
 	backl = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather
@@ -346,7 +346,7 @@
 	wrists = null
 	gloves = /obj/item/clothing/gloves/leather
 	pants = /obj/item/clothing/pants/skirt/colored/black
-	shoes = /obj/item/clothing/shoes/boots/leather
+	shoes = /obj/item/clothing/shoes/nobleboot/thighboots
 	backr = null
 	backl = /obj/item/storage/backpack/satchel
 	belt = /obj/item/storage/belt/leather

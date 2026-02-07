@@ -3,8 +3,8 @@
 	tutorial = "Rangers are unrivalled scouts and trackers, honing a deep connection with nature in order to hunt their favoured prey."
 	department_flag = ADVENTURERS
 	faction = FACTION_NEUTRAL
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 20
+	spawn_positions = 20
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_ADVENTURER_RANGER
 
@@ -21,6 +21,20 @@
 	spell_points = 20
 	attunements_max = 10
 	attunements_min = 5
+
+	job_subclasses = list(
+		/datum/job/advclass/combat/adventurer_ranger/beastmaster,
+		/datum/job/advclass/combat/adventurer_ranger/borderland_rider,
+		/datum/job/advclass/combat/adventurer_ranger/dwarf_ranger,
+		/datum/job/advclass/combat/adventurer_ranger/elf_caravan,
+		/datum/job/advclass/combat/adventurer_ranger/elven_outrider,
+		/datum/job/advclass/combat/adventurer_ranger/monster_hunter,
+		/datum/job/advclass/combat/adventurer_ranger/ranger_hunter,
+		/datum/job/advclass/combat/adventurer_ranger/steppe_wayfarer,
+		/datum/job/advclass/combat/adventurer_ranger/steppesman,
+		/datum/job/advclass/combat/adventurer_ranger/swampstalker,
+		/datum/job/advclass/combat/adventurer_ranger/tabaxi_raider,
+	)
 
 /datum/job/adventurer_ranger/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
