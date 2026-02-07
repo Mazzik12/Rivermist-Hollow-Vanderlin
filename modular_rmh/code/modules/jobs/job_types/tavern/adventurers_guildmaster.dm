@@ -32,7 +32,7 @@
 
 	job_subclasses = list(
 		/datum/job/advclass/adventurers_guildmaster/ranger,
-		/datum/job/advclass/adventurers_guildmaster/spellsword,
+		/datum/job/advclass/adventurers_guildmaster/eldritch_knight,
 	)
 
 //SUBCLASSES
@@ -109,13 +109,30 @@
 		/obj/item/paper,
 	)
 
+/datum/job/advclass/adventurers_guildmaster/ranger/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	spawned.update_sight()
+	var/companions = list("Direbear", "Crow", "Wolf", "Spider")
+	var/companion_choice = browser_input_list(spawned, "CHOOSE YOUR COMPANION.", "WHO IS YOUR FRIEND", companions)
+
+	switch(companion_choice)
+		if("Direbear")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/companion_direbear)
+		if("Crow")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/companion_crow)
+		if("Wolf")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/companion_wolf)
+		if("Spider")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/companion_spider)
+
+
 // ─────────────────────────────
 
-/datum/job/advclass/adventurers_guildmaster/spellsword
-	title = "Retired Spellsword"
+/datum/job/advclass/adventurers_guildmaster/eldritch_knight
+	title = "Retired Eldritch Knight"
 	tutorial = "A master of blade and magic."
 
-	outfit = /datum/outfit/adventurers_guildmaster/spellsword
+	outfit = /datum/outfit/adventurers_guildmaster/eldritch_knight
 	category_tags = list(CAT_AHEAD)
 
 	magic_user = TRUE
@@ -153,8 +170,48 @@
 		TRAIT_OLDPARTY,
 	)
 
-/datum/outfit/adventurers_guildmaster/spellsword
-	name = "Retired Spellsword"
+	spells = list(
+		/datum/action/cooldown/spell/projectile/acid_splash,
+		/datum/action/cooldown/spell/projectile/arcyne_bolt,
+		/datum/action/cooldown/spell/undirected/blade_ward
+	)
+
+/datum/job/advclass/adventurers_guildmaster/eldritch_knight/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	var/boundweapons = list("Spear", "Arming Sword", "Longsword", "Greatsword", "Axe", "Greataxe", "Mace", "Flail", "Greatflail")
+	var/boundweapon_choice = browser_input_list(spawned, "CHOOSE YOUR WEAPON.", "WHAT DID YOU BIND", boundweapons)
+
+	switch(boundweapon_choice)
+		if("Spear")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_spear)
+			spawned.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+		if("Arming Sword")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_armingsword)
+			spawned.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Longsword")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_longsword)
+			spawned.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Greatsword")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_greatsword)
+			spawned.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		if("Axe")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_axe)
+			spawned.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Greataxe")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_greataxe)
+			spawned.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Mace")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_mace)
+			spawned.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+		if("Flail")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_flail)
+			spawned.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+		if("Greatflail")
+			spawned.add_spell(/datum/action/cooldown/spell/undirected/conjure_item/conjure_greatflail)
+			spawned.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+
+/datum/outfit/adventurers_guildmaster/eldritch_knight
+	name = "Retired Eldritch Knight"
 	head = null
 	mask = null
 	neck = null
@@ -183,7 +240,7 @@
 		/obj/item/paper,
 	)
 
-/datum/outfit/adventurers_guildmaster/spellsword/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+/datum/outfit/adventurers_guildmaster/eldritch_knight/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
 	equipped_human.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 	if(equipped_human.gender == MALE)
