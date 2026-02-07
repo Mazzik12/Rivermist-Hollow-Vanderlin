@@ -16,7 +16,7 @@
 		/datum/skill/misc/medicine = 1,
 		/datum/skill/misc/climbing = 4,
 		/datum/skill/misc/athletics = 4,
-		/datum/skill/misc/music, 2
+		/datum/skill/misc/music = 2,
 	)
 
 	jobstats = list(

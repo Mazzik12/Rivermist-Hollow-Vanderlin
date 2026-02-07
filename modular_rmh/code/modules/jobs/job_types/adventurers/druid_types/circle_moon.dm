@@ -6,7 +6,7 @@
 	category_tags = list(CAT_ADVENTURER_DRUID)
 
 	jobstats = list(
-		STATKEY_WIL = 2,
+		STATKEY_END = 2,
 		STATKEY_END = 1,
 	)
 

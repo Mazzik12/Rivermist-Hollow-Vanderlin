@@ -740,7 +740,7 @@
 			return
 		admin_title = new_title
 		if(is_burgmeister_job(human_job))
-			var/datum/job/lord_job = SSjob.GetJobType(/datum/job/burgmeister)
+			var/datum/job/lord_job = SSjob.GetJobType(human_job.type)
 			lord_job?.get_informed_title(src, TRUE, new_title)
 
 /mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)

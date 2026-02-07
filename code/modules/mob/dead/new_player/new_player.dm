@@ -304,7 +304,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 		if(JOB_UNAVAILABLE_SEX)
 			return "[jobtitle] is not meant for your sex."
 		if(JOB_UNAVAILABLE_DEITY)
-			return "[jobtitle] requires more faith."
+			return "[jobtitle] is for the folllowers of other gods."
 		if(JOB_UNAVAILABLE_QUALITY)
 			return "[jobtitle] requires higher player quality."
 		if(JOB_UNAVAILABLE_DONATOR)
@@ -363,7 +363,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	if(CONFIG_GET(flag/usewhitelist))
 		if(job.whitelist_req && (!client.whitelisted()))
 			return JOB_UNAVAILABLE_GENERIC
-
 	if(is_role_banned(client.ckey, job.title))
 		return JOB_UNAVAILABLE_BANNED
 	if(is_race_banned(client.ckey, client.prefs.pref_species.id))
@@ -391,6 +390,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 		return JOB_UNAVAILABLE_AGE
 	if((client.prefs.lastclass == job.title) && !job.bypass_lastclass)
 		return JOB_UNAVAILABLE_LASTCLASS
+	if(length(job.allowed_patrons) && !(client.prefs.selected_patron.type in job.allowed_patrons))
+		return JOB_UNAVAILABLE_DEITY
 	return JOB_AVAILABLE
 
 /mob/dead/new_player/proc/AttemptLateSpawn(rank)

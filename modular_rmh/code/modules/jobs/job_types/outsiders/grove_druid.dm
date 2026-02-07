@@ -29,7 +29,7 @@
 	exp_types_granted = list(EXP_TYPE_MAGICK)
 
 	jobstats = list(
-		STATKEY_WIL = 2,
+		STATKEY_END = 2,
 		STATKEY_END = 1,
 	)
 

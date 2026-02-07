@@ -7,7 +7,7 @@
 	category_tags = list(CAT_ADVENTURER_SORCERER)
 
 	jobstats = list(
-		STATKEY_WIL = 2,
+		STATKEY_END = 2,
 		STATKEY_INT = 1,
 		STATKEY_END = 1
 	)

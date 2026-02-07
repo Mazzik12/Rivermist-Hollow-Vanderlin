@@ -1,5 +1,5 @@
 /datum/job/advclass/combat/adventurer_warlock/the_fiend
-	title = "The Hexblade"
+	title = "The Fiend"
 	tutorial = "You have pledged your soul to the Hells or Abyss in return for a deadly arsenal of fiendish arcana."
 
 	outfit = /datum/outfit/adventurer_warlock/the_fiend

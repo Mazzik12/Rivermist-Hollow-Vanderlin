@@ -28,7 +28,7 @@
 		/datum/skill/misc/medicine = 1,
 		/datum/skill/misc/climbing = 3,
 		/datum/skill/craft/crafting = 1,
-		/datum/skill/craft/cooking = 4
+		/datum/skill/craft/cooking = 4,
 	)
 
 	traits = list(

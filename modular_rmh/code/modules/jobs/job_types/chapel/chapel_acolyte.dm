@@ -68,7 +68,6 @@
 	job_subclasses = list(
 		/datum/job/advclass/acolyte/base,
 		/datum/job/advclass/acolyte/selune,
-		/datum/outfit/acolyte/selune,
 		/datum/job/advclass/acolyte/nun,
 		/datum/job/advclass/acolyte/nun_regal,
 		/datum/job/advclass/acolyte/warrior_priest,

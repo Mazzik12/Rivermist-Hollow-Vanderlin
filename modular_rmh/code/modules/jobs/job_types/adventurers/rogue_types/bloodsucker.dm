@@ -5,7 +5,7 @@
 	outfit = /datum/outfit/adventurer_rogue/bloodsucker
 	category_tags = list(CAT_ADVENTURER_ROGUE)
 	total_positions = 2
-
+	antag_job = TRUE
 	traits = list(
 		TRAIT_DODGEEXPERT,
 		TRAIT_MEDIUMARMOR,

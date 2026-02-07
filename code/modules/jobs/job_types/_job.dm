@@ -866,8 +866,8 @@
 						dat += "<br><font color ='#7a4d0a'><b>Sub</b>class Traits:</font> "
 					else if(!length(adv_ref.traits) && length(traits))
 						traitlist = traits
-						show_traits = FALSE
-						dat += "<font color ='#7a4d0a'><b>Class</b> Traits:</font> "
+						//show_traits = FALSE
+						dat += "<br><font color ='#7a4d0a'><b>Class</b> Traits:</font> "
 					for(var/trait in traitlist)
 						dat += "<details><summary><i><font color ='#ccbb82'>[trait]</font></i></summary>"
 						dat += "<i><font color = '#a3ffe0'>[GLOB.roguetraits[trait]]</font></i></details>"
@@ -912,8 +912,10 @@
 					dat += "["[capitalize(stat)]: <b>\Roman[stat_ceilings[stat]]</b>"] | "
 				dat += "<br><i>Regardless of your statpacks or race choice, you will not be able to exceed these stats on spawn.</i></font>"
 				dat += "</font>"	//Ends the stat limit colors
+		if(spell_points > 0)
+			dat += "<br><font color = '#a3a7e0'>Starting Spellpoints: <b>[spell_points]</b></font>"
 		if(length(traits) && (show_traits || sclass_count > 1))
-			dat += "<b>Class</b></font> Traits: "
+			dat += "<br><b>Class</b></font> Traits: "
 			for(var/trait in traits)
 				dat += "<details><summary><i><font color ='#ccbb82'>[trait]</font></i></summary>"
 				dat += "<i><font color = '#a3ffe0'>[GLOB.roguetraits[trait]]</font></i></details>"

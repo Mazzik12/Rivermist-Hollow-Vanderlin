@@ -26,6 +26,7 @@
 	traits = list(
 		TRAIT_HEAVYARMOR,
 		TRAIT_STEELHEARTED,
+		TRAIT_HOLY,
 	)
 
 	spells = list(

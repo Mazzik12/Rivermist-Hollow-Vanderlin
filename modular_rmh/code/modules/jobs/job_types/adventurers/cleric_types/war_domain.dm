@@ -30,7 +30,7 @@
 	traits = list(
 		TRAIT_MEDIUMARMOR,
 		TRAIT_STEELHEARTED,
-		TRAIT_GENERIC,
+		TRAIT_HOLY,
 	)
 
 	languages = list(/datum/language/celestial)

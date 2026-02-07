@@ -35,7 +35,6 @@
 	traits = list(
 		TRAIT_MEDIUMARMOR,
 		TRAIT_STEELHEARTED,
-		TRAIT_GENERIC
 	)
 
 

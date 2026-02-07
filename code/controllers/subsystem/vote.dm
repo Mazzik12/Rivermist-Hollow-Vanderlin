@@ -219,7 +219,7 @@ SUBSYSTEM_DEF(vote)
 					if(H.stat != DEAD)
 						vote_power += 3
 					if(H.job)
-						var/list/list_of_powerful = list(/datum/job/burgmeister, /datum/job/councilor)
+						var/list/list_of_powerful = GLOB.townhall_positions
 						if(H.mind?.assigned_role && is_type_in_list(H.mind.assigned_role, list_of_powerful))
 							vote_power += 5
 						else

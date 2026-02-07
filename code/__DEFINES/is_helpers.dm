@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 	//#define is__job(job_type) (istype(job_type, /datum/job/)) //template for easy filling in
 	#define is_unassigned_job(job_type) (istype(job_type, /datum/job/unassigned))
 //Townhall
-	#define is_burgmeister_job(job_type) (istype(job_type, /datum/job/burgmeister))
+	#define is_burgmeister_job(job_type) (istype(job_type, /datum/job/burgmeister) || istype(job_type, /datum/job/advclass/burgmeister))
 //Chapel
 	#define is_priest_job(job_type) (istype(job_type, /datum/job/moon_priest || /datum/job/heart_priest))
 //Traders

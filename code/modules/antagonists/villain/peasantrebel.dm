@@ -48,14 +48,21 @@
 
 /datum/antagonist/prebel/can_be_owned(datum/mind/new_owner)
 	. = ..()
+
+	var/title
+	if(new_owner?.assigned_role.parent_job)
+		title = new_owner?.assigned_role.parent_job.title
+	else
+		title = new_owner?.assigned_role.title
+
 	if(.)
-		if(new_owner.assigned_role.title in GLOB.lords_positions)
+		if(title in GLOB.lords_positions)
 			return FALSE
-		if(new_owner.assigned_role.title in GLOB.keep_positions)
+		if(title in GLOB.keep_positions)
 			return FALSE
-		if(new_owner.assigned_role.title in GLOB.townhall_positions)
+		if(title in GLOB.townhall_positions)
 			return FALSE
-		if(new_owner.assigned_role.title in GLOB.townwatch_positions)
+		if(title in GLOB.townwatch_positions)
 			return FALSE
 		if(new_owner.unconvertable)
 			return FALSE

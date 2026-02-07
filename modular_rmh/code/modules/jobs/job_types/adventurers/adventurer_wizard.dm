@@ -18,7 +18,7 @@
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT, EXP_TYPE_MAGICK)
 
 	magic_user = TRUE
-	spell_points = 50
+	spell_points = 40
 	attunements_max = 15
 	attunements_min = 10
 

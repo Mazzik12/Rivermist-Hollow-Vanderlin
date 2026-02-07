@@ -13,13 +13,15 @@
 	allowed_patrons = list(
 		/datum/patron/faerun/neutral_gods/Helm,
 		/datum/patron/faerun/neutral_gods/Tempus,
-
+		/datum/patron/faerun/neutral_gods/Mystra,
+		/datum/patron/faerun/neutral_gods/Tempus,
 		/datum/patron/faerun/good_gods/Bahamut,
 		/datum/patron/faerun/good_gods/Tyr,
 		/datum/patron/faerun/good_gods/Torm,
 		/datum/patron/faerun/good_gods/Lathander,
 		/datum/patron/faerun/good_gods/Ilmater,
-		/datum/patron/faerun/good_gods/Selune
+		/datum/patron/faerun/good_gods/Selune,
+		/datum/patron/faerun/good_gods/Sune,
 	)
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)

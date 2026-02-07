@@ -57,6 +57,8 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 	vip = list(
 	/datum/job/burgmeister,
 	/datum/job/councilor,
+	/datum/job/advclass/councilor,
+	/datum/job/advclass/burgmeister,
 	)
 
 /obj/structure/door/secret/merchant

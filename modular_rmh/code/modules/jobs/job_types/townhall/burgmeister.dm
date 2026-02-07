@@ -162,8 +162,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
-	ring = /obj/item/clothing/ring/slave_control
-	l_hand = null
+	ring = /obj/item/clothing/ring/slave_control/master
+	l_hand = /obj/item/weapon/lordscepter
 	r_hand = null
 
 	backpack_contents = list(
@@ -250,8 +250,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
-	ring = /obj/item/clothing/ring/slave_control
-	l_hand = null
+	ring = /obj/item/clothing/ring/slave_control/master
+	l_hand = /obj/item/weapon/lordscepter
 	r_hand = null
 
 	backpack_contents = list(
@@ -342,9 +342,9 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
-	ring = /obj/item/clothing/ring/slave_control
+	ring = /obj/item/clothing/ring/slave_control/master
 	l_hand = /obj/item/weapon/mace/cane/noble
-	r_hand = null
+	r_hand = /obj/item/weapon/lordscepter
 
 	backpack_contents = list(
 		/obj/item/clothing/neck/slave_collar
@@ -410,8 +410,8 @@ GLOBAL_LIST_EMPTY(burgmeister_titles)
 	belt = /obj/item/storage/belt/leather/plaquegold
 	beltr = /obj/item/storage/belt/pouch/coins/veryrich
 	beltl = /obj/item/storage/keyring/rmh_burgmeister
-	ring = /obj/item/clothing/ring/slave_control
-	l_hand = null
+	ring = /obj/item/clothing/ring/slave_control/master
+	l_hand = /obj/item/weapon/lordscepter
 	r_hand = null
 
 	backpack_contents = list(

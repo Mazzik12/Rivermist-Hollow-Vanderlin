@@ -73,6 +73,11 @@
 
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
+			var/title
+			if(HU.mind?.assigned_role.parent_job)
+				title = HU.mind?.assigned_role.parent_job.title
+			else
+				title = HU.mind?.assigned_role.title
 
 			user.visible_message("<span class='warning'>[user] points [src] at [target].</span>")
 
@@ -88,7 +93,7 @@
 				/datum/job/servant::title,
 			)
 
-			if(!((H.mind?.assigned_role.title in rod_jobs)))
+			if(!((title in rod_jobs)))
 				return
 
 			if(!COOLDOWN_FINISHED(src, scepter))

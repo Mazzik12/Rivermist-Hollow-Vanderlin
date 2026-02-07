@@ -18,8 +18,15 @@
 		if(!isliving(X))
 			continue
 		var/mob/living/L = X
-		if(L.job in valid_positions)
-			var/datum/job/J = SSjob.GetJob(L.job)
+
+		var/title
+		if(L.mind?.assigned_role.parent_job)
+			title = L.mind?.assigned_role.parent_job.title
+		else
+			title = L.mind?.assigned_role.title
+
+		if(title in valid_positions)
+			var/datum/job/J = SSjob.GetJob(title)
 			if(!J)
 				continue
 			J.adjust_current_positions(-1)

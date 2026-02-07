@@ -6,34 +6,6 @@
 	outfit = /datum/outfit/adventurer_paladin/crown
 	category_tags = list(CAT_ADVENTURER_PALADIN)
 
-	skills = list(
-		/datum/skill/combat/axesmaces = 2,
-		/datum/skill/combat/wrestling = 2,
-		/datum/skill/combat/unarmed = 3,
-		/datum/skill/combat/swords = 3,
-		/datum/skill/combat/shields = 3,
-		/datum/skill/misc/climbing = 1,
-		/datum/skill/misc/athletics = 3,
-		/datum/skill/misc/reading = 3,
-		/datum/skill/magic/holy = 2,
-		/datum/skill/craft/cooking = 1,
-		/datum/skill/labor/mathematics = 3,
-	)
-
-	jobstats = list(
-		STATKEY_STR = 2,
-		STATKEY_PER = 2,
-		STATKEY_INT = 2,
-		STATKEY_CON = 1,
-		STATKEY_END = 1,
-		STATKEY_SPD = -2,
-		STATKEY_LCK = 1,
-	)
-
-	traits = list(
-		TRAIT_HEAVYARMOR,
-		TRAIT_NOBLE,
-	)
 
 	skills = list(
 		/datum/skill/combat/axesmaces = 2,
@@ -63,6 +35,7 @@
 		TRAIT_HEAVYARMOR,
 		TRAIT_NOBLE,
 		TRAIT_STEELHEARTED,
+		TRAIT_HOLY,
 	)
 
 	spells = list(

@@ -139,7 +139,7 @@
 	attunements_min = 5
 
 	jobstats = list(
-		STATKEY_WIL = 2,
+		STATKEY_END = 2,
 		STATKEY_INT = 1,
 		STATKEY_END = 1
 	)
@@ -222,7 +222,7 @@
 	attunements_min = 5
 
 	jobstats = list(
-		STATKEY_WIL = 3,
+		STATKEY_END = 3,
 		STATKEY_INT = 1,
 		STATKEY_STR = -1
 	)
@@ -308,7 +308,7 @@
 	attunements_min = 5
 
 	jobstats = list(
-		STATKEY_WIL = 2,
+		STATKEY_END = 2,
 		STATKEY_INT = 2,
 		STATKEY_PER = 1
 	)
