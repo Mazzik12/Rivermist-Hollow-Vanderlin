@@ -56,6 +56,9 @@
 	icon_state = "full"
 	item_state = "full"
 	flags_inv = HIDECROTCH | HIDEBOOB | HIDEBELLY | HIDEBUTT
+	sleeved = 'modular_rmh/icons/clothing/onmob/helpers/undershirts.dmi'
+	nodismemsleeves = FALSE
+	sleevetype = "shirt"
 
 /obj/item/clothing/undershirt/silk
 	name = "silk body"
@@ -110,7 +113,7 @@
 
 /datum/repeatable_crafting_recipe/sewing/solid_body
 	name = "solid body"
-	output = /obj/item/clothing/undershirt/solid
+	output = /obj/item/clothing/undershirt
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2

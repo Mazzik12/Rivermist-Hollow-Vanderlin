@@ -3,6 +3,9 @@
 	desc = "Beautiful, form-fitting long gloves."
 	icon = 'modular_rmh/icons/clothing/sleeves_undershirts.dmi'
 	mob_overlay_icon = 'modular_rmh/icons/clothing/onmob/sleeves_undershirts.dmi'
+	mob_overlay_icon = 'modular_rmh/icons/clothing/onmob/sleeves_undershirts.dmi'
+	sleeved = null
+	sleevetype = "shirt"
 	icon_state = "solid"
 	item_state = "solid"
 	w_class = WEIGHT_CLASS_SMALL
@@ -16,10 +19,6 @@
 	sewrepair = TRUE
 	salvage_result = /obj/item/natural/cloth
 	slot_flags = ITEM_SLOT_GLOVES
-
-	nodismemsleeves = TRUE
-	sleevetype = null
-	sleeved = null
 
 /obj/item/clothing/gloves/armsleeves/solid_half
 	name = "sheer half-armsleeve"
@@ -58,56 +57,56 @@
 
 /datum/repeatable_crafting_recipe/sewing/solid_armsleeves
 	name = "solid armsleeve"
-	output = /obj/item/clothing/armsleeves/solid
+	output = /obj/item/clothing/gloves/armsleeves
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/solid_half_armsleeve
 	name = "solid half armsleeve"
-	output = /obj/item/clothing/armsleeves/solid_half
+	output = /obj/item/clothing/gloves/armsleeves/solid_half
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/silk_armsleeve
 	name = "silk armsleeve"
-	output = /obj/item/clothing/armsleeves/silk
+	output = /obj/item/clothing/gloves/armsleeves/silk
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/silk_half_armsleeve
 	name = "silk half armsleeve"
-	output = /obj/item/clothing/armsleeves/silk_half
+	output = /obj/item/clothing/gloves/armsleeves/silk_half
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/mesh_armsleeve
 	name = "mesh armsleeve"
-	output = /obj/item/clothing/armsleeves/mesh
+	output = /obj/item/clothing/gloves/armsleeves/mesh
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/mesh_half_armsleeve
 	name = "mesh half armsleeve"
-	output = /obj/item/clothing/armsleeves/mesh_half
+	output = /obj/item/clothing/gloves/armsleeves/mesh_half
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/net_armsleeve
 	name = "net armsleeve"
-	output = /obj/item/clothing/armsleeves/net
+	output = /obj/item/clothing/gloves/armsleeves/net
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
 /datum/repeatable_crafting_recipe/sewing/net_half_armsleeve
 	name = "net half armsleeve"
-	output = /obj/item/clothing/armsleeves/net_half
+	output = /obj/item/clothing/gloves/armsleeves/net_half
 	requirements = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
