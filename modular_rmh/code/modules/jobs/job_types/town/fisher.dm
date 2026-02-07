@@ -8,6 +8,7 @@
 	faction = FACTION_TOWN
 	total_positions = 5
 	spawn_positions = 5
+	display_order = JDO_FISHER
 
 	allowed_races = RACES_PLAYER_ALL
 
