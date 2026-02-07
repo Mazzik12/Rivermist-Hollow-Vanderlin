@@ -2,7 +2,10 @@
 /client/proc/vv_do_list(list/target, href_list)
 	var/target_index = text2num(GET_VV_VAR_TARGET)
 	if(!isnum(target_index) || target_index < 1 || target_index > target.len)
+	{
+		to_chat(src, span_warning("VV: list changed, refresh the panel."))
 		return
+	}
 	if(check_rights(R_VAREDIT))
 		if(href_list[VV_HK_LIST_EDIT])
 			mod_list(target, null, "list", "contents", target_index, autodetect_class = TRUE)
@@ -12,8 +15,10 @@
 
 		if(href_list[VV_HK_LIST_REMOVE])
 			if(target_index < 1 || target_index > target.len)
+			{
+				to_chat(src, span_warning("VV: cannot remove item, list has changed."))
 				return
-
+			}
 			var/variable = target[target_index]
 			var/prompt = alert("Do you want to remove item number [target_index] from list?", "Confirm", "Yes", "No")
 			if (prompt != "Yes")
