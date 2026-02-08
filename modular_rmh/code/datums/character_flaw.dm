@@ -1,4 +1,4 @@
-/datum/charflaw/addiction/lovefiend
+/datum/quirk/vice/lovefiend
 	name = "Nymphomaniac"
 	desc = "I must make love!"
 	time = 25 MINUTES

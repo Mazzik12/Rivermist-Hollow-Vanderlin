@@ -70,8 +70,7 @@
 	r_hand = null
 
 	// Weapon will be set in pre_equip() based on random selection
-
-/datum/outfit/adventurer_paladin/immortal/pre_equip(mob/living/carbon/human/H, visuals_only)
+/datum/outfit/adventurer_paladin/immortal/pre_equip(mob/living/carbon/human/H, visuals_only)m
 	. = ..()
 	H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 

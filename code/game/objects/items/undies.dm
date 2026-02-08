@@ -26,7 +26,7 @@
 	. = ..()
 	icon_state_base = icon_state
 
-/obj/item/clothing/undies/attack(mob/M, mob/user, def_zone)
+/obj/item/undies/attack(mob/M, mob/user, list/modifiers)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!H.underwear)

@@ -263,7 +263,7 @@
 							to_chat(devouser, span_info("I feel Viiritri guide me."))*/
 
 	var/isnymph = 0
-	if(HAS_TRAIT(user, TRAIT_NYMPHO_CURSE) || user.has_flaw(/datum/charflaw/addiction/lovefiend))
+	if(HAS_TRAIT(user, TRAIT_NYMPHO_CURSE) || user.has_quirk(/datum/quirk/vice/lovefiend))
 		isnymph = 2
 	if(user.has_status_effect(/datum/status_effect/debuff/orgasmbroken))
 		if(isnymph)
@@ -565,7 +565,7 @@
 	set_orgasm_prog(parent, 0)
 	SEND_SIGNAL(user, COMSIG_SEX_CLIMAX)
 
-	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+	if(user.has_quirk(/datum/quirk/vice/lovefiend))
 		user.sate_addiction()
 
 	if(!user.rogue_sneaking && user.alpha > 100) //stealth sex, keep your voice down.
@@ -770,7 +770,7 @@
 	if(prob(50))
 		return
 	last_pain = world.time
-	if(!user.has_flaw(/datum/charflaw/masochist))
+	if(!user.has_quirk(/datum/charflaw/masochist))
 		if(pain_amt >= PAIN_HIGH_EFFECT)
 			var/pain_msg = pick(list("IT HURTS!!!", "IT NEEDS TO STOP!!!", "I CAN'T TAKE IT ANYMORE!!!"))
 			to_chat(user, span_boldwarning(pain_msg))
@@ -806,11 +806,11 @@
 /datum/component/arousal/proc/update_aching(pain_amt, giving)
 	var/mob/user = parent
 	if(pain_amt >= LOINHURT_GAIN_THRESHOLD)
-		if(user.has_flaw(/datum/charflaw/masochist))
+		if(user.has_quirk(/datum/charflaw/masochist))
 			user.sate_addiction()
 			user.add_stress(/datum/stress_event/loinachegood)
 			return
-		if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		if(user.has_quirk(/datum/quirk/vice/lovefiend))
 			user.add_stress(/datum/stress_event/loinachegood)
 			return
 		user.add_stress(/datum/stress_event/loinache)
@@ -899,7 +899,7 @@
 /datum/component/arousal/proc/handle_statuses()
 	var/mob/living/user = parent
 	var/nymph_mod = 0
-	if(HAS_TRAIT(user, TRAIT_NYMPHO_CURSE) || user.has_flaw(/datum/charflaw/addiction/lovefiend))
+	if(HAS_TRAIT(user, TRAIT_NYMPHO_CURSE) || user.has_quirk(/datum/quirk/vice/lovefiend))
 		nymph_mod = 2
 
 	//Sorry but idk how else to do this

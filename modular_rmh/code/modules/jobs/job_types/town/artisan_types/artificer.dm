@@ -19,8 +19,7 @@
 		STATKEY_STR = 1,
 		STATKEY_INT = 2,
 		STATKEY_END = 1,
-		STATKEY_CON = 1,
-		STATKEY_SPD = -1,
+		STATKEY_SPD = -1
 	)
 
 	skills = list(
@@ -30,12 +29,13 @@
 		/datum/skill/craft/engineering = 4,
 		/datum/skill/misc/lockpicking = 3,
 		/datum/skill/misc/swimming = 1,
-		/datum/skill/misc/climbing = 3,
+		/datum/skill/misc/climbing = 2,
 		/datum/skill/misc/athletics = 2,
 		/datum/skill/labor/mining = 2,
 		/datum/skill/craft/smelting = 4,
 		/datum/skill/misc/reading = 2,
 		/datum/skill/labor/mathematics = 2,
+		/datum/skill/craft/bombs = 3,
 	)
 
 	traits = list(

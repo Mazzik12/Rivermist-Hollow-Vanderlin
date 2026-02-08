@@ -51,7 +51,7 @@
 	backr = null
 	backl = null
 	belt = /obj/item/storage/belt/leather/plaquesilver
-	beltr = /obj/item/weapon/mace/rungu/iron
+	beltr = /obj/item/weapon/mace/rungu
 	beltl = /obj/item/storage/belt/pouch //broke as hell!
 	ring = null
 	l_hand = null

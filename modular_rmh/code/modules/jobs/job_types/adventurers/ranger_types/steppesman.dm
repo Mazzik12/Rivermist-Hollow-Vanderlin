@@ -7,7 +7,7 @@
 
 
 	jobstats = list(
-		STATKEY_STR = 2,
+		STATKEY_STR = 1,
 		STATKEY_END = 1,
 		STATKEY_PER = 1,
 	)
@@ -33,8 +33,8 @@
 	)
 
 	traits = list(
-        TRAIT_MEDIUMARMOR,
-        TRAIT_DUALWIELDER,
+		TRAIT_DUALWIELDER,
+		TRAIT_DODGEEXPERT,
 	)
 
 /datum/job/advclass/combat/adventurer_ranger/steppesman/after_spawn(mob/living/carbon/human/spawned, client/player_client)

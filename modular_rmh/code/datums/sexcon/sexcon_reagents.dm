@@ -97,8 +97,8 @@
         to_chat(C, span_danger("I have an intense craving for Emberwine."))
 
     var/mob/living/carbon/human/H = C
-    if(!istype(H.charflaw, /datum/charflaw/addiction/lovefiend))
-        H.charflaw = new /datum/charflaw/addiction/lovefiend(H)
+    if(!istype(H.charflaw, /datum/quirk/vice/lovefiend))
+        H.charflaw = new /datum/quirk/vice/lovefiend(H)
 
 /datum/reagent/consumable/ethanol/beer/emberwine/addiction_act_stage4(mob/living/carbon/human/C)
     SEND_SIGNAL(C, COMSIG_SEX_SET_AROUSAL, 40)
@@ -201,8 +201,8 @@
         SEND_SIGNAL(C, COMSIG_SEX_ADJUST_AROUSAL, 10)
 
     var/mob/living/carbon/human/H = C
-    if(!istype(H.charflaw, /datum/charflaw/addiction/lovefiend))
-        H.charflaw = new /datum/charflaw/addiction/lovefiend(H)
+    if(!istype(H.charflaw, /datum/quirk/vice/lovefiend))
+        H.charflaw = new /datum/quirk/vice/lovefiend(H)
 
 /datum/alch_cauldron_recipe/aphrodisiac
 	recipe_name = "Aphrodisiac"
