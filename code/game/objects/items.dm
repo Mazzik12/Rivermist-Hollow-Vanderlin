@@ -835,7 +835,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(!silent)
 		playsound(src, drop_sound, DROP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
 	toggle_altgrip(user, FALSE)
-	user.update_equipment_speed_mods()
+	if(user)
+		user.update_equipment_speed_mods()
 	if(isliving(user))
 		var/mob/living/living_user = user
 		living_user.encumbrance_to_speed()
