@@ -10222,10 +10222,6 @@
 	},
 /turf/open/floor/church,
 /area/indoors/town/rmh/library)
-"eyG" = (
-/obj/effect/landmark/start/villagerlate,
-/turf/open/floor/cobblerock,
-/area/outdoors/rmh_field)
 "eyL" = (
 /turf/closed/wall/mineral/wooddark,
 /area/outdoors/exposed/town/rmh/farm)
@@ -12556,10 +12552,6 @@
 /obj/structure/flora/newleaf/snow,
 /turf/open/transparent/openspace,
 /area/indoors/shelter/woods)
-"fKs" = (
-/obj/effect/landmark/start/villagerlate,
-/turf/open/floor/dirt/road,
-/area/outdoors/rmh_field)
 "fKz" = (
 /obj/structure/stairs/stone{
 	dir = 2
@@ -237932,7 +237924,7 @@ tII
 vRp
 vRp
 vRp
-eyG
+qrx
 ixH
 dqB
 dqB
@@ -238189,7 +238181,7 @@ fFw
 fxN
 diV
 qrx
-eyG
+qrx
 rZR
 dqB
 dqB
@@ -238446,7 +238438,7 @@ fFw
 fxN
 vRp
 vRp
-fKs
+dqB
 rZR
 dqB
 qrx

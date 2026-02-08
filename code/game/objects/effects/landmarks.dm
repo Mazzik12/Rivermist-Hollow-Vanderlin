@@ -98,12 +98,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 		"Adventurer Wizard")
 	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/villagerlate
-	name = "Townerlate"
-	icon_state = "arrow"
-	jobspawn_override = list("Towner")
-	delete_after_roundstart = FALSE
-
 //TOWNHALL
 
 /obj/effect/landmark/start/burgmeister
