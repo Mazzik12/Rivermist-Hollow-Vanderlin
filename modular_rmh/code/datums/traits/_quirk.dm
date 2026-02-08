@@ -56,6 +56,7 @@
 /datum/quirk/proc/reapply()
 	if(revive_reapply)
 		if(!QDELETED(src))
+			on_spawn()
 			addtimer(CALLBACK(src, PROC_REF(post_add)), 30)
 
 /datum/quirk/proc/add() //special "on add" effects
