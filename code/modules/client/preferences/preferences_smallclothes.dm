@@ -109,8 +109,15 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 			var/preference_type = href_list["preference_type"]
 			if(!isnull(undie_type))
 				var/choice = input(user, "Choose a color.", "Underwear Colour") as null|anything in colorlist
-				if (choice && colorlist[choice])
-					smallclothes_preferences[preference_type] = colorlist[choice]
+				if (choice)
+					var/selected_value = colorlist[choice]
+					if(selected_value == "CUSTOM_RGB")
+						var/current_color = smallclothes_preferences[preference_type]||"#FFFFFF"
+						var/new_color = input(user, "Select color:", "Custom Color", current_color) as color|null
+						if(new_color)
+							smallclothes_preferences[preference_type] = sanitize_hexcolor(new_color, include_crunch=1)
+					else
+						smallclothes_preferences[preference_type] = colorlist[choice]
 					to_chat(user, "The colour for your underwear has been set to <b>[choice].</b>.")
 				else
 					smallclothes_preferences[preference_type] = null
@@ -122,8 +129,15 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 			var/preference_type = href_list["preference_type"]
 			if(!isnull(legwear_type))
 				var/choice = input(user, "Choose a color.", "Legwear Colour") as null|anything in colorlist
-				if (choice && colorlist[choice])
-					smallclothes_preferences[preference_type] = colorlist[choice]
+				if (choice)
+					var/selected_value = colorlist[choice]
+					if(selected_value == "CUSTOM_RGB")
+						var/current_color = smallclothes_preferences[preference_type]||"#FFFFFF"
+						var/new_color = input(user, "Select color:", "Custom Color", current_color) as color|null
+						if(new_color)
+							smallclothes_preferences[preference_type] = sanitize_hexcolor(new_color, include_crunch=1)
+					else
+						smallclothes_preferences[preference_type] = colorlist[choice]
 					to_chat(user, "The colour for your legwear has been set to <b>[choice].</b>.")
 				else
 					smallclothes_preferences[preference_type] = null
@@ -185,7 +199,7 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 	if (undie_color)
 		dat += "<a href='byond://?_src_=prefs;undie_type=[current_undie];preference=undie_color;preference_type=[SMALCLOTHES_UNDIE_COLOR_PREFERENCES];task=change_smallclothes_preferences'> <span style='border: 1px solid #161616; background-color: [undie_color ? undie_color : "#FFFFFF"];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>"
 	else
-		dat += "<a href='byond://?_src_=prefs;undie_type=[current_undie];preference=undie_color;preference_type=[SMALCLOTHES_UNDIE_COLOR_PREFERENCES];task=change_smallclothes_preferences'>(C)</a>"
+		dat += "<a href='byond://?_src_=prefs;undie_type=[current_undie];preference=undie_color;preference_type=[SMALCLOTHES_UNDIE_COLOR_PREFERENCES];task=change_smallclothes_preferences'>(Select color)</a>"
 	dat += "</span></div>"
 
 	dat += "<div [random_preferences ? "" : "class='smallclothes-item'"]><b>Legwear: </b> <span class='smallclothes-icon'>[legwear_icon]</span> <span class='smallclothes-text'>"
@@ -196,7 +210,7 @@ GLOBAL_LIST_EMPTY(cached_legwear_flat_icons)
 	if (legwear_color)
 		dat += "<a href='byond://?_src_=prefs;legwear_type=[current_legwear];preference=legwear_color;preference_type=[SMALCLOTHES_LEGWEAR_COLOR_PREFERENCES];task=change_smallclothes_preferences'> <span style='border: 1px solid #161616; background-color: [legwear_color ? legwear_color : "#FFFFFF"];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>"
 	else
-		dat += "<a href='byond://?_src_=prefs;legwear_type=[current_legwear];preference=legwear_color;preference_type=[SMALCLOTHES_LEGWEAR_COLOR_PREFERENCES];task=change_smallclothes_preferences'>(C)</a>"
+		dat += "<a href='byond://?_src_=prefs;legwear_type=[current_legwear];preference=legwear_color;preference_type=[SMALCLOTHES_LEGWEAR_COLOR_PREFERENCES];task=change_smallclothes_preferences'>(Select color)</a>"
 	dat += "</span></div>"
 
 	return dat
