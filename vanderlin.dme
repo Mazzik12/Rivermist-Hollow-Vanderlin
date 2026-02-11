@@ -3892,6 +3892,7 @@
 #include "modular_rmh\code\modules\spells\spell_types\undirected\wild_rage.dm"
 #include "modular_rmh\code\modules\spells\spell_types\undirected\conjure_item\aphrodisiac_bomb.dm"
 #include "modular_rmh\code\modules\spells\spell_types\undirected\conjure_item\destroy_clothes_bomb.dm"
+#include "modular_rmh\code\modules\spells\spell_types\undirected\conjure_item\sleeping_bomb.dm"
 #include "modular_rmh\code\modules\spells\spell_types\undirected\conjure_item\conjure_weapons\conjure_armingsword.dm"
 #include "modular_rmh\code\modules\spells\spell_types\undirected\conjure_item\conjure_weapons\conjure_axe.dm"
 #include "modular_rmh\code\modules\spells\spell_types\undirected\conjure_item\conjure_weapons\conjure_flail.dm"
