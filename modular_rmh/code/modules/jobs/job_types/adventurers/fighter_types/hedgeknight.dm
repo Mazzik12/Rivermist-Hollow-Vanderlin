@@ -43,6 +43,23 @@
 	if(species && species.id == SPEC_ID_HUMEN)
 		species.soundpack_m = new /datum/voicepack/male/knight()
 
+	var/mounts = list("White Female", "White Male", "Black Female", "Black Male", "Brown Female", "Brown Male")
+	var/mount_choice = browser_input_list(spawned, "CHOOSE YOUR MOUNT.", "YOUR HORSE", mounts)
+
+	switch(mount_choice)
+		if("White Female")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/summon_horse)
+		if("White Male")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/summon_horse/male)
+		if("Black Female")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/summon_horse/black)
+		if("Black Male")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/summon_horse/black_male)
+		if("Brown Female")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/summon_horse/brown)
+		if("Brown Male")
+			spawned.add_spell(/datum/action/cooldown/spell/conjure/summon_horse/brown_male)
+
 /datum/outfit/adventurer_fighter/hedgeknight
 	name = "Hedge Knight (Folkhero)"
 	head = /obj/item/clothing/head/rare/grenzelplate
