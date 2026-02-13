@@ -2,6 +2,9 @@
 	title = "Hedge Knight"
 	tutorial = "A wandering hedge knight, mastering the sword and upholding the code of honor across Faerûn."
 
+	allowed_races = list(SPEC_ID_HUMEN, SPEC_ID_AASIMAR)
+	allowed_sexes = list(MALE)
+
 	outfit = /datum/outfit/adventurer_fighter/hedgeknight
 	category_tags = list(CAT_ADVENTURER_FIGHTER)
 
