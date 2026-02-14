@@ -339,7 +339,7 @@
 	desc = "An odd mix of a pickaxe front and a hatchet blade back, capable of being switched between."
 	icon = 'icons/roguetown/weapons/32/axes_picks.dmi'
 	icon_state = "paxe"
-	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/pick)
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	wlength = WLENGTH_NORMAL
 	max_blade_int = 300
