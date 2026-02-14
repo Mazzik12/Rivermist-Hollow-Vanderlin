@@ -24,6 +24,7 @@
 		/datum/job/advclass/towner/bard,
 		/datum/job/advclass/towner/jester,
 		/datum/job/advclass/towner/miner,
+		/datum/job/advclass/towner/lumberjack,
 		/datum/job/advclass/towner/farmhand,
 		/datum/job/advclass/towner/hunter,
 		/datum/job/advclass/towner/fisher,

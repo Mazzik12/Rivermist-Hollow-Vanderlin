@@ -697,13 +697,13 @@
 	recipe_name = "a Steel Kukri"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	created_item = /obj/item/weapon/knife/dagger/kukri/steel
-	
-/datum/anvil_recipe/weapons/steel/knuckles	
+
+/datum/anvil_recipe/weapons/steel/knuckles
 	name = "Knuckles"
 	recipe_name = "a Steel Knuckles"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	created_item = /obj/item/weapon/knuckles
-	
+
 /datum/anvil_recipe/weapons/steel/dagger_steel
 	name = "2x Steel Daggers"
 	recipe_name = "a couple Daggers"
@@ -883,7 +883,7 @@
 	recipe_name = "a Pick that is also an Axe"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	additional_items = list(/obj/item/ingot/steel, /obj/item/grown/log/tree/stick)
-	created_item = /obj/item/weapon/pick/paxe
+	created_item = /obj/item/weapon/axe/paxe
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/steel/rapier_steel
