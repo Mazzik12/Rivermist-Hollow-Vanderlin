@@ -3857,6 +3857,7 @@
 #include "modular_rmh\code\modules\jobs\job_types\town\towner_types\town_fisher.dm"
 #include "modular_rmh\code\modules\jobs\job_types\town\towner_types\town_hunter.dm"
 #include "modular_rmh\code\modules\jobs\job_types\town\towner_types\town_jester.dm"
+#include "modular_rmh\code\modules\jobs\job_types\town\towner_types\town_lumberjack.dm"
 #include "modular_rmh\code\modules\jobs\job_types\town\towner_types\town_miner.dm"
 #include "modular_rmh\code\modules\jobs\job_types\town\towner_types\town_mouth.dm"
 #include "modular_rmh\code\modules\jobs\job_types\townhall\burgmeister.dm"

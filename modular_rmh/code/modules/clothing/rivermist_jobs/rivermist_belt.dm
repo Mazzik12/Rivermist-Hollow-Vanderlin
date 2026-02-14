@@ -16,3 +16,10 @@
 
 /obj/item/storage/belt/leather/cloth/heart_priest
 	color = CLOTHING_BLOOD_RED
+
+/obj/item/storage/belt/leather/adventurers_subclasses
+	populate_contents = list(
+		/obj/item/needle/thorn,
+		/obj/item/natural/cloth,
+		/obj/item/reagent_containers/glass/bottle/healthpot,
+	)
