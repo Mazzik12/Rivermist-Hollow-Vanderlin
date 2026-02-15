@@ -6,6 +6,7 @@
 	allowed_races = RACES_PLAYER_ELF_ALL
 	outfit = /datum/outfit/adventurer_fighter/qualinesti
 	category_tags = list(CAT_ADVENTURER_FIGHTER)
+	give_bank_account = TRUE
 
 	jobstats = list(
 		STATKEY_END = 2,
@@ -48,7 +49,7 @@
 	backr = /obj/item/weapon/shield/tower/buckleriron
 	belt = /obj/item/storage/belt/leather/black/adventurers_subclasses
 	beltr = /obj/item/weapon/sword/long/shotel
-	beltl = /obj/item/weapon/knife/njora/steel
+	beltl = /obj/item/weapon/knife/dagger/steel/njora
 	ring = null
 	l_hand = null
 	r_hand = null

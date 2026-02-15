@@ -11,6 +11,7 @@
 	nodismemsleeves = TRUE
 	sleevetype = null
 	sleeved = null
+	misc_flags = CRAFTING_TEST_EXCLUDE
 
 /obj/item/clothing/pants/loincloth/desert_sorceress
 	name = "desert sorceress skirt"
@@ -23,6 +24,7 @@
 	nodismemsleeves = TRUE
 	sleevetype = null
 	sleeved = null
+	misc_flags = CRAFTING_TEST_EXCLUDE
 
 /obj/item/clothing/head/desert_sorceress
 	name = "desert sorceress hood"
@@ -32,3 +34,4 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	icon_state = "hood"
 	item_state = "hood"
+	misc_flags = CRAFTING_TEST_EXCLUDE

@@ -52,8 +52,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		job_preferences = list() //It loaded null from nonexistant savefile field.
 
 		//Can't use SSjob here since this happens right away on login
-		for(var/job in subtypesof(/datum/job))
-			var/datum/job/J = job
+		for(var/datum/job/J as anything in subtypesof(/datum/job))
 			var/new_value
 			if(new_value)
 				job_preferences[initial(J.title)] = new_value
@@ -97,6 +96,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["oocpronouns"]		>> oocpronouns
 	S["admin_ghost_icon"]	>> admin_ghost_icon
 	S["ui_theme"]			>> ui_theme
+	S["char_theme"]			>> char_theme
 	S["lastchangelog"]		>> lastchangelog
 	S["UI_style"]			>> UI_style
 	S["hotkeys"]			>> hotkeys
@@ -138,7 +138,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["enable_tips"]		>> enable_tips
 	S["tip_delay"]			>> tip_delay
 	S["ui_scale"]			>> ui_scale
-	S["chat_scale"]			>> chat_scale
 	S["multi_char_ready"] >> multi_char_ready
 
 	S["multi_ready_slots"] >> multi_ready_slots
@@ -148,8 +147,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
 
-	if(!chat_scale)
-		chat_scale = 1
+	if(!char_theme)
+		char_theme = "grimshart"
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_preferences(needs_update, S)		//needs_update = savefile_version if we need an update (positive integer)
@@ -210,6 +209,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["anonymize"], anonymize)
 	WRITE_FILE(S["admin_ghost_icon"], admin_ghost_icon)
 	WRITE_FILE(S["ui_theme"], ui_theme)
+	WRITE_FILE(S["char_theme"], char_theme)
 	WRITE_FILE(S["crt"], crt)
 	WRITE_FILE(S["lastclass"], lastclass)
 	WRITE_FILE(S["mastervol"], mastervol)
@@ -248,7 +248,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["enable_tips"], enable_tips)
 	WRITE_FILE(S["tip_delay"], tip_delay)
 	WRITE_FILE(S["ui_scale"], ui_scale)
-	WRITE_FILE(S["chat_scale"], chat_scale)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["multi_char_ready"], multi_char_ready)
 	WRITE_FILE(S["multi_ready_slots"], multi_ready_slots)
@@ -261,16 +260,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/newtype = GLOB.species_list[species_name]
 		if(newtype)
 			pref_species = new newtype
-
-/datum/preferences/proc/_load_flaw(S)
-	var/charflaw_type
-	S["charflaw"]			>> charflaw_type
-	if(charflaw_type)
-		charflaw = new charflaw_type()
-	else
-		charflaw = pick(GLOB.character_flaws)
-		charflaw = GLOB.character_flaws[charflaw]
-		charflaw = new charflaw()
 
 /datum/preferences/proc/_load_loadouts(S)
 	for(var/i in 1 to 3)
@@ -363,8 +352,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Species
 	_load_species(S)
 
-	_load_flaw(S)
-
 	_load_loadouts(S)
 
 	_load_culinary_preferences(S)
@@ -375,6 +362,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	_load_smallclothes_preferences(S)
 
 	_load_combat_music(S)
+	load_quirks(S)
 
 	var/patron_typepath
 	S["selected_patron"] >> patron_typepath
@@ -394,9 +382,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Load prefs
 	S["job_preferences"] >> job_preferences
-
-	//Quirks
-	S["all_quirks"] >> all_quirks
 
 	//Load headshot link
 	S["headshot_link"]			>> headshot_link
@@ -469,8 +454,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(job_preferences[j] != JP_LOW && job_preferences[j] != JP_MEDIUM && job_preferences[j] != JP_HIGH)
 			job_preferences -= j
 
-	all_quirks = SANITIZE_LIST(all_quirks)
-
 	S["customizer_entries"] >> customizer_entries
 	validate_customizer_entries()
 
@@ -509,7 +492,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["moan_selection"] , moan_selection)	//RMH edit
 	WRITE_FILE(S["combat_music"], combat_music.type)
 	WRITE_FILE(S["species"]			, pref_species.name)
-	WRITE_FILE(S["charflaw"]			, charflaw.type)
 	WRITE_FILE(S["loadout1"]		, loadout1)
 	WRITE_FILE(S["loadout2"]		, loadout2)
 	WRITE_FILE(S["loadout3"]		, loadout3)
@@ -530,9 +512,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["joblessrole"]		, joblessrole)
 	//Write prefs
 	WRITE_FILE(S["job_preferences"] , job_preferences)
-
-	//Quirks
-	WRITE_FILE(S["all_quirks"]			, all_quirks)
 
 	//Patron
 	WRITE_FILE(S["selected_patron"]		, selected_patron.type)
@@ -558,6 +537,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	save_erp_preferences(S)
 
+	save_quirks(S)
 	return TRUE
 
 

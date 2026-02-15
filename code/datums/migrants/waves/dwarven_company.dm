@@ -25,10 +25,10 @@
 		/datum/skill/combat/axesmaces = 4,
 		/datum/skill/combat/swords = 2,
 		/datum/skill/combat/knives = 2,
-		/datum/skill/combat/wrestling = 3,
-		/datum/skill/combat/unarmed = 3,
+		/datum/skill/combat/wrestling = 2,
+		/datum/skill/combat/unarmed = 2,
 		/datum/skill/misc/swimming = 1,
-		/datum/skill/misc/climbing = 4,
+		/datum/skill/misc/climbing = 3,
 		/datum/skill/misc/athletics = 3,
 		/datum/skill/craft/crafting = 3,
 		/datum/skill/craft/blacksmithing = 2,
@@ -56,7 +56,7 @@
 	backr = /obj/item/weapon/shield/wood
 	belt = /obj/item/storage/belt/leather
 	beltr = /obj/item/flashlight/flare/torch/lantern
-	beltl = /obj/item/weapon/axe/paxe
+	beltl = /obj/item/weapon/pick/paxe
 	pants = /obj/item/clothing/pants/trou
 	shoes = /obj/item/clothing/shoes/simpleshoes/buckle
 	backl = /obj/item/storage/backpack/satchel
@@ -130,7 +130,7 @@
 		shirt = /obj/item/clothing/shirt/dress/gen/colored/random
 		armor = /obj/item/clothing/armor/leather/splint
 		shoes = /obj/item/clothing/shoes/shortboots
-		backl = /obj/item/weapon/axe/paxe
+		backl = /obj/item/weapon/pick/paxe
 
 /datum/migrant_role/dwarven_company/armorsmith
 	name = "Dwarven Armorsmith"
@@ -194,7 +194,7 @@
 	if(equipped_human.gender == MALE)
 		shoes = /obj/item/clothing/shoes/simpleshoes/buckle
 		shirt = /obj/item/clothing/shirt/shortshirt
-		backl = /obj/item/weapon/axe/paxe
+		backl = /obj/item/weapon/pick/paxe
 	else
 		shirt = /obj/item/clothing/shirt/dress/gen/colored/random
 		shoes = /obj/item/clothing/shoes/shortboots

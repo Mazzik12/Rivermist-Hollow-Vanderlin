@@ -115,7 +115,7 @@ var/global/list/colorlist = list(
 	selectable_colors |= new_pack.selectable_colors
 	qdel(new_pack)
 
-/obj/structure/dye_bin/attackby(obj/item/I, mob/living/user)
+/obj/structure/dye_bin/attackby(obj/item/I, mob/living/user, list/modifiers)
 	if(istype(I, /obj/item/dye_pack))
 		. = TRUE
 		var/obj/item/dye_pack/pack = I
@@ -141,7 +141,7 @@ var/global/list/colorlist = list(
 		if(!allow_mobs)
 			to_chat(user, span_warning("I could not fit [I] into [src]."))
 			return
-		var/obj/item/clothing/head/mob_holder/fellow = I
+		var/obj/item/mob_holder/fellow = I
 		fellow.release() //is this not a bug?
 
 	if(inserted)

@@ -4,10 +4,11 @@
 
 	outfit = /datum/outfit/adventurer_ranger/steppesman
 	category_tags = list(CAT_ADVENTURER_RANGER)
+	give_bank_account = TRUE
 
 
 	jobstats = list(
-		STATKEY_STR = 2,
+		STATKEY_STR = 1,
 		STATKEY_END = 1,
 		STATKEY_PER = 1,
 	)
@@ -33,8 +34,8 @@
 	)
 
 	traits = list(
-        TRAIT_MEDIUMARMOR,
-        TRAIT_DUALWIELDER,
+		TRAIT_DUALWIELDER,
+		TRAIT_DODGEEXPERT,
 	)
 
 /datum/outfit/adventurer_ranger/steppesman

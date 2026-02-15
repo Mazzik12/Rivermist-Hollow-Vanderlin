@@ -131,16 +131,9 @@
 #define CLOTHING_WET			"#bbbbbb"
 
 //This is i-dont-a-give-a-fuk dyes
-#define CLOTHING_PURPLE "#8747b1"
-#define CLOTHING_BLACK "#2b292e"
-#define CLOTHING_BROWN "#61462c"
-#define CLOTHING_YELLOW "#ffcd43"
-#define CLOTHING_AZURE "#007fff"
 #define CLOTHING_BABY_PUKE "#b5b004"
 #define CLOTHING_GOLD "#f9a602"
 #define CLOTHING_MAGE_RED "#b8252c"
-#define CLOTHING_ORANGE "#bd6606"
-#define CLOTHING_RED "#a32121"
 
 
 /// Deprecated macro, should be removed

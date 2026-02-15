@@ -3,6 +3,7 @@
 	tutorial = "You value the arts of stealth and subterfuge, bending the shadows to your will to strike without warning."
 
 	category_tags = list(CAT_ADVENTURER_MONK)
+	give_bank_account = TRUE
 	outfit = /datum/outfit/adventurer_monk/shadow
 
 	jobstats = list(
@@ -51,7 +52,7 @@
 	backr = null
 	backl = null
 	belt = /obj/item/storage/belt/leather/plaquesilver/adventurers_subclasses
-	beltr = /obj/item/weapon/mace/rungu/iron
+	beltr = /obj/item/weapon/mace/rungu
 	beltl = /obj/item/storage/belt/pouch //broke as hell!
 	ring = null
 	l_hand = null
