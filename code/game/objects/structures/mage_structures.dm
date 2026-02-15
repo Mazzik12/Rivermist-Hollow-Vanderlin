@@ -18,7 +18,7 @@ GLOBAL_LIST_EMPTY(mana_fountains)
 	blade_dulling = DULLING_BASH
 	resistance_flags = FIRE_PROOF
 	lock = /datum/lock
-	can_add_lock = FALSE
+	can_add_lock = TRUE
 	max_integrity = 2000
 
 	repair_thresholds = null

@@ -84,6 +84,12 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
+/datum/repeatable_crafting_recipe/sewing/undies/thong
+	name = "thong"
+	output = /obj/item/clothing/undies/thong
+	requirements = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/fibers = 2)
+
 /datum/repeatable_crafting_recipe/sewing/bikini_bottom
 	name = "bikini bottom"
 	output = /obj/item/clothing/undies/bikini_bottom

@@ -7,3 +7,4 @@
 	mob_overlay_icon = 'modular_rmh/icons/clothing/onmob/cerclothes.dmi'
 	sleeved = 'modular_rmh/icons/clothing/onmob/helpers/cerclothes.dmi'
 	allowed_sex = list(FEMALE)
+	misc_flags = CRAFTING_TEST_EXCLUDE

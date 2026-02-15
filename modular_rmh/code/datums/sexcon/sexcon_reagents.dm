@@ -12,11 +12,11 @@
     color = "#721a46"
 
 /datum/reagent/consumable/ethanol/beer/emberwine/on_mob_metabolize(mob/living/carbon/human/C)
-    ..()
+    .=..()
     SEND_SIGNAL(C, COMSIG_SEX_ADJUST_AROUSAL, 5)
 
 /datum/reagent/consumable/ethanol/beer/emberwine/on_mob_end_metabolize(mob/living/carbon/human/C)
-    ..()
+    .=..()
     SEND_SIGNAL(C, COMSIG_SEX_ADJUST_AROUSAL, -5)
 
 /datum/reagent/consumable/ethanol/beer/emberwine/on_mob_life(mob/living/carbon/human/C)
@@ -119,11 +119,11 @@
 	overdose_threshold = 10
 
 /datum/reagent/consumable/aphrodisiac/on_mob_metabolize(mob/living/carbon/human/C)
-    ..()
+    .=..()
     SEND_SIGNAL(C, COMSIG_SEX_ADJUST_AROUSAL, 10)
 
 /datum/reagent/consumable/aphrodisiac/on_mob_end_metabolize(mob/living/carbon/human/C)
-    ..()
+    .=..()
     SEND_SIGNAL(C, COMSIG_SEX_ADJUST_AROUSAL, -10)
 
 /datum/reagent/consumable/aphrodisiac/on_mob_life(mob/living/carbon/human/C)

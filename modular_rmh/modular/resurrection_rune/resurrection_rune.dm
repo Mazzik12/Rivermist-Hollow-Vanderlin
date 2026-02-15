@@ -226,7 +226,11 @@
 	GLOB.global_resurrunes += src
 
 /obj/structure/resurrection_rune/Destroy()
+	resrunecontroler.control_rune = null
+	resrunecontroler.sub_rune = null
+	main_rune_link = null
 	qdel(resrunecontroler)
+	GLOB.global_resurrunes -= src
 	. = ..()
 
 /obj/structure/resurrection_rune/proc/find_master()
