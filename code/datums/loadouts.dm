@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
+GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item
 	abstract_type = /datum/loadout_item
@@ -9,15 +9,27 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 	/// Path to the item to spawn
 	var/item_path
 
+	var/point_cost = 0
+	var/keep_loadout_stats = FALSE	// If TRUE, item keeps default values (not nerfed)
+
+/datum/loadout_item/New()
+	if (point_cost)
+		description += "Costs [point_cost] Points."
+
+/datum/loadout_item/proc/nobility_check(client/C)
+	// Override this in subtypes that require nobility
+	return TRUE
 //Miscellaneous
 
 /datum/loadout_item/card_deck
 	name = "Card Deck"
 	item_path = /obj/item/toy/cards/deck
+	point_cost = 9
 
 /datum/loadout_item/rosa_bouquet
 	name = "Rosa Bouquet"
 	item_path = /obj/item/bouquet/rosa
+	point_cost = 2
 
 /datum/loadout_item/salvia_bouquet
 	name = "Salvia Bouquet"
