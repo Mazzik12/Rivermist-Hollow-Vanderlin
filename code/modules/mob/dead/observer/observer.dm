@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 /mob/dead/observer/rogue/Move(n, direct)
 	if(world.time < next_gmove)
 		return
-	next_gmove = world.time + 2
+	next_gmove = world.time + 1
 	var/turf/T = n
 
 	setDir(direct)
@@ -151,6 +151,7 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 	ghostimage_simple = image(src.icon,src,"")
 	ghostimage_simple.override = TRUE
 	GLOB.ghost_images_simple |= ghostimage_simple
+	set_glide_size(DELAY_TO_GLIDE_SIZE(3))
 
 	updateallghostimages()
 
@@ -934,7 +935,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 
 	if(client?.holder && (type == /mob/dead/observer)) //subtypes begone!
-		icon_state = client?.prefs.admin_ghost_icon
+		var/icon_pref = client?.prefs.admin_ghost_icon
+		if(icon_pref)
+			icon_state = icon_pref
+		else
+			icon_state = initial(icon_state)
 
 	client.prefs.apply_character_randomization_prefs()
 

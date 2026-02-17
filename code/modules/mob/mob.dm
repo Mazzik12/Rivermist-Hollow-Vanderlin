@@ -40,7 +40,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	for(var/cc in client_colours)
 		qdel(cc)
 	client_colours = null
-	ghostize(drawskip=TRUE)
+	ghostize()
 	..()
 	return QDEL_HINT_HARDDEL
 
