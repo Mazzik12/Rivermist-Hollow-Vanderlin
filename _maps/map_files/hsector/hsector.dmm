@@ -719,6 +719,12 @@
 	},
 /turf/open/floor/cobble,
 /area/indoors/town/rmh/garrison)
+"aum" = (
+/obj/effect/decal/cobblerockedge{
+	dir = 4
+	},
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "auq" = (
 /obj/effect/decal/cleanable/sigil/N,
 /turf/open/floor/blocks,
@@ -1005,6 +1011,12 @@
 	},
 /turf/open/floor/concrete,
 /area/outdoors/town/rmh)
+"aBB" = (
+/obj/structure/lever/wall{
+	redstone_id = "westgate"
+	},
+/turf/closed/wall/mineral/stonebrick,
+/area/indoors/town/rmh/garrison/wall)
 "aBK" = (
 /turf/open/floor/ruinedwood,
 /area/indoors/cave/underhamlet)
@@ -14188,7 +14200,7 @@
 	})
 "gVh" = (
 /obj/structure/lever/wall{
-	redstone_id = "maskl2"
+	redstone_id = "westgate"
 	},
 /turf/closed/wall/mineral/stone/moss,
 /area/under/town/rmh/sewer)
@@ -19437,6 +19449,12 @@
 /obj/structure/stairs/stone,
 /turf/open/floor/cobble,
 /area/under/town/rmh/basement)
+"jyJ" = (
+/obj/effect/decal/cobblerockedge{
+	dir = 4
+	},
+/turf/open/floor/grass/healthy,
+/area/outdoors/town/rmh)
 "jyQ" = (
 /obj/structure/flora/tree/pine{
 	icon_state = "pine3"
@@ -20483,6 +20501,13 @@
 	plane = -6
 	},
 /turf/open/floor/cobble,
+/area/indoors/town/rmh/garrison/wall)
+"kdB" = (
+/obj/effect/decal/cobblerockedge{
+	dir = 1
+	},
+/obj/structure/ladder,
+/turf/open/floor/blocks/stonered,
 /area/indoors/town/rmh/garrison/wall)
 "kdV" = (
 /obj/effect/decal/cleanable/debris/wood,
@@ -26424,6 +26449,19 @@
 	},
 /turf/open/floor/church/green,
 /area/indoors/cave/underhamlet)
+"mTU" = (
+/obj/effect/decal/cobblerockedge,
+/obj/structure/table/wood/plain/alto,
+/obj/item/candle/tin/lit{
+	pixel_y = 4;
+	pixel_x = -6
+	},
+/obj/item/natural/feather{
+	pixel_x = 11;
+	pixel_y = 4
+	},
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "mTZ" = (
 /obj/structure/rack/shelf/biggest,
 /obj/item/storage/handbasket{
@@ -27514,6 +27552,14 @@
 	damage_deflection = 1000
 	},
 /area/under/rmh_bedrock)
+"nyC" = (
+/obj/effect/decal/cobblerockedge{
+	dir = 4
+	},
+/obj/effect/decal/cobblerockedge,
+/obj/structure/chair/stool/bar,
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "nyG" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -28116,6 +28162,9 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/wood,
 /area/indoors/town/rmh/tavern)
+"nMU" = (
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "nMW" = (
 /obj/item/grown/log/tree/stick,
 /turf/open/floor/dirt,
@@ -29458,6 +29507,15 @@
 /obj/item/ration,
 /turf/open/floor/cobble,
 /area/indoors/cave/rmh_cave/greenskins)
+"opL" = (
+/obj/structure/door/viewport{
+	dir = 8;
+	name = "Town Watch's Fort"
+	},
+/obj/effect/mapping_helpers/access/keyset/garrison/general,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/concrete,
+/area/indoors/town/rmh/garrison/wall)
 "oqh" = (
 /obj/effect/decal/cobblerockedge{
 	dir = 4
@@ -31533,6 +31591,16 @@
 "pqx" = (
 /turf/closed/wall/mineral/decostone/end,
 /area/indoors/town/church/chapel)
+"pqF" = (
+/obj/effect/decal/cobblerockedge{
+	dir = 9
+	},
+/obj/effect/decal/cobblerockedge{
+	dir = 1
+	},
+/obj/machinery/light/fueled/torchholder/metal_torch/west,
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "pqM" = (
 /mob/living/simple_animal/hostile/retaliate/troll/quiet,
 /turf/open/floor/cobblerock/alt,
@@ -32569,6 +32637,11 @@
 	},
 /turf/closed/wall/mineral/pipe,
 /area/under/town/rmh/basement)
+"pRh" = (
+/obj/effect/decal/cobblerockedge,
+/obj/structure/chair/stool/bar,
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "pRG" = (
 /obj/structure/door/weak/bolt{
 	name = "Garden"
@@ -38424,6 +38497,44 @@
 	},
 /turf/open/floor/concrete,
 /area/indoors/town/rmh/bank)
+"sHt" = (
+/obj/effect/decal/cobblerockedge{
+	dir = 5
+	},
+/obj/effect/decal/cobblerockedge{
+	dir = 1
+	},
+/obj/effect/decal/cobblerockedge{
+	dir = 4
+	},
+/obj/structure/closet/crate/chest/crafted,
+/obj/effect/mapping_helpers/access/keyset/garrison/general,
+/obj/item/paper{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/paper{
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/obj/item/paper{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/paper{
+	pixel_x = 9;
+	pixel_y = -11
+	},
+/obj/item/paper{
+	pixel_x = -11;
+	pixel_y = -1
+	},
+/obj/item/reagent_containers/glass/bottle/beer/voddena{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/turf/open/floor/blocks/stonered,
+/area/indoors/town/rmh/garrison/wall)
 "sHw" = (
 /turf/open/floor/rooftop,
 /area/outdoors/town/rmh/roofs)
@@ -200786,11 +200897,11 @@ wjC
 wjC
 eDo
 eDo
-rDX
+cBT
 bCW
+lch
 ebj
-ebj
-rDX
+cBT
 qDI
 jJs
 jJs
@@ -201043,11 +201154,11 @@ wjC
 wjC
 wjC
 wjC
-rDX
-rDX
-cBT
-cBT
-bCW
+lch
+nyC
+aum
+sHt
+lch
 jJs
 mpV
 mpV
@@ -201301,9 +201412,9 @@ kkP
 kkP
 kkP
 rDX
-rDX
-fgp
-rDX
+mTU
+nMU
+kdB
 cBT
 fgp
 ipc
@@ -201557,11 +201668,11 @@ aMb
 aMb
 aMb
 aMb
-bCW
-rDX
-rDX
+lch
+pRh
+nMU
+pqF
 cBT
-rDX
 fgp
 fgp
 fgp
@@ -201815,10 +201926,10 @@ aMb
 aMb
 aMb
 cBT
-cBT
-bCW
+aBB
+opL
 tkm
-rDX
+cBT
 lyL
 lyL
 fgp
@@ -202329,7 +202440,7 @@ aMb
 aMb
 mOG
 mOG
-lyL
+jyJ
 lyL
 lyL
 lyL
@@ -266839,7 +266950,7 @@ xrU
 iCB
 xiX
 xiX
-iWb
+oiT
 rDX
 fkx
 jvp
